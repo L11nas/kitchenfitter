@@ -58,7 +58,7 @@ import kitchen56 from '../assets/Kitchenimg/56.jpg';
 
 const kitchenProjects = [
   { id: 1, src: kitchen1, title: 'Modern Kitchen Renovation' },
-  { id: 3, src: kitchen3, title: 'Rustic Wooden Kitchen' },
+
   { id: 4, src: kitchen4, title: 'Compact Apartment Kitchen' },
   { id: 5, src: kitchen5, title: 'Luxury Marble Kitchen' },
   { id: 6, src: kitchen6, title: 'Open Concept Kitchen' },
