@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import '../../components/styles/custom.css';
-import backgroundImage from '../../assets/valeria.jpg';
+import backgroundImage from '../../../public/assets/Kitchenimg/valeria.jpg';
 
 export default function CustomRenovation() {
   return (

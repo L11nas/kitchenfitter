@@ -4,7 +4,7 @@ import deckingProjects from '../../data/DeckingProjects';
 import { useState } from 'react';
 import { Dialog } from '@headlessui/react';
 import { ChevronLeft, ChevronRight, X } from 'lucide-react'; // Naujos ikonos
-import backgroundImage from '../../assets/valeria.jpg';
+import backgroundImage from '../../../public/assets/Kitchenimg/valeria.jpg';
 
 export default function DeckingProjects() {
   const [selectedIndex, setSelectedIndex] = useState(null);

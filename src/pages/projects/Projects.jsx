@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom';
 import '../../components/styles/projects.css';
-import kitchenBg from '../../assets/k3.jpg';
-import flooringBg from '../../assets/KItchenimg/pgrindys/floor.jpg';
-import deckingBg from '../../assets/KItchenimg/Lauko/TerraceF.jpg';
-import staircaseBg from '../../assets/KItchenimg/stairs.jpg';
-import customBg from '../../assets/worker.jpg';
-import backgroundImage from '../../assets/valeria.jpg'; // ✅ Importuotas bendras fonas
+import kitchenBg from '/assets/Kitchenimg/k3.jpg';
+import flooringBg from '/assets/Kitchenimg/floor.jpg';
+import deckingBg from '/assets/Kitchenimg/TerraceF.jpg';
+import staircaseBg from '/assets/Kitchenimg/stairs.jpg';
+import customBg from '/assets/Kitchenimg/worker.jpg';
+import backgroundImage from '../../../public/assets/Kitchenimg/valeria.jpg'; // ✅ Importuotas bendras fonas
 import Reviews from '../../components/Reviews';
 import { FaStar } from 'react-icons/fa';
 export default function Projects() {

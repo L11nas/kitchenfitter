@@ -1,8 +1,8 @@
-import decking2 from '../assets/KItchenimg/Lauko/ld1.jpg';
-import decking3 from '../assets/KItchenimg/Lauko/ld2.jpg';
-import decking4 from '../assets/KItchenimg/Lauko/ld3.jpg';
-import decking5 from '../assets/KItchenimg/Lauko/ld4.jpg';
-import decking6 from '../assets/KItchenimg/Lauko/ld5.jpg';
+import decking2 from '/assets/Kitchenimg/ld1.jpg';
+import decking3 from '/assets/Kitchenimg/ld2.jpg';
+import decking4 from '/assets/Kitchenimg/ld3.jpg';
+import decking5 from '/assets/Kitchenimg/ld4.jpg';
+import decking6 from '/assets/Kitchenimg/ld5.jpg';
 
 const deckingProjects = [
   { id: 2, src: decking2, title: 'Outdoor Decking' },

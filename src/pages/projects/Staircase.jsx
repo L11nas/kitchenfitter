@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import '../../components/styles/staircase.css';
-import backgroundImage from '../../assets/valeria.jpg';
+import backgroundImage from '../../../public/assets/Kitchenimg/valeria.jpg';
 const staircaseProjects = [];
 
 export default function StaircaseProjects() {

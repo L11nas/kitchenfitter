@@ -3,11 +3,11 @@ import '../../components/styles/services.css';
 import { FaBookmark } from 'react-icons/fa';
 
 // Importuojame vaizdus
-import kitchenImg from '../../assets/KItchenimg/51.jpg';
-import flooringImg from '../../assets/KItchenimg/Parketas/parquet.jpg';
-import renovationImg from '../../assets/hero1.jpg';
-import deckingImg from '../../assets/KItchenimg/Lauko/terrace.jpg';
-import staircaseImg from '../../assets/KItchenimg/Staircase .jpg';
+import kitchenImg from '/assets/Kitchenimg/51.jpg';
+import flooringImg from '/assets/Kitchenimg/parquet.jpg';
+import renovationImg from '/assets/Kitchenimg/hero1.jpg';
+import deckingImg from '/assets/Kitchenimg/terrace.jpg';
+import staircaseImg from '/assets/Kitchenimg/Staircase .jpg';
 
 const services = [
   {
