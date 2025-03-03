@@ -1,0 +1,29 @@
+.footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  background: black;
+  color: white;
+  padding: 10px 0;
+  text-align: center;
+}
+
+.footer-contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.footer-contacts a {
+  color: #f5a623;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+}
+
+.footer-contacts a:hover {
+  color: #ff7b00;
+}

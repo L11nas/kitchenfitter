@@ -1,0 +1,192 @@
+/* ✅ Puslapio fonas */
+.kitchen-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  width: 100%;
+  padding-top: 100px;
+  position: relative;
+  background: linear-gradient(135deg, #f7f7f7, #eaeaea);
+  color: #333; /* Tamsiai pilkas tekstas, kad nebūtų per daug aštrus */
+}
+
+/* ✅ Pavadinimas */
+.kitchen-title {
+  margin-top: 20px;
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  margin-bottom: 40px;
+  color: #2c3e50; /* Prabangus, subtilus atspalvis */
+}
+/* ✅ Nuotrauka kortelėje */
+.kitchen-img-container {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  border-radius: 12px 12px 0 0;
+}
+
+.kitchen-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+/* ✅ Kortelių išdėstymas */
+.kitchen-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 50px;
+}
+
+/* ✅ Kortelės */
+.kitchen-card {
+  position: relative;
+  width: 250px; /* Pritaikyk pagal poreikį */
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.9); /* Balta, šiek tiek peršviečiama */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Švelnus šešėlis */
+}
+
+.kitchen-card:hover {
+  transform: scale(1.05);
+}
+/* ✅ Kortelės konteineris */
+
+.kitchen-card:hover {
+  transform: scale(1.05);
+}
+
+/* ✅ Nuotrauka kortelėje */
+.kitchen-card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 12px 12px 0 0;
+}
+
+/* ✅ Aprašymo konteineris */
+.kitchen-description {
+  padding: 12px;
+  font-size: 0.9rem;
+  text-align: center;
+  color: white;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 0 0 12px 12px;
+  font-weight: 500;
+  line-height: 1.4;
+  transition: background 0.3s ease-in-out;
+}
+
+/* ✅ Aprašymas išryškėja užvedus pelę */
+.kitchen-card:hover .kitchen-description {
+  transform: scale(1.05);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease-in-out;
+}
+
+/* ✅ Modalinis langas */
+.kitchen-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.kitchen-modal-content {
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  max-width: 850px;
+  padding: 20px;
+  position: relative;
+}
+
+/* ✅ Mygtukas uždaryti */
+.kitchen-modal-close {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  background: white;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  transition: background 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.kitchen-modal-close:hover {
+  background: #ddd;
+  transform: scale(1.1);
+}
+
+/* ✅ Rodyklės */
+.kitchen-modal-prev,
+.kitchen-modal-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.3);
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50%;
+}
+
+.kitchen-modal-prev {
+  left: -50px;
+}
+
+.kitchen-modal-next {
+  right: -50px;
+}
+.kitchen-modal-img {
+  max-width: 90%; /* Nuotrauka neviršys 90% ekrano pločio */
+  max-height: 80vh; /* Neviršys 80% ekrano aukščio */
+  object-fit: contain; /* Užtikrina, kad neišsikraipytų */
+  display: block;
+  margin: auto; /* Centruoja nuotrauką */
+}
+/* 🔹 Navigacijos tarp kategorijų mygtukai */
+.category-navigation {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.nav-button {
+  background: #f5f5f5;
+  color: #333;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  border: 2px solid transparent;
+}
+
+.nav-button:hover {
+  background: #333;
+  color: white;
+  border-color: #333;
+}

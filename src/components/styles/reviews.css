@@ -1,0 +1,118 @@
+.reviews-section {
+  width: 100%;
+  margin-top: 40px;
+  padding: 50px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  z-index: 6;
+}
+.reviews-section h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
+  padding-bottom: 30px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.reviews-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  max-width: 1200px;
+}
+
+/* Atsiliepimo kortelė */
+.review-card {
+  width: 300px;
+  padding: 20px;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.6); /* Tamsesnis blur */
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  color: #fff;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.review-card:hover {
+  transform: translateY(-5px) scale(1.05);
+  background: rgba(0, 0, 0, 0.7);
+  box-shadow: 0 10px 20px rgba(255, 102, 0, 0.5);
+}
+
+/* Profilio informacija */
+.review-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.review-header img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ffcc33;
+}
+
+.review-name {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.review-date {
+  font-size: 0.8rem;
+  color: #ddd;
+}
+
+/* Atsiliepimo tekstas */
+.review-text {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+/* Žvaigždučių įvertinimas */
+.review-stars {
+  color: gold;
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+/* Atsiliepimo palikimo mygtukas */
+.leave-review {
+  margin-top: 30px;
+}
+
+.leave-review-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #ff7eb9, #7afcff);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.leave-review-btn:hover {
+  background: linear-gradient(135deg, #ff5599, #00eaff);
+  transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .reviews-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .review-card {
+    width: 90%;
+  }
+}

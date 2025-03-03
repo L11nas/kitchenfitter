@@ -1,0 +1,203 @@
+.hero-container {
+  width: 100%;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  background-image: url('../../assets/background.jpg');
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  position: relative;
+  z-index: 10;
+  padding-top: 20px;
+  overflow: hidden;
+  overflow-y: auto;
+  padding-bottom: 60px;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  margin: 18vh auto 30px;
+  padding: 20px;
+
+  color: #f5f5dc;
+}
+
+.hero-content h1 {
+  font-size: 4rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-family: 'Playfair Display', serif;
+  text-shadow: 3px 5px 10px rgba(0, 0, 0, 0.7);
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  color: #e3dac9;
+}
+
+/* 🔹 HERO SERVICES SECTION */
+.hero-services {
+  padding: 20px;
+  margin: 20px 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  color: #fff;
+  border-radius: 15px;
+}
+
+.hero-services h2 {
+  margin-bottom: 25px;
+  font-size: 2rem;
+}
+
+.hero-services-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.hero-service-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 30px;
+  border-radius: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex: 1;
+  min-width: 250px;
+  max-width: 350px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.hero-service-card:hover {
+  transform: translateY(-5px) scale(1.05);
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 10px 20px rgba(255, 102, 0, 0.3);
+}
+
+.hero-service-card h3 {
+  color: #fff;
+  margin: 15px 0;
+  font-size: 1.5rem;
+}
+
+.hero-service-card p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.hero-service-card svg {
+  color: #ffcc33;
+  margin-bottom: 10px;
+  font-size: 2rem;
+}
+
+/* 🔹 HERO PROJECTS SECTION */
+.hero-projects {
+  padding: 20px;
+  margin: 20px 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  color: #fff;
+  border-radius: 15px;
+}
+
+.hero-projects h2 {
+  margin-bottom: 25px;
+  font-size: 2rem;
+}
+
+.hero-projects-images {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.hero-projects-images img {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.hero-cta-button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #ff7eb9, #7afcff);
+  color: white;
+  border-radius: 25px;
+  text-decoration: none;
+}
+
+.hero-cta-button:hover {
+  background: linear-gradient(135deg, #ff5599, #00eaff);
+}
+
+/* 🔹 RESPONSYVUMAS */
+@media (max-width: 1024px) {
+  .hero-container {
+    background-image: url('../../assets/background.jpg'); /* Mobilus paveikslėlis */
+    background-size: 100% auto;
+    background-position: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-content {
+    max-width: 500px;
+    margin: 120px auto 30px;
+    padding: 20px;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content {
+    max-width: 90%;
+    margin: 100px auto 20px;
+    padding: 15px;
+    margin-top: 35vh;
+  }
+
+  .hero-content h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero-content p {
+    font-size: 0.9rem;
+  }
+
+  .hero-cta-button {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}

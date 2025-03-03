@@ -1,0 +1,198 @@
+/* ✅ Kortelės */
+.decking-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  width: 100%;
+  padding-top: 150px; /* ✅ Padidina atstumą nuo viršaus */
+  position: relative;
+}
+
+.decking-card {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  border-radius: 15px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.1); /* Pusiau permatomas fonas */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  backdrop-filter: blur(5px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.decking-card:hover {
+  transform: scale(1.05);
+}
+.decking-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  margin-bottom: 40px; /* Suteikia daugiau vietos tarp pavadinimo ir kortelių */
+}
+
+/* ✅ Nuotraukos konteineris */
+.decking-img-container {
+  width: 100%;
+  height: 200px; /* Vienodas aukštis visoms kortelėms */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 10px 10px 0 0; /* Užapvaliname tik viršų */
+}
+.decking-modal-image-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.decking-card:hover {
+  transform: scale(1.1);
+}
+/* ✅ Modal overlay */
+.decking-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer; /* Parodo, kad galima paspausti */
+}
+
+/* ✅ Modal langas */
+.decking-modal-content {
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  max-width: 850px;
+  padding: 20px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+/* ✅ Uždarymo mygtukas */
+/* ✅ Uždarymo mygtukas */
+.decking-modal-close {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  background: white;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  transition: background 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.decking-modal-close:hover {
+  background: #ddd;
+  transform: scale(1.1);
+}
+
+/* ✅ Perjungimo mygtukai */
+.decking-modal-prev,
+.decking-modal-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.3);
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50%;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.decking-modal-prev:hover,
+.decking-modal-next:hover {
+  background: rgba(255, 255, 255, 0.6);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.decking-modal-prev {
+  left: -50px;
+}
+
+.decking-modal-next {
+  right: -50px;
+}
+
+/* ✅ Nuotraukos modal lange */
+/* ✅ Nuotraukos modal lange */
+.decking-modal-img {
+  max-width: 90%;
+  max-height: 75vh;
+  object-fit: contain;
+  display: block;
+  margin: auto;
+}
+
+/* ✅ Nuotraukos pavadinimas */
+.decking-modal-caption {
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 1rem;
+  text-align: center;
+}
+/* ✅ Aprašymo tekstas po nuotrauka */
+
+/* ✅ Kortelių konteineris */
+.decking-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px; /* ✅ Didesnis tarpas tarp kortelių */
+  margin-top: 50px; /* ✅ Atitraukia nuo pavadinimo */
+}
+
+/* ✅ Pavadinimo animacija užvedus pelę */
+.decking-card:hover .decking-description {
+  opacity: 0; /* Jei buvo paslėptas, tampa matomas */
+}
+
+/* 🔹 RESPONSYVUMAS */
+@media (max-width: 768px) {
+  .decking-container {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  .decking-img-container {
+    height: 160px;
+  }
+}
+
+@media (max-width: 480px) {
+  .decking-container {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+
+  .decking-img-container {
+    height: 140px;
+  }
+}

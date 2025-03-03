@@ -1,0 +1,60 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Node.js modulių katalogas
+node_modules
+
+# Vite "dist" katalogas (sugeneruotas build failas)
+dist
+dist-ssr
+
+# Aplankai ir failai, kurių nereikia įtraukti
+*.local
+.env
+.env.*.local
+
+# Editor directories and files
+.vscode/
+!.vscode/extensions.json
+.idea/
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# MacOS sistemos failai
+._*
+
+# Tailwind CSS cache
+.tailwind/
+
+# Next.js ir kiti cache failai (jei naudoji Vercel, Netlify)
+.vercel
+.netlify
+out
+.cache
+
+# TypeScript generuoti failai
+*.tsbuildinfo
+
+# Jest testavimo failai
+coverage
+
+# ESLint ir Prettier cache failai
+.eslintcache
+.prettier-cache
+
+# NPM ir Yarn lock failai (jei naudoji vieną iš jų)
+.pnpm-debug.log*
+.yarn-debug.log*
+.yarn-error.log*
+
+# Windows failai
+Thumbs.db
