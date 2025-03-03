@@ -1,5 +1,5 @@
 import kitchen1 from '../assets/Kitchenimg/1.jpg';
-import kitchen3 from '../assets/Kitchenimg/3.jpg';
+
 import kitchen4 from '../assets/Kitchenimg/4.jpg';
 import kitchen5 from '../assets/Kitchenimg/5.jpg';
 import kitchen6 from '../assets/Kitchenimg/6.jpg';
