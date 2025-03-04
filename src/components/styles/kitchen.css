@@ -8,7 +8,8 @@
   width: 100%;
   padding-top: 100px;
   position: relative;
-  background: linear-gradient(135deg, #f7f7f7, #eaeaea);
+  background: linear-gradient(135deg, #2c3e50, #34495e);
+  color: white;
   color: #333; /* Tamsiai pilkas tekstas, kad nebūtų per daug aštrus */
 }
 
@@ -20,12 +21,11 @@
   color: white;
   text-align: center;
   margin-bottom: 40px;
-  color: #2c3e50; /* Prabangus, subtilus atspalvis */
 }
 /* ✅ Nuotrauka kortelėje */
 .kitchen-img-container {
   width: 100%;
-  height: auto;
+  height: 250px;
   overflow: hidden;
   border-radius: 12px 12px 0 0;
 }
@@ -68,7 +68,7 @@
 /* ✅ Nuotrauka kortelėje */
 .kitchen-card img {
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
   border-radius: 12px 12px 0 0;
 }
@@ -168,25 +168,111 @@
 /* 🔹 Navigacijos tarp kategorijų mygtukai */
 .category-navigation {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 15px;
   margin-bottom: 20px;
+  padding: 10px 0;
 }
 
 .nav-button {
-  background: #f5f5f5;
-  color: #333;
-  padding: 10px 20px;
-  font-size: 1rem;
+  background: #ffffff; /* Balta spalva */
+  color: #2c3e50; /* Tamsiai mėlyna, geras kontrastas */
+  padding: 12px 20px;
+  font-size: 1.1rem;
   font-weight: bold;
-  border-radius: 5px;
+  border-radius: 8px;
   text-decoration: none;
   transition: all 0.3s ease-in-out;
-  border: 2px solid transparent;
+  border: 2px solid #2c3e50;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .nav-button:hover {
-  background: #333;
+  background: #2c3e50;
   color: white;
-  border-color: #333;
+  border-color: #2c3e50;
+}
+/* ✅ Kitchen puslapio optimizavimas mažiems ekranams */
+@media (max-width: 1024px) {
+  .kitchen-container {
+    gap: 10px;
+  }
+
+  .kitchen-card {
+    width: 200px; /* Sumažiname korteles planšetėje */
+  }
+}
+
+/* ✅ Telefonams */
+@media (max-width: 768px) {
+  .kitchen-container {
+    flex-direction: column; /* Kad būtų viena kortelė per eilutę */
+    align-items: center;
+  }
+
+  .kitchen-card {
+    width: 90%; /* Kortelės užima beveik visą ekraną */
+  }
+
+  .kitchen-description {
+    font-size: 0.8rem;
+  }
+
+  .category-navigation {
+    flex-direction: column; /* Mygtukai eina vienas po kito */
+    gap: 10px;
+    align-items: center;
+  }
+
+  .nav-button {
+    width: 80%; /* Užima daugiau vietos, lengviau paspausti */
+    text-align: center;
+    font-size: 1rem;
+    padding: 10px 15px;
+  }
+
+  /* ✅ Modalinis langas mobiliesiems */
+  .kitchen-modal-content {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .kitchen-modal-prev,
+  .kitchen-modal-next {
+    padding: 5px;
+    font-size: 16px;
+  }
+
+  .kitchen-modal-img {
+    max-width: 100%;
+    max-height: 70vh;
+  }
+}
+@media (max-width: 480px) {
+  .category-navigation {
+    gap: 8px; /* Sumažiname tarpą tarp mygtukų */
+  }
+
+  .nav-button {
+    width: 90%; /* Mygtukai užima beveik visą plotį */
+    font-size: 0.8rem; /* Mažesnis šriftas, kad neiškryptų iš ekrano */
+    padding: 8px 12px; /* Kompaktiškesnis dizainas */
+  }
+
+  .kitchen-card {
+    width: 95%; /* Kortelės beveik per visą ekraną */
+  }
+
+  .kitchen-modal-content {
+    width: 98%; /* Modalinis langas mažesnis */
+    padding: 10px;
+  }
+
+  .kitchen-modal-img {
+    max-width: 100%;
+    max-height: 60vh; /* Neleidžiame modalui per daug užimti ekrano */
+  }
 }

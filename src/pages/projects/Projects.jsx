@@ -7,7 +7,7 @@ import staircaseBg from '/assets/Kitchenimg/stairs.jpg';
 import customBg from '/assets/Kitchenimg/worker.jpg';
 import backgroundImage from '../../../public/assets/Kitchenimg/valeria.jpg'; // ✅ Importuotas bendras fonas
 import Reviews from '../../components/Reviews';
-import { FaStar } from 'react-icons/fa';
+
 export default function Projects() {
   const categories = [
     {

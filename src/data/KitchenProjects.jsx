@@ -1,5 +1,5 @@
 import kitchen1 from '/assets/Kitchenimg/1.jpg';
-import kitchen3 from '/assets/Kitchenimg/3.jpg';
+
 import kitchen4 from '/assets/Kitchenimg/4.jpg';
 import kitchen5 from '/assets/Kitchenimg/5.jpg';
 import kitchen6 from '/assets/Kitchenimg/6.jpg';
@@ -58,7 +58,7 @@ import kitchen56 from '/assets/Kitchenimg/56.jpg';
 
 const kitchenProjects = [
   { id: 1, src: kitchen1, title: 'Modern Kitchen Renovation' },
-  { id: 3, src: kitchen3, title: 'Rustic Wooden Kitchen' },
+
   { id: 4, src: kitchen4, title: 'Compact Apartment Kitchen' },
   { id: 5, src: kitchen5, title: 'Luxury Marble Kitchen' },
   { id: 6, src: kitchen6, title: 'Open Concept Kitchen' },
