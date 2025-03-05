@@ -7,6 +7,7 @@
   min-height: 100vh;
   width: 100%;
   padding-top: 100px;
+  padding-bottom: 20px;
   position: relative;
   background: linear-gradient(135deg, #2c3e50, #34495e);
   color: white;
@@ -97,8 +98,8 @@
 .kitchen-modal-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.8);
-  backdrop-filter: blur(8px);
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -106,8 +107,8 @@
 }
 
 .kitchen-modal-content {
-  background: rgba(0, 0, 0, 0.8);
-  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.1); /* 🔹 Lengvas peršviečiamumas */
+  border-radius: 12px; /* 🔹 Švelnesni kampai */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -120,8 +121,10 @@
 /* ✅ Mygtukas uždaryti */
 .kitchen-modal-close {
   position: absolute;
-  top: -20px;
-  right: -20px;
+  top: 10px;
+  right: 10px;
+  width: 40px; /* ✅ Apskritas mygtukas */
+  height: 40px;
   background: white;
   border: none;
   font-size: 22px;
@@ -168,9 +171,9 @@
 /* 🔹 Navigacijos tarp kategorijų mygtukai */
 .category-navigation {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* Jei netelpa, keliasi žemyn */
   justify-content: center;
-  gap: 15px;
+  gap: 10px;
   margin-bottom: 20px;
   padding: 10px 0;
 }
@@ -212,7 +215,9 @@
     flex-direction: column; /* Kad būtų viena kortelė per eilutę */
     align-items: center;
   }
-
+  .kitchen-modal-overlay {
+    display: none !important;
+  }
   .kitchen-card {
     width: 90%; /* Kortelės užima beveik visą ekraną */
   }
@@ -222,9 +227,8 @@
   }
 
   .category-navigation {
-    flex-direction: column; /* Mygtukai eina vienas po kito */
-    gap: 10px;
-    align-items: center;
+    flex-wrap: wrap; /* Išdėsto eilutėje, jei netelpa - keliasi žemyn */
+    justify-content: center;
   }
 
   .nav-button {

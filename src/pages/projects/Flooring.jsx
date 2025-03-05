@@ -3,8 +3,7 @@ import '../../components/styles/flooring.css';
 import flooringProjects from '../../data/FlooringProjects';
 import { useState } from 'react';
 import { Dialog } from '@headlessui/react';
-import { ChevronLeft, ChevronRight, X } from 'lucide-react'; // Naujos ikonos
-import backgroundImage from '../../../public/assets/Kitchenimg/valeria.jpg';
+import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 
 export default function FlooringProjects() {
   const [selectedIndex, setSelectedIndex] = useState(null);
@@ -34,18 +33,10 @@ export default function FlooringProjects() {
   };
 
   return (
-    <section
-      className='flooring-page'
-      style={{
-        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${backgroundImage})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-      }}
-    >
-      <h1 className='flooring-title'>Flooring & Parquet</h1>
+    <section className='flooring-page'>
+      <h1 className='flooring-title'>Flooring Renovations</h1>
       {/* 🔹 Navigacijos tarp kategorijų mygtukai */}
-      <div className='category-navigation'>
+      <div className='flooring-category-navigation'>
         <Link to='/projects/kitchens' className='nav-button'>
           Kitchen
         </Link>
@@ -62,6 +53,7 @@ export default function FlooringProjects() {
           Custom
         </Link>
       </div>
+
       <div className='flooring-container'>
         {flooringProjects.map((project, index) => (
           <div
@@ -76,6 +68,8 @@ export default function FlooringProjects() {
                 className='flooring-img'
               />
             </div>
+            {/* ✅ Aprašymo laukas po nuotrauka */}
+            <p className='flooring-description'>{project.title}</p>
           </div>
         ))}
       </div>
@@ -85,11 +79,10 @@ export default function FlooringProjects() {
         open={selectedIndex !== null}
         onClose={closeModal}
         className='flooring-modal-overlay'
-        onClick={closeModal} // ✅ Leidžia uždaryti modalą paspaudus foną
       >
         <div
-          className='flooring-modal-container'
-          onClick={(e) => e.stopPropagation()} // ✅ Neleidžia modalui užsidaryti paspaudus jo viduje
+          className='flooring-modal-content'
+          onClick={(e) => e.stopPropagation()}
         >
           <button className='flooring-modal-close' onClick={closeModal}>
             <X size={24} />
@@ -97,13 +90,19 @@ export default function FlooringProjects() {
           <button className='flooring-modal-prev' onClick={prevImage}>
             <ChevronLeft size={24} />
           </button>
-          <div className='flooring-modal-content'>
+          <div className='flooring-modal-image-container'>
             {selectedIndex !== null && (
-              <img
-                src={flooringProjects[selectedIndex].src}
-                alt={flooringProjects[selectedIndex].title}
-                className='flooring-modal-img'
-              />
+              <>
+                <img
+                  src={flooringProjects[selectedIndex].src}
+                  alt={flooringProjects[selectedIndex].title}
+                  className='flooring-modal-img'
+                />
+                {/* ✅ Aprašymas po modaline nuotrauka */}
+                <p className='flooring-modal-caption'>
+                  {flooringProjects[selectedIndex].title}
+                </p>
+              </>
             )}
           </div>
           <button className='flooring-modal-next' onClick={nextImage}>

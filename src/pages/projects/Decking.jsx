@@ -1,10 +1,9 @@
 import { Link } from 'react-router-dom';
 import '../../components/styles/decking.css';
-import deckingProjects from '../../data/DeckingProjects';
+import deckingProjects from '../../data/deckingProjects';
 import { useState } from 'react';
 import { Dialog } from '@headlessui/react';
-import { ChevronLeft, ChevronRight, X } from 'lucide-react'; // Naujos ikonos
-import backgroundImage from '../../../public/assets/Kitchenimg/valeria.jpg';
+import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 
 export default function DeckingProjects() {
   const [selectedIndex, setSelectedIndex] = useState(null);
@@ -34,18 +33,10 @@ export default function DeckingProjects() {
   };
 
   return (
-    <section
-      className='decking-page'
-      style={{
-        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${backgroundImage})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-      }}
-    >
-      <h1 className='decking-title'>Outdoor Decking</h1>
+    <section className='decking-page'>
+      <h1 className='decking-title'>Flooring Renovations</h1>
       {/* 🔹 Navigacijos tarp kategorijų mygtukai */}
-      <div className='category-navigation'>
+      <div className='decking-category-navigation'>
         <Link to='/projects/kitchens' className='nav-button'>
           Kitchen
         </Link>
@@ -62,6 +53,7 @@ export default function DeckingProjects() {
           Custom
         </Link>
       </div>
+
       <div className='decking-container'>
         {deckingProjects.map((project, index) => (
           <div
@@ -76,6 +68,8 @@ export default function DeckingProjects() {
                 className='decking-img'
               />
             </div>
+            {/* ✅ Aprašymo laukas po nuotrauka */}
+            <p className='decking-description'>{project.title}</p>
           </div>
         ))}
       </div>
@@ -85,11 +79,10 @@ export default function DeckingProjects() {
         open={selectedIndex !== null}
         onClose={closeModal}
         className='decking-modal-overlay'
-        onClick={closeModal}
       >
         <div
           className='decking-modal-content'
-          onClick={(e) => e.stopPropagation()} // Neleidžia modalui užsidaryti paspaudus viduje
+          onClick={(e) => e.stopPropagation()}
         >
           <button className='decking-modal-close' onClick={closeModal}>
             <X size={24} />
@@ -105,6 +98,7 @@ export default function DeckingProjects() {
                   alt={deckingProjects[selectedIndex].title}
                   className='decking-modal-img'
                 />
+                {/* ✅ Aprašymas po modaline nuotrauka */}
                 <p className='decking-modal-caption'>
                   {deckingProjects[selectedIndex].title}
                 </p>

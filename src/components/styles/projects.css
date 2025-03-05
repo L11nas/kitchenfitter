@@ -53,8 +53,8 @@
 
 /* ✅ Kortelės kiekvienai kategorijai */
 .projects-category {
-  width: 260px;
-  height: 180px;
+  width: 360px;
+  height: 280px;
   border-radius: 15px;
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;

@@ -1,26 +1,109 @@
+/* ✅ Footer pagrindinis stilius */
 .footer {
-  background: #222;
-  padding: 20px;
-  text-align: center;
-  color: #ffd700; /* Auksiniai akcentai */
-}
-
-.footer-contacts {
+  background: #2c3e50;
+  color: white;
+  padding: 40px 10%;
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  margin-top: 10px;
+  align-items: center;
+  text-align: center;
 }
 
-.footer-contacts a {
-  color: #f5a623;
+/* ✅ Konteineris su 3 stulpeliais */
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* ✅ Centruoja viską vertikaliai */
+  width: 100%;
+  max-width: 1200px;
+  text-align: left;
+  gap: 20px;
+}
+
+/* ✅ Kiekviena footer sekcija */
+.footer-column {
+  flex: 1;
+  min-width: 250px;
+}
+
+/* ✅ Pavadinimų stilius */
+.footer-column h4 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #f1c40f;
+}
+
+/* ✅ Kontaktai */
+.footer-column p,
+.footer-column a {
+  color: white;
   text-decoration: none;
   display: flex;
   align-items: center;
   gap: 8px;
-  justify-content: center;
+  margin-bottom: 5px;
+  transition: color 0.3s ease;
 }
 
-.footer-contacts a:hover {
-  color: #ff7b00;
+.footer-column a:hover {
+  color: #f39c12;
+}
+.footer-column.services {
+  text-align: right;
+}
+
+/* ✅ Socialinių tinklų nuorodos */
+.social-icons {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.social-icons a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: white;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #f39c12;
+}
+
+/* ✅ Paslaugų vietovės sąrašas */
+.service-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* ✅ Centruoja horizontaliai */
+  text-align: center;
+}
+
+.service-areas li {
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+}
+.service-area iframe {
+  display: block;
+  margin: auto; /* ✅ Užtikrina, kad žemėlapis liktų per vidurį */
+}
+/* ✅ Autorių teisės */
+.footer-copyright {
+  font-size: 0.9rem;
+  margin-top: 20px;
+}
+
+/* ✅ Mažesniems ekranams */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-column {
+    text-align: center;
+    margin-bottom: 15px;
+  }
 }
