@@ -1,19 +1,11 @@
 import { Link } from 'react-router-dom';
 import '../../components/styles/staircase.css';
-import backgroundImage from '../../../public/assets/Kitchenimg/valeria.jpg';
+
 const staircaseProjects = [];
 
 export default function StaircaseProjects() {
   return (
-    <section
-      className='staircase-page'
-      style={{
-        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${backgroundImage})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-      }}
-    >
+    <section className='staircase-page'>
       <h1 className='staircase-title'>Staircase Renovation</h1>
       {/* 🔹 Navigacijos tarp kategorijų mygtukai */}
       <div className='category-navigation'>

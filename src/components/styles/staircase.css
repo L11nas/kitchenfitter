@@ -2,11 +2,9 @@
 .staircase-page {
   width: 100%;
   min-height: 100vh;
-  background: linear-gradient(
-    to bottom,
-    #2c3e50,
-    #bdc3c7
-  ); /* Šviesesnis gradientas */
+  background: linear-gradient(135deg, #2c3e50, #34495e);
+  color: white;
+  color: #333; /* Tamsiai pilkas tekstas, kad nebūtų per daug aštrus */
   display: flex;
   flex-direction: column;
   justify-content: center; /* Centruoja turinį vertikaliai */

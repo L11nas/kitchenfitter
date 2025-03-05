@@ -10,7 +10,7 @@ export default function Navbar() {
       <div className='navbar-container'>
         {/* Logotipas */}
         <Link to='/' className='logo'>
-          <div className='logo-main'>ProFit UK</div>
+          <div className='logo-main'>Fitters UK</div>
           <div className='logo-sub'>Kitchen & Flooring Experts</div>
         </Link>
 
