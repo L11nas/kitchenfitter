@@ -6,21 +6,18 @@ export default function Footer() {
     <footer className='footer'>
       <div className='footer-container'>
         {/* 🔹 Kontaktinė informacija (kairėje) */}
-        <div className='footer-column'>
+        <div className='footer-column contact-info'>
           <h4>Contact Information</h4>
           <p>
             <FaPhone /> <a href='tel:+44 7414 460648'>+44 7414 460648</a>
           </p>
           <p>
             <FaEnvelope />{' '}
-            <a href='mailto:slcarpentryltd@gmail.com'>
-              slcarpentryltd@gmail.com
-            </a>
+            <a href='mailto:info@fittersuk.com'>info@fittersuk.com</a>
           </p>
-          {/* 🔹 Socialiniai tinklai */}
           <div className='social-icons'>
             <a
-              href='https://www.facebook.com/S.L.BUILDERS.LTD?rdid=YQTc4DYXfuff7RDW&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F18evDGgZrq#'
+              href='https://www.facebook.com/S.L.BUILDERS.LTD'
               target='_blank'
               rel='noopener noreferrer'
             >
@@ -37,29 +34,29 @@ export default function Footer() {
         </div>
 
         {/* 🔹 Žemėlapis (centre) */}
-        {/* 🔹 Žemėlapis (centre) */}
         <div className='footer-column service-area'>
           <h4>Service Area</h4>
           <iframe
             src='https://www.google.com/maps/d/u/0/embed?mid=14HW21weW7r_NS8dsaUHVN_agE8A0KuI&ehbc=2E312F&noprof=1'
-            width='340'
+            width='100%'
             height='180'
+            style={{ border: 0 }}
+            allowFullScreen=''
+            loading='lazy'
           ></iframe>
         </div>
 
-        {/* 🔹 Paslaugų teikimo vietovės (dešinėje) */}
+        {/* 🔹 Paslaugų vietovės (dešinėje) */}
         <div className='footer-column services'>
-          <div className='footer-column'>
-            <h4>We provide services in:</h4>
-            <ul className='service-areas'>
-              <li>Lincolnshire, UK</li>
-              <li>Nottinghamshire, UK</li>
-              <li>Leicestershire, UK</li>
-              <li>Doncaster, UK</li>
-              <li>Hucknall, UK</li>
-              <li>Leeds, UK</li>
-            </ul>
-          </div>
+          <h4>We provide services in:</h4>
+          <ul className='service-areas'>
+            <li>Lincolnshire, UK</li>
+            <li>Nottinghamshire, UK</li>
+            <li>Leicestershire, UK</li>
+            <li>Doncaster, UK</li>
+            <li>Hucknall, UK</li>
+            <li>Leeds, UK</li>
+          </ul>
         </div>
       </div>
 

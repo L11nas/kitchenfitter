@@ -1,12 +1,5 @@
-import kitchen1 from '/assets/Kitchenimg/1.jpg';
-
-import kitchen4 from '/assets/Kitchenimg/4.jpg';
-import kitchen5 from '/assets/Kitchenimg/5.jpg';
-import kitchen6 from '/assets/Kitchenimg/6.jpg';
-import kitchen7 from '/assets/Kitchenimg/7.jpg';
-import kitchen8 from '/assets/Kitchenimg/8.jpg';
 import kitchen9 from '/assets/Kitchenimg/9.jpg';
-import kitchen10 from '/assets/Kitchenimg/10.jpg';
+
 import kitchen11 from '/assets/Kitchenimg/11.jpg';
 import kitchen12 from '/assets/Kitchenimg/12.jpg';
 import kitchen13 from '/assets/Kitchenimg/13.jpg';
@@ -30,11 +23,7 @@ import kitchen30 from '/assets/Kitchenimg/30.jpg';
 import kitchen31 from '/assets/Kitchenimg/31.jpg';
 import kitchen32 from '/assets/Kitchenimg/32.jpg';
 import kitchen33 from '/assets/Kitchenimg/33.jpg';
-import kitchen34 from '/assets/Kitchenimg/34.jpg';
-import kitchen35 from '/assets/Kitchenimg/35.jpg';
-import kitchen36 from '/assets/Kitchenimg/36.jpg';
-import kitchen37 from '/assets/Kitchenimg/37.jpg';
-import kitchen38 from '/assets/Kitchenimg/38.jpg';
+
 import kitchen39 from '/assets/Kitchenimg/39.jpg';
 import kitchen40 from '/assets/Kitchenimg/40.jpg';
 import kitchen41 from '/assets/Kitchenimg/41.jpg';
@@ -57,15 +46,8 @@ import kitchen56 from '/assets/Kitchenimg/56.jpg';
 // ✅ Pridėkite likusias 50 nuotraukų analogiškai
 
 const kitchenProjects = [
-  { id: 1, src: kitchen1, title: 'Modern Kitchen Renovation' },
-
-  { id: 4, src: kitchen4, title: 'Compact Apartment Kitchen' },
-  { id: 5, src: kitchen5, title: 'Luxury Marble Kitchen' },
-  { id: 6, src: kitchen6, title: 'Open Concept Kitchen' },
-  { id: 7, src: kitchen7, title: 'Rustic Wooden Kitchen' },
-  { id: 8, src: kitchen8, title: 'Compact Apartment Kitchen' },
   { id: 9, src: kitchen9, title: 'Luxury Marble Kitchen' },
-  { id: 10, src: kitchen10, title: 'Open Concept Kitchen' },
+
   { id: 11, src: kitchen11, title: 'Modern Kitchen Renovation' },
   { id: 12, src: kitchen12, title: 'Classic White Kitchen' },
   { id: 13, src: kitchen13, title: 'Rustic Wooden Kitchen' },
@@ -89,11 +71,7 @@ const kitchenProjects = [
   { id: 31, src: kitchen31, title: 'Modern Kitchen Renovation' },
   { id: 32, src: kitchen32, title: 'Classic White Kitchen' },
   { id: 33, src: kitchen33, title: 'Rustic Wooden Kitchen' },
-  { id: 34, src: kitchen34, title: 'Compact Apartment Kitchen' },
-  { id: 35, src: kitchen35, title: 'Luxury Marble Kitchen' },
-  { id: 36, src: kitchen36, title: 'Open Concept Kitchen' },
-  { id: 37, src: kitchen37, title: 'Rustic Wooden Kitchen' },
-  { id: 38, src: kitchen38, title: 'Compact Apartment Kitchen' },
+
   { id: 39, src: kitchen39, title: 'Luxury Marble Kitchen' },
   { id: 40, src: kitchen40, title: 'Open Concept Kitchen' },
   { id: 41, src: kitchen41, title: 'Modern Kitchen Renovation' },
