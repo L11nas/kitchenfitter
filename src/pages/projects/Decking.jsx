@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import '../../components/styles/decking.css';
-import deckingProjects from '../../data/DeckingProjects';
+import deckingProjects from '../../data/deckingProjects';
 import { useState } from 'react';
 import { Dialog } from '@headlessui/react';
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
