@@ -20,7 +20,7 @@ export default function Footer() {
           {/* 🔹 Socialiniai tinklai */}
           <div className='social-icons'>
             <a
-              href='https://facebook.com/kitchenfitters'
+              href='https://www.facebook.com/S.L.BUILDERS.LTD?rdid=YQTc4DYXfuff7RDW&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F18evDGgZrq#'
               target='_blank'
               rel='noopener noreferrer'
             >
