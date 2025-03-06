@@ -3,7 +3,7 @@ import '../../components/styles/services.css';
 import { FaBookmark } from 'react-icons/fa';
 
 // Importuojame vaizdus
-import kitchenImg from '/assets/Kitchenimg/51.jpg';
+import kitchenImg from '/assets/Kitchenimg/project8/51.jpg';
 import flooringImg from '/assets/Kitchenimg/parquet.jpg';
 import renovationImg from '/assets/Kitchenimg/hero1.jpg';
 import deckingImg from '/assets/Kitchenimg/terrace.jpg';

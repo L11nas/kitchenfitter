@@ -8,9 +8,9 @@ import {
   FaTree,
   FaLayerGroup,
 } from 'react-icons/fa';
-import project1 from '/assets/Kitchenimg/25.jpg';
-import project2 from '/assets/Kitchenimg/54.jpg';
-import project3 from '/assets/Kitchenimg/36.jpg';
+import project1 from '/assets/Kitchenimg/project5/25.jpg';
+import project2 from '/assets/Kitchenimg/project8/54.jpg';
+import project3 from '/assets/Kitchenimg/project1/36.jpg';
 import '../../src/components/styles/hero.css';
 
 export default function Hero() {

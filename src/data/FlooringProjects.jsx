@@ -12,18 +12,22 @@ import flooring11 from '/assets/Kitchenimg/p1.jpg';
 import flooring12 from '/assets/Kitchenimg/p2.jpg';
 
 const flooringProjects = [
-  { id: 1, src: flooring1, title: 'Flooring Projects' },
-  { id: 2, src: flooring2, title: 'Flooring Projects' },
-  { id: 3, src: flooring3, title: 'Flooring Projects' },
-  { id: 4, src: flooring4, title: 'Flooring Projects' },
-  { id: 5, src: flooring5, title: 'Flooring Projects' },
-  { id: 6, src: flooring6, title: 'Flooring Projects' },
-  { id: 7, src: flooring7, title: 'Flooring Projects' },
-  { id: 8, src: flooring8, title: 'Flooring Projects' },
-  { id: 9, src: flooring9, title: 'Flooring Projects' },
+  { id: 1, src: flooring1, title: 'Parquet floor installation' },
+  { id: 2, src: flooring2, title: 'Parquet floor installation' },
+  { id: 3, src: flooring3, title: 'Parquet floor installation' },
+  { id: 4, src: flooring4, title: 'Parquet floor installation' },
+  { id: 5, src: flooring5, title: 'Parquet floor installation' },
+  { id: 6, src: flooring6, title: 'Parquet floor installation' },
+  { id: 7, src: flooring7, title: 'Parquet floor installation' },
+  { id: 8, src: flooring8, title: 'Parquet floor installation' },
+  { id: 9, src: flooring9, title: 'Parquet floor installation' },
   { id: 10, src: flooring10, title: 'Flooring Projects' },
-  { id: 11, src: flooring11, title: 'Flooring Projects' },
-  { id: 12, src: flooring12, title: 'Flooring Projects' },
+  {
+    id: 11,
+    src: flooring11,
+    title: 'Laminate flooring installation',
+  },
+  { id: 12, src: flooring12, title: 'Laminate flooring installation' },
 ];
 
 export default flooringProjects;

@@ -5,7 +5,7 @@ import flooringBg from '/assets/Kitchenimg/floor.jpg';
 import deckingBg from '/assets/Kitchenimg/TerraceF.jpg';
 import staircaseBg from '/assets/Kitchenimg/stairs.jpg';
 import customBg from '/assets/Kitchenimg/worker.jpg';
-import backgroundImage from '../../../public/assets/Kitchenimg/valeria.jpg'; // ✅ Importuotas bendras fonas
+import backgroundImage from '/assets/valeria.jpg'; // ✅ Importuotas bendras fonas
 import Reviews from '../../components/Reviews';
 
 export default function Projects() {
