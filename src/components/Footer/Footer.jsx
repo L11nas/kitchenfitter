@@ -48,15 +48,17 @@ export default function Footer() {
 
         {/* 🔹 Paslaugų vietovės (dešinėje) */}
         <div className='footer-column services'>
-          <h4>We provide services in:</h4>
-          <ul className='service-areas'>
-            <li>Lincolnshire, UK</li>
-            <li>Nottinghamshire, UK</li>
-            <li>Leicestershire, UK</li>
-            <li>Doncaster, UK</li>
-            <li>Hucknall, UK</li>
-            <li>Leeds, UK</li>
-          </ul>
+          <h4>We provide services in</h4>
+          <div className='service-areas-container'>
+            <ul className='service-areas'>
+              <li>Lincolnshire, UK</li>
+              <li>Nottinghamshire, UK</li>
+              <li>Leicestershire, UK</li>
+              <li>Doncaster, UK</li>
+              <li>Hucknall, UK</li>
+              <li>Leeds, UK</li>
+            </ul>
+          </div>
         </div>
       </div>
 

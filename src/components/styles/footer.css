@@ -62,11 +62,17 @@
 
 /* ✅ Paslaugų vietovės sąrašas */
 .service-areas {
-  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Centruojame sąrašą */
+  gap: 10px; /* Atstumas tarp elementų */
   padding: 0;
-  text-align: right; /* Dešinėje */
+  list-style: none;
 }
-
+.service-areas li {
+  width: calc(50% - 10px); /* Dviejų stulpelių išdėstymas */
+  text-align: left; /* Tekstas kairėje */
+}
 .service-areas li {
   margin-bottom: 5px;
   font-size: 0.9rem;
@@ -78,14 +84,22 @@
   margin-top: 20px;
   text-align: center;
 }
-
+.service-areas-container {
+  display: flex;
+  justify-content: center;
+}
+.services h4 {
+  text-align: center;
+}
 /* ✅ Mažesniems ekranams */
 @media (max-width: 768px) {
   .footer-container {
     flex-direction: column;
     text-align: center;
   }
-
+  .service-areas li {
+    width: 50%; /* Mažesniuose ekranuose dviejų stulpelių išdėstymas */
+  }
   .footer-column {
     text-align: center;
     margin-bottom: 15px;
@@ -93,5 +107,16 @@
 
   .service-areas {
     text-align: center; /* Centre mažiems ekranams */
+  }
+}
+@media (max-width: 600px) {
+  .service-areas li {
+    width: 100%;
+    text-align: center; /* Centruotas tekstas */
+  }
+}
+@media (max-width: 480px) {
+  .service-areas li {
+    width: 100%; /* Mobiliajame ekrane vieno stulpelio išdėstymas */
   }
 }
