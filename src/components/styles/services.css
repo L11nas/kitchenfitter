@@ -56,6 +56,9 @@
   width: 100%;
   overflow: hidden;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  align-items: center;
+  justify-content: space-between;
+  min-height: 250px;
 }
 
 .services-hero-card:hover {
@@ -67,14 +70,18 @@
   width: 40%;
   object-fit: cover;
   border-radius: 12px;
+  height: 100%;
 }
 
 .services-hero-text {
   width: 60%;
   padding: 20px;
   text-align: left;
-
   color: white;
+  min-height: 150px; /* Gali keisti pagal poreikį */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .services-hero-text h3 {
@@ -113,6 +120,7 @@
 }
 
 /* 🔹 RESPONSYVUMAS */
+
 @media (max-width: 768px) {
   .services-hero-card {
     flex-direction: column;
@@ -132,5 +140,18 @@
 
   .services-hero-text h3 {
     justify-content: center;
+  }
+}
+@media (max-width: 480px) {
+  .services-hero-content h2 {
+    font-size: 2rem;
+  }
+
+  .services-hero-text h3 {
+    font-size: 1.5rem;
+  }
+
+  .services-hero-text p {
+    font-size: 1rem;
   }
 }

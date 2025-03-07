@@ -3,12 +3,12 @@ import kitchen2 from '/assets/Kitchenimg/project1/2.jpg';
 import kitchen3 from '/assets/Kitchenimg/project1/4.jpg';
 import kitchen4 from '/assets/Kitchenimg/project1/5.jpg';
 
-import kitchen5 from '/assets/Kitchenimg/project2/7.jpg';
-import kitchen6 from '/assets/Kitchenimg/project2/9.jpg';
-import kitchen7 from '/assets/Kitchenimg/project2/11.jpg';
-import kitchen8 from '/assets/Kitchenimg/project2/12.jpg';
-import kitchen9 from '/assets/Kitchenimg/project2/18.jpg';
-import kitchen10 from '/assets/Kitchenimg/project2/20.jpg';
+import kitchen5 from '/assets/Kitchenimg/project2/7.webp';
+import kitchen6 from '/assets/Kitchenimg/project2/9.webp';
+import kitchen7 from '/assets/Kitchenimg/project2/11.webp';
+import kitchen8 from '/assets/Kitchenimg/project2/12.webp';
+import kitchen9 from '/assets/Kitchenimg/project2/18.webp';
+import kitchen10 from '/assets/Kitchenimg/project2/20.webp';
 import kitchen11 from '/assets/Kitchenimg/project2/21.jpg';
 import kitchen12 from '/assets/Kitchenimg/project2/22.jpg';
 import kitchen13 from '/assets/Kitchenimg/project2/27.jpg';

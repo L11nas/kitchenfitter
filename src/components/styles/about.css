@@ -129,4 +129,10 @@
   .blur-card {
     width: 100%;
   }
+  .about-info h1 {
+    font-size: 2.2rem; /* Sumažinta */
+  }
+  .about-info p {
+    font-size: 1rem; /* Aiškesnis tekstas */
+  }
 }

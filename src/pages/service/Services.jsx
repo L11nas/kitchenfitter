@@ -13,35 +13,35 @@ const services = [
   {
     title: 'Kitchen Installation',
     description:
-      'Our expert kitchen fitting services ensure precise installation of cabinets, countertops, and appliances for a perfect finish. We handle everything from unit assembly, plumbing, electrical connections, and final finishing touches to create a fully functional and visually stunning kitchen. Our team ensures seamless integration of modern designs while maximizing storage efficiency and workflow optimization.',
+      'Our expert kitchen fitting services cover everything from cabinet installation, countertops, plumbing, electrical work, and final finishing. We ensure a seamless, functional, and stylish kitchen design, optimizing storage space and workflow for a perfect balance of aesthetics and practicality.',
     image: kitchenImg,
     link: '/services/kitchen-installation',
   },
   {
     title: 'Flooring Installation',
     description:
-      'We provide high-quality flooring solutions, including hardwood, laminate, vinyl, and tile installations. Our team ensures a smooth and durable finish, addressing leveling, underlayment, and expansion gaps to prevent future issues. Whether you need a classic wooden floor for warmth and elegance or a modern, water-resistant vinyl solution, we ensure top-notch craftsmanship and longevity in every project.',
+      'We offer hardwood, laminate, vinyl, and tile flooring installations, ensuring a smooth, durable, and perfectly leveled finish. Whether you prefer the warmth of wood or the resilience of modern vinyl, our precise craftsmanship guarantees long-lasting beauty and functionality.',
     image: flooringImg,
     link: '/services/flooring',
   },
   {
     title: 'Custom Renovations',
     description:
-      'Transform your home with our tailor-made renovation services. We specialize in full and partial renovations, modernizing outdated spaces, creating additional storage solutions, and improving functionality. Our services include wall remodeling, bespoke furniture fitting, and smart home integrations to ensure your space aligns with both your aesthetic and practical needs.',
+      'Reimagine your home with tailor-made renovation solutions. We specialize in modernizing outdated spaces, optimizing layouts, and integrating smart home features. From wall remodeling to bespoke furniture installations, we bring style and practicality together.',
     image: renovationImg,
     link: '/services/renovations',
   },
   {
     title: 'Outdoor Decking Installation',
     description:
-      'Enhance your outdoor living experience with our professional decking solutions. We use high-quality materials like pressure-treated wood, composite, and hardwood for durable and weather-resistant decking. Our services include custom-built deck designs, railing installation, waterproofing, and protective coatings to ensure longevity and aesthetic appeal for your outdoor space.',
+      'Create a stunning outdoor space with our professional decking services. We use premium materials like composite, hardwood, and pressure-treated wood to deliver weather-resistant, durable, and visually striking decking solutions. Services include custom deck designs, railing installation, and waterproofing.',
     image: deckingImg,
     link: '/services/decking',
   },
   {
     title: 'Staircase Renovation',
     description:
-      'Upgrade your home’s aesthetic and safety with our staircase renovation services. We replace worn-out steps, install modern handrails, and reinforce structures to improve durability. Our team works with a variety of materials, including wood, glass, and metal, to provide stylish and functional stair solutions tailored to your home’s architecture and design preferences.',
+      'Upgrade your home’s aesthetics and safety with a staircase renovation. We replace worn-out steps, install modern handrails, and reinforce structures for enhanced durability. Choose from wood, glass, or metal to match your home’s architecture while adding a modern touch.',
     image: staircaseImg,
     link: '/services/staircase',
   },

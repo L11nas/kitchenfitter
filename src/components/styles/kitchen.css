@@ -72,6 +72,7 @@
   height: 100%;
   object-fit: cover;
   border-radius: 12px 12px 0 0;
+  image-rendering: crisp-edges;
 }
 
 /* ✅ Aprašymo konteineris */
@@ -216,7 +217,7 @@
     align-items: center;
   }
   .kitchen-modal-overlay {
-    display: none !important;
+    display: none;
   }
   .kitchen-card {
     width: 90%; /* Kortelės užima beveik visą ekraną */

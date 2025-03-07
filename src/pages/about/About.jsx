@@ -15,33 +15,33 @@ import '../../components/styles/about.css';
 
 const aboutPoints = [
   {
-    title: 'Expert Fitters with Years of Experience',
+    title: 'Skilled Fitters with Proven Expertise',
     description:
-      'Our team consists of trained professionals with hands-on experience in fitting kitchens, flooring, staircases, and more.',
+      'Our team of experienced professionals specializes in the precise installation of kitchens, flooring, staircases, and more. We ensure every project meets the highest standards of craftsmanship.',
     icon: <FaTools />,
   },
   {
-    title: 'Tailored Solutions for Every Home',
+    title: 'Custom Solutions for Every Home',
     description:
-      'Every space is unique, and so is our approach. We provide customized installations that match your specific needs.',
+      'Every home is different, and so are our solutions. We create tailored installations that perfectly fit your space, style, and needs.',
     icon: <FaCogs />,
   },
   {
-    title: 'High-Quality Materials',
+    title: 'Premium Materials for Lasting Quality',
     description:
-      'We work with premium materials to guarantee durability and aesthetics in all our projects.',
+      'We source high-quality materials to ensure durability, elegance, and long-lasting value for your home improvement projects.',
     icon: <FaGem />,
   },
   {
-    title: 'Efficient & Hassle-Free Process',
+    title: 'Seamless & Stress-Free Process',
     description:
-      'From consultation to completion, we ensure a smooth and stress-free process, keeping you informed every step of the way.',
+      'From the initial consultation to the final touches, we manage everything with efficiency and clear communication, ensuring a hassle-free experience.',
     icon: <FaClipboardCheck />,
   },
   {
-    title: 'Customer Satisfaction is Our Priority',
+    title: 'Your Satisfaction Comes First',
     description:
-      'We believe in clear communication, transparent pricing, and delivering results that exceed expectations.',
+      'We prioritize transparency, fair pricing, and outstanding results, delivering work that exceeds expectations every time.',
     icon: <FaHandshake />,
   },
 ];
@@ -50,19 +50,19 @@ const processSteps = [
   {
     title: 'Consultation & Planning',
     description:
-      'We start by understanding your vision and needs, providing expert advice and clear guidance.',
+      'We start by understanding your vision, offering expert recommendations, and creating a clear plan tailored to your needs.',
     icon: <FaComments />,
   },
   {
-    title: 'Professional Installation',
+    title: 'Precision Installation',
     description:
-      'Our experienced fitters handle every step with precision, ensuring a seamless and high-quality finish.',
+      'Our skilled team handles the entire installation with care and accuracy, ensuring a flawless and professional finish.',
     icon: <FaHammer />,
   },
   {
-    title: 'Final Inspection & Handover',
+    title: 'Quality Assurance & Final Handover',
     description:
-      'Once the work is completed, we conduct a thorough quality check and ensure your full satisfaction.',
+      'Before completing the project, we conduct a thorough inspection to guarantee everything meets your expectations.',
     icon: <FaCheckCircle />,
   },
 ];
@@ -77,11 +77,13 @@ export default function About() {
       <div className='about-info'>
         <h1 data-aos='fade-up'>About Us</h1>
         <p data-aos='fade-up'>
-          At <strong>ProFit UK</strong>, we have been delivering high-quality
-          kitchen installations, flooring, decking, and home renovations for
-          over <strong>15 years</strong>. Our team of certified professionals
-          guarantees **precision, efficiency, and craftsmanship** in every
-          project.
+          At Fitters, we specialize in high-quality kitchen installations,
+          flooring, decking, and home renovations, backed by over 15 years of
+          expertise. Our team of certified professionals ensures precision,
+          efficiency, and exceptional craftsmanship in every project,
+          transforming homes with durability and style. Whether you’re upgrading
+          your kitchen, enhancing your outdoor space, or renovating your entire
+          home, we deliver results that stand the test of time.
         </p>
       </div>
 
