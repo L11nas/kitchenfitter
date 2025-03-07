@@ -72,7 +72,6 @@
   height: 100%;
   object-fit: cover;
   border-radius: 12px 12px 0 0;
-  image-rendering: crisp-edges;
 }
 
 /* ✅ Aprašymo konteineris */
@@ -104,7 +103,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
+
+  overflow-y: auto;
 }
 
 .kitchen-modal-content {
@@ -113,8 +113,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 80%;
-  max-width: 850px;
+  width: 100%;
+  max-width: 550px;
+  max-height: 90vh;
   padding: 20px;
   position: relative;
 }
@@ -163,8 +164,8 @@
   right: -50px;
 }
 .kitchen-modal-img {
-  max-width: 90%; /* Nuotrauka neviršys 90% ekrano pločio */
-  max-height: 80vh; /* Neviršys 80% ekrano aukščio */
+  max-width: 100%; /* Nuotrauka neviršys 90% ekrano pločio */
+  max-height: 45vh; /* Neviršys 80% ekrano aukščio */
   object-fit: contain; /* Užtikrina, kad neišsikraipytų */
   display: block;
   margin: auto; /* Centruoja nuotrauką */
@@ -217,7 +218,7 @@
     align-items: center;
   }
   .kitchen-modal-overlay {
-    display: none;
+    display: none !important;
   }
   .kitchen-card {
     width: 90%; /* Kortelės užima beveik visą ekraną */
@@ -243,6 +244,8 @@
   .kitchen-modal-content {
     width: 95%;
     padding: 15px;
+    max-height: 75vh; /* ✅ Modalas neviršys 75% ekrano aukščio */
+    overflow-y: auto;
   }
 
   .kitchen-modal-prev,
