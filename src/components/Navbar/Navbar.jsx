@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { FaWhatsapp, FaPhone, FaBars, FaTimes } from 'react-icons/fa';
+import { FaWhatsapp, FaBars, FaTimes, FaSms } from 'react-icons/fa'; // Import FaSms
 import '../styles/navbar.css';
+
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -29,18 +30,19 @@ export default function Navbar() {
           </ul>
 
           <div className='contact-links'>
-            <a href='tel:+44 7414 460648' className='contact-link'>
-              <FaPhone />
-              <span className='contact-text'>+44 7414 460648</span>
-            </a>
+            <div className='contact-link'>
+              <FaSms />{' '}
+              {/* Changed to FaSms for desktop as well for consistency */}
+              <span className='contact-text'>+44 7414 460648 (SMS only)</span>
+            </div>
             <a
-              href='https://wa.me/+44 7414 460648'
+              href='sms:+447414460648'
               target='_blank'
               rel='noreferrer'
               className='contact-link'
             >
               <FaWhatsapp />
-              <span className='contact-text'>WhatsApp</span>
+              <span className='contact-text'>WhatsApp (SMS only)</span>
             </a>
           </div>
         </div>
@@ -48,11 +50,11 @@ export default function Navbar() {
         {/* Mobilūs kontaktai ir hamburger */}
         <div className='mobile-controls'>
           <div className='mobile-contacts'>
-            <a href='tel:+44 7414 460648' className='mobile-contact-link'>
-              <FaPhone />
+            <a href='sms:+447414460648' className='mobile-contact-link'>
+              <FaSms /> {/* Changed to FaSms */}
             </a>
             <a
-              href='https://wa.me/+44 7414 460648'
+              href='sms:+447414460648'
               target='_blank'
               rel='noreferrer'
               className='mobile-contact-link'

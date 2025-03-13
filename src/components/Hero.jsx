@@ -66,7 +66,7 @@ export default function Hero() {
               weather-resistant outdoor spaces.
             </p>
           </div>
-          <div className='hero-service-card' data-aos='fade-left'>
+          <div className='hero-service-card' data-aos='zoom-in'>
             <FaLayerGroup size={40} />
             <h3>Staircase Renovation</h3>
             <p>

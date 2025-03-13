@@ -1,122 +1,225 @@
-/* ✅ Footer pagrindinis stilius */
+/* Main footer style */
 .footer {
-  background: #2c3e50;
+  background: linear-gradient(to right, #2c3e50, #1a252f);
   color: white;
   padding: 40px 10%;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+  box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* ✅ Konteineris su 3 stulpeliais */
+/* Container with 3 columns */
 .footer-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   width: 100%;
   max-width: 1200px;
-  text-align: left;
+  text-align: center;
   gap: 40px;
+  flex-wrap: wrap;
 }
 
-/* ✅ Kiekviena footer sekcija */
+/* Each footer section */
 .footer-column {
   flex: 1;
   min-width: 250px;
+  transition: transform 0.3s ease;
 }
 
-/* ✅ Pavadinimų stilius */
+.footer-column:hover {
+  transform: translateY(-5px);
+}
+
+/* Heading style */
 .footer-column h4 {
-  font-size: 1.2rem;
-  margin-bottom: 10px;
+  font-size: 1.3rem;
+  margin-bottom: 15px;
   color: #f1c40f;
+  position: relative;
+  padding-bottom: 10px;
+  text-align: center; /* Center all headings */
 }
 
-/* ✅ Kontaktai */
+.footer-column h4::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%; /* Center all underlines */
+  transform: translateX(-50%); /* Center all underlines */
+  width: 50px;
+  height: 3px;
+  background-color: #f1c40f;
+}
+
+.services h4::after,
+.service-area h4::after {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Contacts */
 .contact-info p,
 .contact-info a {
   color: white;
   text-decoration: none;
   display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 5px;
+  align-items: center; /* This centers items vertically */
+  gap: 10px;
+  margin-bottom: 2px;
   transition: color 0.3s ease;
+  line-height: 1.5; /* Consistent line height */
 }
 
 .contact-info a:hover {
   color: #f39c12;
 }
 
-/* ✅ Socialinių tinklų nuorodos */
+/* Social media links */
 .social-icons {
   display: flex;
+  flex-direction: column;
   gap: 15px;
-  margin-top: 10px;
+  margin-top: 15px;
 }
 
-/* ✅ Žemėlapio konteineris */
+.social-icon-link {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Aligns content to the left */
+  gap: 10px;
+  padding: 8px 12px;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.social-icon-link:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateX(5px);
+}
+
+/* Map container */
 .service-area {
-  text-align: center; /* Centruoja žemėlapį */
+  text-align: center;
 }
 
-/* ✅ Paslaugų vietovės sąrašas */
+.map-container {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.map-container:hover {
+  transform: scale(1.02);
+}
+
+/* Service areas list */
 .service-areas {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; /* Centruojame sąrašą */
-  gap: 10px; /* Atstumas tarp elementų */
+  justify-content: center;
+  gap: 10px;
   padding: 0;
   list-style: none;
 }
+
 .service-areas li {
-  width: calc(50% - 10px); /* Dviejų stulpelių išdėstymas */
-  text-align: left; /* Tekstas kairėje */
+  width: calc(50% - 10px);
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 0;
+  transition: transform 0.2s ease;
 }
-.service-areas li {
-  margin-bottom: 5px;
+
+.service-areas li:hover {
+  transform: translateX(5px);
+  color: #f1c40f;
+}
+
+.location-icon {
+  color: #f1c40f;
   font-size: 0.9rem;
 }
 
-/* ✅ Autorių teisės */
+/* Copyright */
 .footer-copyright {
   font-size: 0.9rem;
-  margin-top: 20px;
+  margin-top: 30px;
   text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
 .service-areas-container {
   display: flex;
   justify-content: center;
 }
+
 .services h4 {
   text-align: center;
 }
-/* ✅ Mažesniems ekranams */
+
+/* For smaller screens */
 @media (max-width: 768px) {
   .footer-container {
     flex-direction: column;
     text-align: center;
+    gap: 30px;
   }
+
+  .footer-column h4::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
   .service-areas li {
-    width: 50%; /* Mažesniuose ekranuose dviejų stulpelių išdėstymas */
+    width: 50%;
+    justify-content: center;
   }
+
   .footer-column {
     text-align: center;
     margin-bottom: 15px;
   }
 
-  .service-areas {
-    text-align: center; /* Centre mažiems ekranams */
+  .contact-info p,
+  .contact-info a {
+    justify-content: center;
+  }
+
+  .social-icons {
+    align-items: center;
   }
 }
+
 @media (max-width: 600px) {
   .service-areas li {
     width: 100%;
-    text-align: center; /* Centruotas tekstas */
+    text-align: center;
+    justify-content: center;
+  }
+
+  .footer {
+    padding: 30px 5%;
   }
 }
+
 @media (max-width: 480px) {
   .service-areas li {
-    width: 100%; /* Mobiliajame ekrane vieno stulpelio išdėstymas */
+    width: 100%;
+  }
+
+  .social-icon-link {
+    width: 100%;
+    justify-content: center;
   }
 }
