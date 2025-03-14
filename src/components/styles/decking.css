@@ -62,7 +62,7 @@
 }
 /* ✅ Kortelės konteineris */
 
-.fdecking-card:hover {
+.decking-card:hover {
   transform: scale(1.05);
 }
 
@@ -96,9 +96,10 @@
 
 /* ✅ Modalinis langas */
 .decking-modal-overlay {
+  z-index: 1000;
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(10px);
   display: flex;
   align-items: center;
@@ -117,7 +118,12 @@
   padding: 20px;
   position: relative;
 }
-
+.decking-modal-caption {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  color: white;
+}
 /* ✅ Mygtukas uždaryti */
 .decking-modal-close {
   position: absolute;

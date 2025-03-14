@@ -75,39 +75,45 @@ export default function FlooringProjects() {
       </div>
 
       {/* ✅ Modalas su Headless UI Dialog */}
+      {/* Modalas su Headless UI Dialog */}
       <Dialog
         open={selectedIndex !== null}
         onClose={closeModal}
-        className='flooring-modal-overlay'
+        className='kitchen-modal-overlay'
       >
         <div
-          className='flooring-modal-content'
-          onClick={(e) => e.stopPropagation()}
+          className='kitchen-modal-overlay'
+          onClick={closeModal} // Add this to handle clicks on the overlay background
         >
-          <button className='flooring-modal-close' onClick={closeModal}>
-            <X size={24} />
-          </button>
-          <button className='flooring-modal-prev' onClick={prevImage}>
-            <ChevronLeft size={24} />
-          </button>
-          <div className='flooring-modal-image-container'>
-            {selectedIndex !== null && (
-              <>
-                <img
-                  src={flooringProjects[selectedIndex].src}
-                  alt={flooringProjects[selectedIndex].title}
-                  className='flooring-modal-img'
-                />
-                {/* ✅ Aprašymas po modaline nuotrauka */}
-                <p className='flooring-modal-caption'>
-                  {flooringProjects[selectedIndex].title}
-                </p>
-              </>
-            )}
+          <div
+            className='flooring-modal-content'
+            onClick={(e) => e.stopPropagation()} // Keep this to prevent clicks on content from closing
+          >
+            <button className='flooring-modal-close' onClick={closeModal}>
+              <X size={24} />
+            </button>
+            <button className='flooring-modal-prev' onClick={prevImage}>
+              <ChevronLeft size={24} />
+            </button>
+            <div className='flooring-modal-image-container'>
+              {selectedIndex !== null && (
+                <>
+                  <img
+                    src={flooringProjects[selectedIndex].src}
+                    alt={flooringProjects[selectedIndex].title}
+                    className='flooring-modal-img'
+                  />
+                  {/* Aprašymas po modaline nuotrauka */}
+                  <p className='flooring-modal-caption'>
+                    {flooringProjects[selectedIndex].title}
+                  </p>
+                </>
+              )}
+            </div>
+            <button className='flooring-modal-next' onClick={nextImage}>
+              <ChevronRight size={24} />
+            </button>
           </div>
-          <button className='flooring-modal-next' onClick={nextImage}>
-            <ChevronRight size={24} />
-          </button>
         </div>
       </Dialog>
     </section>

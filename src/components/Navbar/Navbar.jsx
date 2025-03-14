@@ -36,7 +36,7 @@ export default function Navbar() {
               <span className='contact-text'>+44 7414 460648 (SMS only)</span>
             </div>
             <a
-              href='sms:+447414460648'
+              href='https://wa.me/447414460648'
               target='_blank'
               rel='noreferrer'
               className='contact-link'

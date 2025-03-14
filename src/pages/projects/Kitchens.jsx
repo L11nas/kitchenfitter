@@ -36,7 +36,7 @@ export default function KitchenProjects() {
     <section className='kitchen-page'>
       <h1 className='kitchen-title'>Kitchen Renovations</h1>
       {/* 🔹 Navigacijos tarp kategorijų mygtukai */}
-      <div className='category-navigation'>
+      <div className='kitchen-category-navigation'>
         <Link to='/projects/kitchens' className='nav-button'>
           Kitchen
         </Link>
@@ -74,40 +74,45 @@ export default function KitchenProjects() {
         ))}
       </div>
 
-      {/* ✅ Modalas su Headless UI Dialog */}
+      {/* Modalas su Headless UI Dialog */}
       <Dialog
         open={selectedIndex !== null}
         onClose={closeModal}
         className='kitchen-modal-overlay'
       >
         <div
-          className='kitchen-modal-content'
-          onClick={(e) => e.stopPropagation()}
+          className='kitchen-modal-overlay'
+          onClick={closeModal} // Add this to handle clicks on the overlay background
         >
-          <button className='kitchen-modal-close' onClick={closeModal}>
-            <X size={24} />
-          </button>
-          <button className='kitchen-modal-prev' onClick={prevImage}>
-            <ChevronLeft size={24} />
-          </button>
-          <div className='kitchen-modal-image-container'>
-            {selectedIndex !== null && (
-              <>
-                <img
-                  src={kitchenProjects[selectedIndex].src}
-                  alt={kitchenProjects[selectedIndex].title}
-                  className='kitchen-modal-img'
-                />
-                {/* ✅ Aprašymas po modaline nuotrauka */}
-                <p className='kitchen-modal-caption'>
-                  {kitchenProjects[selectedIndex].title}
-                </p>
-              </>
-            )}
+          <div
+            className='kitchen-modal-content'
+            onClick={(e) => e.stopPropagation()} // Keep this to prevent clicks on content from closing
+          >
+            <button className='kitchen-modal-close' onClick={closeModal}>
+              <X size={24} />
+            </button>
+            <button className='kitchen-modal-prev' onClick={prevImage}>
+              <ChevronLeft size={24} />
+            </button>
+            <div className='kitchen-modal-image-container'>
+              {selectedIndex !== null && (
+                <>
+                  <img
+                    src={kitchenProjects[selectedIndex].src}
+                    alt={kitchenProjects[selectedIndex].title}
+                    className='kitchen-modal-img'
+                  />
+                  {/* Aprašymas po modaline nuotrauka */}
+                  <p className='kitchen-modal-caption'>
+                    {kitchenProjects[selectedIndex].title}
+                  </p>
+                </>
+              )}
+            </div>
+            <button className='kitchen-modal-next' onClick={nextImage}>
+              <ChevronRight size={24} />
+            </button>
           </div>
-          <button className='kitchen-modal-next' onClick={nextImage}>
-            <ChevronRight size={24} />
-          </button>
         </div>
       </Dialog>
     </section>

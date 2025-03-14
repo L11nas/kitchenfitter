@@ -34,7 +34,7 @@ export default function DeckingProjects() {
 
   return (
     <section className='decking-page'>
-      <h1 className='decking-title'>Flooring Renovations</h1>
+      <h1 className='decking-title'>Decking Renovations</h1>
       {/* 🔹 Navigacijos tarp kategorijų mygtukai */}
       <div className='decking-category-navigation'>
         <Link to='/projects/kitchens' className='nav-button'>
@@ -74,40 +74,45 @@ export default function DeckingProjects() {
         ))}
       </div>
 
-      {/* ✅ Modalas su Headless UI Dialog */}
+      {/* Modalas su Headless UI Dialog */}
       <Dialog
         open={selectedIndex !== null}
         onClose={closeModal}
         className='decking-modal-overlay'
       >
         <div
-          className='decking-modal-content'
-          onClick={(e) => e.stopPropagation()}
+          className='decking-modal-overlay'
+          onClick={closeModal} // Add this to handle clicks on the overlay background
         >
-          <button className='decking-modal-close' onClick={closeModal}>
-            <X size={24} />
-          </button>
-          <button className='decking-modal-prev' onClick={prevImage}>
-            <ChevronLeft size={24} />
-          </button>
-          <div className='decking-modal-image-container'>
-            {selectedIndex !== null && (
-              <>
-                <img
-                  src={deckingProjects[selectedIndex].src}
-                  alt={deckingProjects[selectedIndex].title}
-                  className='decking-modal-img'
-                />
-                {/* ✅ Aprašymas po modaline nuotrauka */}
-                <p className='decking-modal-caption'>
-                  {deckingProjects[selectedIndex].title}
-                </p>
-              </>
-            )}
+          <div
+            className='decking-modal-content'
+            onClick={(e) => e.stopPropagation()} // Keep this to prevent clicks on content from closing
+          >
+            <button className='decking-modal-close' onClick={closeModal}>
+              <X size={24} />
+            </button>
+            <button className='decking-modal-prev' onClick={prevImage}>
+              <ChevronLeft size={24} />
+            </button>
+            <div className='decking-modal-image-container'>
+              {selectedIndex !== null && (
+                <>
+                  <img
+                    src={deckingProjects[selectedIndex].src}
+                    alt={deckingProjects[selectedIndex].title}
+                    className='decking-modal-img'
+                  />
+                  {/* Aprašymas po modaline nuotrauka */}
+                  <p className='decking-modal-caption'>
+                    {deckingProjects[selectedIndex].title}
+                  </p>
+                </>
+              )}
+            </div>
+            <button className='decking-modal-next' onClick={nextImage}>
+              <ChevronRight size={24} />
+            </button>
           </div>
-          <button className='decking-modal-next' onClick={nextImage}>
-            <ChevronRight size={24} />
-          </button>
         </div>
       </Dialog>
     </section>

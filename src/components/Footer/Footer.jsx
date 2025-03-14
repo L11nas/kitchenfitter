@@ -31,7 +31,7 @@ export default function Footer() {
               <FaFacebook /> <span>Facebook</span>
             </a>
             <a
-              href='sms:+447414460648'
+              href='https://wa.me/447414460648'
               target='_blank'
               rel='noopener noreferrer'
               className='social-icon-link'
