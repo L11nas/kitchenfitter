@@ -4,6 +4,7 @@ import flooringProjects from '../../data/FlooringProjects';
 import { useState } from 'react';
 import { Dialog } from '@headlessui/react';
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
 
 export default function FlooringProjects() {
   const [selectedIndex, setSelectedIndex] = useState(null);
@@ -34,6 +35,16 @@ export default function FlooringProjects() {
 
   return (
     <section className='flooring-page'>
+      {/* ✅ SEO: Page Title and Meta Description */}
+      <Helmet>
+        <title>Flooring & Parquet Renovations | Our Projects</title>
+        <meta
+          name='description'
+          content='Explore our beautiful flooring and parquet renovation projects. See examples of our work and get inspired for your own flooring remodel.'
+        />
+      </Helmet>
+
+      {/* ✅ SEO: Main Heading */}
       <h1 className='flooring-title'>Flooring Renovations</h1>
       {/* 🔹 Navigacijos tarp kategorijų mygtukai */}
       <div className='flooring-category-navigation'>
@@ -62,9 +73,10 @@ export default function FlooringProjects() {
             onClick={() => openModal(index)}
           >
             <div className='flooring-img-container'>
+              {/* ✅ SEO: Descriptive Alt Text */}
               <img
                 src={project.src}
-                alt={project.title}
+                alt={`Flooring Renovation: ${project.title}`}
                 className='flooring-img'
               />
             </div>
@@ -98,9 +110,10 @@ export default function FlooringProjects() {
             <div className='flooring-modal-image-container'>
               {selectedIndex !== null && (
                 <>
+                  {/* ✅ SEO: Descriptive Alt Text in Modal */}
                   <img
                     src={flooringProjects[selectedIndex].src}
-                    alt={flooringProjects[selectedIndex].title}
+                    alt={`Flooring Renovation: ${flooringProjects[selectedIndex].title}`}
                     className='flooring-modal-img'
                   />
                   {/* Aprašymas po modaline nuotrauka */}

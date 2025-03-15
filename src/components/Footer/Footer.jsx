@@ -14,29 +14,34 @@ export default function Footer() {
         {/* Contact Information (left) */}
         <div className='footer-column contact-info'>
           <h4>Contact Information</h4>
-          <p>
-            <FaSms /> <a href='sms:+447414460648'>+44 7414 460648 (SMS only)</a>
-          </p>
-          <p>
-            <FaEnvelope />{' '}
-            <a href='mailto:info@fittersuk.com'>info@fittersuk.com</a>
-          </p>
-          <div className='social-icons'>
+          <address>
+            <p>
+              <FaSms aria-label='SMS icon' title='SMS' />{' '}
+              <a href='sms:+447414460648'>+44 7414 460648 (SMS only)</a>
+            </p>
+            <p>
+              <FaEnvelope aria-label='Email icon' title='Email' />{' '}
+              <a href='mailto:info@fittersuk.com'>info@fittersuk.com</a>
+            </p>
+          </address>
+          <div className='social-icons' aria-label='Social media links'>
             <a
               href='https://www.facebook.com/S.L.BUILDERS.LTD'
               target='_blank'
               rel='noopener noreferrer'
               className='social-icon-link'
+              aria-label='Visit our Facebook page'
             >
-              <FaFacebook /> <span>Facebook</span>
+              <FaFacebook title='Facebook' /> <span>Facebook</span>
             </a>
             <a
               href='https://wa.me/447414460648'
               target='_blank'
               rel='noopener noreferrer'
               className='social-icon-link'
+              aria-label='Chat with us on WhatsApp'
             >
-              <FaWhatsapp /> <span>WhatsApp (SMS only)</span>
+              <FaWhatsapp title='WhatsApp' /> <span>WhatsApp (SMS only)</span>
             </a>
           </div>
         </div>
@@ -53,6 +58,7 @@ export default function Footer() {
               allowFullScreen=''
               loading='lazy'
               title='Kitchen Fitters UK Service Area'
+              aria-label='Kitchen Fitters UK Service Area'
             ></iframe>
           </div>
         </div>
@@ -62,24 +68,23 @@ export default function Footer() {
           <h4>We provide services in</h4>
           <div className='service-areas-container'>
             <ul className='service-areas'>
-              <li>
-                <FaMapMarkerAlt className='location-icon' /> Lincolnshire, UK
-              </li>
-              <li>
-                <FaMapMarkerAlt className='location-icon' /> Nottinghamshire, UK
-              </li>
-              <li>
-                <FaMapMarkerAlt className='location-icon' /> Leicestershire, UK
-              </li>
-              <li>
-                <FaMapMarkerAlt className='location-icon' /> Doncaster, UK
-              </li>
-              <li>
-                <FaMapMarkerAlt className='location-icon' /> Hucknall, UK
-              </li>
-              <li>
-                <FaMapMarkerAlt className='location-icon' /> Leeds, UK
-              </li>
+              {[
+                'Lincolnshire, UK',
+                'Nottinghamshire, UK',
+                'Leicestershire, UK',
+                'Doncaster, UK',
+                'Hucknall, UK',
+                'Leeds, UK',
+              ].map((area, index) => (
+                <li key={index}>
+                  <FaMapMarkerAlt
+                    className='location-icon'
+                    aria-label={`Location: ${area}`}
+                    title={area}
+                  />{' '}
+                  {area}
+                </li>
+              ))}
             </ul>
           </div>
         </div>

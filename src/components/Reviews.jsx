@@ -1,4 +1,6 @@
 import React from 'react';
+
+import { Helmet } from 'react-helmet-async';
 import '../components/styles/reviews.css';
 import { FaFacebook } from 'react-icons/fa';
 
@@ -7,7 +9,7 @@ const reviews = [
   {
     name: 'Alisha Chambers',
     profilePic:
-      'https://scontent.fvno5-1.fna.fbcdn.net/v/t39.30808-6/464151870_10161966446303748_2932932423142499780_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=CiJ1A42d4TUQ7kNvgFf4JLe&_nc_oc=Adh-jSFYAdOl9AC5hK6hBnYFWFOOgL3XJqCggUAMxwK5opUjUKG5X6LT6YFQpWhB0Fw&_nc_zt=23&_nc_ht=scontent.fvno5-1.fna&_nc_gid=AzYkZTy1_ZG0oXsRU__H-J2&oh=00_AYBroxmzKNlquFgan3A5z8y62S6VD3x9mVR027BYQjf9-A&oe=67CB0134', // Pakeisk į tikrą FB profilio nuotrauką
+      'https://scontent.fvno5-1.fna.fbcdn.net/v/t39.30808-6/464151870_10161966446303748_2932932423142499780_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=CiJ1A42d4TUQ7kNvgFf4JLe&_nc_oc=Adh-jSFYAdOl9AC5hK6hBnYFWFOOgL3XJqCggUAMxwK5opUjUKG5X6LT6YFQpWhB0Fw&_nc_zt=23&_nc_ht=scontent.fvno5-1.fna&_nc_gid=AzYkZTy1_ZG0oXsRU__H-J2&oh=00_AYBroxmzKNlquFgan3A5z8y62S6VD3x9mVR027BYQjf9-A&oe=67CB0134',
     text: 'absolutely fantastic. now completed two things for me in my house and I am so over the moon! I will definitely be using you again!',
     date: 'August 02, 2024',
     rating: 5,
@@ -63,8 +65,42 @@ const reviews = [
 ];
 
 export default function Reviews() {
+  const structuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    name: 'S.L. Builders', // Replace with your actual business name
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: reviews.length > 0 ? '5' : '0', // Default to 0 if no reviews
+      reviewCount: reviews.length,
+    },
+    review: reviews.map((review) => ({
+      '@type': 'Review',
+      author: {
+        '@type': 'Person',
+        name: review.name,
+      },
+      datePublished: review.date,
+      reviewBody: review.text,
+      reviewRating: {
+        '@type': 'Rating',
+        ratingValue: review.rating,
+        bestRating: '5',
+      },
+    })),
+  };
   return (
     <section className='reviews-section'>
+      <Helmet>
+        <title>Customer Reviews - S.L. Builders</title>
+        <meta
+          name='description'
+          content="Read real customer reviews about S.L. Builders' services. High-quality work and professional service."
+        />
+        <script type='application/ld+json'>
+          {JSON.stringify(structuredData)}
+        </script>
+      </Helmet>
       <h2>Customer Reviews</h2>
 
       {/* Atsiliepimų sąrašas */}
@@ -74,8 +110,9 @@ export default function Reviews() {
             <div className='review-header'>
               <img
                 src={review.profilePic}
-                alt={review.name}
+                alt={`Profile picture of ${review.name}`}
                 className='profile-pic'
+                loading='lazy'
               />
               <div>
                 <h3>{review.name}</h3>

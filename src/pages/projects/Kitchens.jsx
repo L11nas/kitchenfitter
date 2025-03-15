@@ -4,6 +4,7 @@ import kitchenProjects from '../../data/KitchenProjects';
 import { useState } from 'react';
 import { Dialog } from '@headlessui/react';
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
 
 export default function KitchenProjects() {
   const [selectedIndex, setSelectedIndex] = useState(null);
@@ -34,6 +35,16 @@ export default function KitchenProjects() {
 
   return (
     <section className='kitchen-page'>
+      {/* ✅ SEO: Page Title and Meta Description */}
+      <Helmet>
+        <title>Kitchen Renovations | Our Projects</title>
+        <meta
+          name='description'
+          content='Explore our stunning kitchen renovation projects. See examples of our work and get inspired for your own kitchen remodel.'
+        />
+      </Helmet>
+
+      {/* ✅ SEO: Main Heading */}
       <h1 className='kitchen-title'>Kitchen Renovations</h1>
       {/* 🔹 Navigacijos tarp kategorijų mygtukai */}
       <div className='kitchen-category-navigation'>
@@ -62,9 +73,10 @@ export default function KitchenProjects() {
             onClick={() => openModal(index)}
           >
             <div className='kitchen-img-container'>
+              {/* ✅ SEO: Descriptive Alt Text */}
               <img
                 src={project.src}
-                alt={project.title}
+                alt={`Kitchen Renovation: ${project.title}`}
                 className='kitchen-img'
               />
             </div>
@@ -97,9 +109,10 @@ export default function KitchenProjects() {
             <div className='kitchen-modal-image-container'>
               {selectedIndex !== null && (
                 <>
+                  {/* ✅ SEO: Descriptive Alt Text in Modal */}
                   <img
                     src={kitchenProjects[selectedIndex].src}
-                    alt={kitchenProjects[selectedIndex].title}
+                    alt={`Kitchen Renovation: ${kitchenProjects[selectedIndex].title}`}
                     className='kitchen-modal-img'
                   />
                   {/* Aprašymas po modaline nuotrauka */}

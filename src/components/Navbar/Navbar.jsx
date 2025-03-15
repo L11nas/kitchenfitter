@@ -8,9 +8,9 @@ export default function Navbar() {
 
   return (
     <nav className='navbar'>
-      <div className='navbar-container'>
+      <div className='navbar-container' role='navigation'>
         {/* Logotipas */}
-        <Link to='/' className='logo'>
+        <Link to='/' className='logo' aria-label='Go to Home - Fitters UK'>
           <div className='logo-main'>Fitters UK</div>
           <div className='logo-sub'>Kitchen & Flooring Experts</div>
         </Link>
@@ -19,19 +19,25 @@ export default function Navbar() {
         <div className='desktop-nav'>
           <ul className='nav-links'>
             <li>
-              <Link to='/about'>About</Link>
+              <Link to='/about' aria-label='About Us'>
+                About
+              </Link>
             </li>
             <li>
-              <Link to='/services'>Services</Link>
+              <Link to='/services' aria-label='Our Services'>
+                Services
+              </Link>
             </li>
             <li>
-              <Link to='/projects'>Projects</Link>
+              <Link to='/projects' aria-label='Our Projects'>
+                Projects
+              </Link>
             </li>
           </ul>
 
           <div className='contact-links'>
             <div className='contact-link'>
-              <FaSms />{' '}
+              <FaSms aria-label='SMS icon' title='Send SMS' />{' '}
               {/* Changed to FaSms for desktop as well for consistency */}
               <span className='contact-text'>+44 7414 460648 (SMS only)</span>
             </div>
@@ -40,6 +46,7 @@ export default function Navbar() {
               target='_blank'
               rel='noreferrer'
               className='contact-link'
+              aria-label='Chat with us on WhatsApp'
             >
               <FaWhatsapp />
               <span className='contact-text'>WhatsApp (SMS only)</span>
@@ -50,7 +57,11 @@ export default function Navbar() {
         {/* Mobilūs kontaktai ir hamburger */}
         <div className='mobile-controls'>
           <div className='mobile-contacts'>
-            <a href='sms:+447414460648' className='mobile-contact-link'>
+            <a
+              href='sms:+447414460648'
+              className='mobile-contact-link'
+              aria-label='Send us an SMS'
+            >
               <FaSms /> {/* Changed to FaSms */}
             </a>
             <a
@@ -58,8 +69,9 @@ export default function Navbar() {
               target='_blank'
               rel='noreferrer'
               className='mobile-contact-link'
+              aria-label='Chat with us on WhatsApp'
             >
-              <FaWhatsapp />
+              <FaWhatsapp title='WhatsApp' />
             </a>
           </div>
 

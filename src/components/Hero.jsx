@@ -19,87 +19,90 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className='hero-container'>
+    <section className='hero-container' role='banner'>
       <div className='hero-overlay'></div>
       <div className='hero-content'>
-        <h1>Elevate Your Home with Precision & Style</h1>
+        <h1>Transform Your Home with Expert Craftsmanship</h1>
         <p>
-          From kitchen installations to flooring, staircase renovations, and
-          outdoor cladding, we deliver expert craftsmanship across the UK. Our
-          certified professionals ensure every project meets the highest
-          standards of quality, durability, and aesthetics.
+          Our skilled professionals specialize in kitchen installations,
+          flooring, staircases, and outdoor cladding, delivering high-quality
+          renovations across the UK.
         </p>
       </div>
 
       <section className='hero-services' data-aos='fade-up'>
-        <h2>What We Offer – Expert Renovation & Installation</h2>
+        <h2>Our Services – Precision & Style in Every Project</h2>
         <div className='hero-services-cards'>
-          <div className='hero-service-card' data-aos='zoom-in'>
-            <FaTools size={40} />
+          <article className='hero-service-card' data-aos='zoom-in'>
+            <FaTools size={40} aria-hidden='true' />
             <h3>Kitchen Installation</h3>
             <p>
-              Bespoke kitchen fitting services, designed for style,
-              functionality, and durability.
+              Custom kitchen fitting services designed for functionality and
+              aesthetics.
             </p>
-          </div>
-          <div className='hero-service-card' data-aos='zoom-in'>
-            <FaClock size={40} />
+          </article>
+          <article className='hero-service-card' data-aos='zoom-in'>
+            <FaClock size={40} aria-hidden='true' />
             <h3>Flooring Installation</h3>
             <p>
-              Expertly fitted wooden, laminate, and vinyl flooring, ensuring a
-              flawless finish.
+              Professional installation of wooden, laminate, and vinyl flooring
+              for a flawless finish.
             </p>
-          </div>
-          <div className='hero-service-card' data-aos='zoom-in'>
-            <FaThumbsUp size={40} />
+          </article>
+          <article className='hero-service-card' data-aos='zoom-in'>
+            <FaThumbsUp size={40} aria-hidden='true' />
             <h3>Custom Renovations</h3>
             <p>
-              Transform your home with tailored renovation solutions, from
-              kitchens to full property upgrades.
+              Bespoke renovations that elevate your home, from single rooms to
+              full property upgrades.
             </p>
-          </div>
-          <div className='hero-service-card' data-aos='zoom-in'>
-            <FaTree size={40} />
-            <h3>Outdoor Decking Installation</h3>
+          </article>
+          <article className='hero-service-card' data-aos='zoom-in'>
+            <FaTree size={40} aria-hidden='true' />
+            <h3>Outdoor Decking</h3>
             <p>
-              Premium decking solutions for stunning, durable, and
+              Premium decking solutions for durable, stylish, and
               weather-resistant outdoor spaces.
             </p>
-          </div>
-          <div className='hero-service-card' data-aos='zoom-in'>
-            <FaLayerGroup size={40} />
+          </article>
+          <article className='hero-service-card' data-aos='zoom-in'>
+            <FaLayerGroup size={40} aria-hidden='true' />
             <h3>Staircase Renovation</h3>
             <p>
-              Upgrade your home's staircases with expert renovations, including
-              handrails, steps, and balustrades.
+              Upgrade staircases with expert craftsmanship, including steps,
+              handrails, and balustrades.
             </p>
-          </div>
+          </article>
         </div>
       </section>
 
       <section className='hero-projects' data-aos='fade-up'>
-        <h2>Our Latest Home Transformations</h2>
+        <h2>Recent Projects – See Our Work</h2>
         <div className='hero-projects-images'>
           <img
             src={project1}
-            alt='Project 1'
+            alt='Modern kitchen installation with premium finishes'
             loading='lazy'
             className='blur-up'
           />
           <img
             src={project2}
-            alt='Project 2'
+            alt='Luxury staircase renovation with elegant wooden design'
             loading='lazy'
             className='blur-up'
           />
           <img
             src={project3}
-            alt='Project 3'
+            alt='Outdoor decking project with durable wood panels'
             loading='lazy'
             className='blur-up'
           />
         </div>
-        <a href='/projects' className='hero-cta-button'>
+        <a
+          href='/projects'
+          className='hero-cta-button'
+          aria-label='View all renovation projects'
+        >
           View All Projects
         </a>
       </section>

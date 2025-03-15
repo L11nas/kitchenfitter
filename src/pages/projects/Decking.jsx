@@ -4,6 +4,7 @@ import deckingProjects from '../../data/DeckingProjects';
 import { useState } from 'react';
 import { Dialog } from '@headlessui/react';
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
 
 export default function DeckingProjects() {
   const [selectedIndex, setSelectedIndex] = useState(null);
@@ -34,6 +35,16 @@ export default function DeckingProjects() {
 
   return (
     <section className='decking-page'>
+      {/* ✅ SEO: Page Title and Meta Description */}
+      <Helmet>
+        <title>Outdoor Decking & Terrace Renovations | Our Projects</title>
+        <meta
+          name='description'
+          content='Explore our beautiful outdoor decking and terrace renovation projects. See examples of our work and get inspired for your own decking remodel.'
+        />
+      </Helmet>
+
+      {/* ✅ SEO: Main Heading */}
       <h1 className='decking-title'>Decking Renovations</h1>
       {/* 🔹 Navigacijos tarp kategorijų mygtukai */}
       <div className='decking-category-navigation'>
@@ -62,9 +73,10 @@ export default function DeckingProjects() {
             onClick={() => openModal(index)}
           >
             <div className='decking-img-container'>
+              {/* ✅ SEO: Descriptive Alt Text */}
               <img
                 src={project.src}
-                alt={project.title}
+                alt={`Decking Renovation: ${project.title}`}
                 className='decking-img'
               />
             </div>
@@ -97,9 +109,10 @@ export default function DeckingProjects() {
             <div className='decking-modal-image-container'>
               {selectedIndex !== null && (
                 <>
+                  {/* ✅ SEO: Descriptive Alt Text in Modal */}
                   <img
                     src={deckingProjects[selectedIndex].src}
-                    alt={deckingProjects[selectedIndex].title}
+                    alt={`Decking Renovation: ${deckingProjects[selectedIndex].title}`}
                     className='decking-modal-img'
                   />
                   {/* Aprašymas po modaline nuotrauka */}

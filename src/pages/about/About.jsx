@@ -1,4 +1,6 @@
 import React, { useEffect } from 'react';
+
+import { Helmet } from 'react-helmet-async';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import {
@@ -74,10 +76,21 @@ export default function About() {
 
   return (
     <section className='about'>
+      <Helmet>
+        <title>About Us - Kitchen & Home Renovation Experts | Fitters UK</title>
+        <meta
+          name='description'
+          content='Learn about Fitters UK, your trusted experts for kitchen installations, flooring, decking, and home renovations. Discover our commitment to quality and craftsmanship.'
+        />
+        <meta
+          name='keywords'
+          content='kitchen installation, home renovation, flooring, decking, Fitters UK, skilled fitters, custom solutions, premium materials, seamless process, customer satisfaction'
+        />
+      </Helmet>
       <div className='about-info'>
         <h1 data-aos='fade-up'>About Us</h1>
         <p data-aos='fade-up'>
-          At Fitters, we specialize in high-quality kitchen installations,
+          At Fitters UK, we specialize in high-quality kitchen installations,
           flooring, decking, and home renovations, backed by over 15 years of
           expertise. Our team of certified professionals ensures precision,
           efficiency, and exceptional craftsmanship in every project,
@@ -90,15 +103,17 @@ export default function About() {
       {/* About Highlights */}
       <div className='about-highlights'>
         {aboutPoints.map((point, index) => (
-          <div
+          <article
             key={index}
             className='highlight-item blur-card'
             data-aos='fade-up'
           >
-            <div className='icon'>{point.icon}</div>
+            <div className='icon' aria-hidden='true'>
+              {point.icon}
+            </div>
             <h2>{point.title}</h2>
             <p>{point.description}</p>
-          </div>
+          </article>
         ))}
       </div>
 
@@ -107,15 +122,17 @@ export default function About() {
         <h2 className='work-title'>Our Work Process</h2>
         <div className='process-steps'>
           {processSteps.map((step, index) => (
-            <div
+            <article
               key={index}
               className='process-step blur-card'
               data-aos='fade-up'
             >
-              <div className='icon'>{step.icon}</div>
+              <div className='icon' aria-hidden='true'>
+                {step.icon}
+              </div>
               <h3>{step.title}</h3>
               <p>{step.description}</p>
-            </div>
+            </article>
           ))}
         </div>
       </div>
