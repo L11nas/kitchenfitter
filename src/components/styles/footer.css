@@ -167,7 +167,11 @@
 .services h4 {
   text-align: center;
 }
-
+iframe {
+  max-width: 100%;
+  width: 100%;
+  height: 250px; /* Arba kitas tinkamas aukštis */
+}
 /* For smaller screens */
 @media (max-width: 768px) {
   .footer-container {
