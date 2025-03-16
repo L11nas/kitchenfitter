@@ -215,11 +215,11 @@
 
 @media (max-width: 480px) {
   .service-areas li {
-    width: 100%;
+    width: 95%;
   }
 
   .social-icon-link {
-    width: 100%;
+    width: 95%;
     justify-content: center;
   }
 }

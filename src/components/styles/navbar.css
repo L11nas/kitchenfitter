@@ -126,9 +126,9 @@
   .mobile-menu {
     display: none;
     position: absolute;
-    top: 100%;
+    top: 95%;
     left: 0;
-    width: 100%;
+    width: 95%;
     background: rgba(0, 0, 0, 0.8); /* Pusiau permatomas sluoksnis */
 
     list-style: none;

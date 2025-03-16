@@ -299,7 +299,7 @@
   }
 
   .kitchen-modal-img {
-    max-width: 100%;
+    max-width: 95%;
     max-height: 60vh; /* Neleidžiame modalui per daug užimti ekrano */
   }
 }
