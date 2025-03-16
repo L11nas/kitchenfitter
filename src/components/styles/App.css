@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  outline: 1px solid red;
 }
 
 /* ================= BODY & GENERAL ================= */
@@ -16,7 +17,6 @@ body {
   background-color: transparent;
   display: flex;
   flex-direction: column;
-  max-width: 100vw;
 }
 
 /* ================= TYPOGRAPHY ================= */
