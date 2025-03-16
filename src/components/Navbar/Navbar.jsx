@@ -65,7 +65,7 @@ export default function Navbar() {
               <FaSms /> {/* Changed to FaSms */}
             </a>
             <a
-              href='sms:+447414460648'
+              href='https://wa.me/447414460648'
               target='_blank'
               rel='noreferrer'
               className='mobile-contact-link'

@@ -15,6 +15,7 @@
   padding: 20px;
   overflow: hidden;
   padding-top: 100px;
+  box-sizing: border-box;
 }
 
 .hero-overlay {
@@ -156,7 +157,7 @@
 .hero-projects-images {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 15px;
   justify-content: center;
   align-items: center;
   max-width: 1100px;
