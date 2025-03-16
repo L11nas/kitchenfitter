@@ -17,7 +17,6 @@ body {
   display: flex;
   flex-direction: column;
   max-width: 100vw;
-  touch-action: pan-y;
 }
 
 /* ================= TYPOGRAPHY ================= */
@@ -70,10 +69,10 @@ button:hover {
 
 /* ================= GLOBAL LAYOUT ================= */
 .container {
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 .section {
