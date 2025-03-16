@@ -3,6 +3,10 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  word-wrap: break-word;
 }
 
 /* ================= BODY & GENERAL ================= */
@@ -64,6 +68,7 @@ button:hover {
   text-align: center;
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
 }
 
 /* ================= GLOBAL LAYOUT ================= */
@@ -71,7 +76,8 @@ button:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 .wrapper {
   position: relative;

@@ -20,7 +20,14 @@
   margin-bottom: 30px;
   text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
 }
-
+.category-navigation {
+  display: flex;
+  flex-wrap: wrap; /* Jei netelpa, keliasi žemyn */
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  padding: 10px 0;
+}
 /* ✅ Kortelės konteineris */
 .staircase-container {
   display: flex;
