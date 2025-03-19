@@ -1,304 +1,254 @@
-/* ✅ Puslapio fonas */
 .flooring-page {
+  align-items: center;
+  background: linear-gradient(135deg, #2c3e50, #34495e);
+  color: #fff;
+  color: #333;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: flex-start;
   min-height: 100vh;
-  width: 100%;
-  padding-top: 100px;
   padding-bottom: 20px;
+  padding-top: 100px;
   position: relative;
-  background: linear-gradient(135deg, #2c3e50, #34495e);
-  color: white;
-  color: #333; /* Tamsiai pilkas tekstas, kad nebūtų per daug aštrus */
-}
-
-/* ✅ Pavadinimas */
-.flooring-title {
-  margin-top: 20px;
-  font-size: 2.2rem;
-  font-weight: bold;
-  color: white;
-  text-align: center;
-  margin-bottom: 40px;
-}
-/* ✅ Nuotrauka kortelėje */
-.flooring-img-container {
   width: 100%;
+}
+.flooring-title {
+  color: #fff;
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+  margin-top: 20px;
+  text-align: center;
+}
+.flooring-img-container {
+  border-radius: 12px 12px 0 0;
   height: 250px;
   overflow: hidden;
-  border-radius: 12px 12px 0 0;
-}
-
-.flooring-img {
   width: 100%;
+}
+.flooring-img {
   height: auto;
   object-fit: cover;
+  width: 100%;
 }
-/* ✅ Kortelių išdėstymas */
 .flooring-container {
-  display: flex;
-  justify-content: center;
   align-items: center;
+  display: flex;
   flex-wrap: wrap;
   gap: 15px;
+  justify-content: center;
   margin-top: 50px;
 }
-
-/* ✅ Kortelės */
 .flooring-card {
-  position: relative;
-  width: 250px; /* Pritaikyk pagal poreikį */
+  background: hsla(0, 0%, 100%, 0.9);
   border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  background: rgba(255, 255, 255, 0.9); /* Balta, šiek tiek peršviečiama */
+  position: relative;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Švelnus šešėlis */
+  width: 250px;
 }
-
 .flooring-card:hover {
   transform: scale(1.05);
 }
-/* ✅ Kortelės konteineris */
-
-.flooring-card:hover {
-  transform: scale(1.05);
-}
-
-/* ✅ Nuotrauka kortelėje */
 .flooring-card img {
-  width: 100%;
+  border-radius: 12px 12px 0 0;
   height: 100%;
   object-fit: cover;
-  border-radius: 12px 12px 0 0;
+  width: 100%;
 }
-
-/* ✅ Aprašymo konteineris */
 .flooring-description {
-  padding: 12px;
-  font-size: 0.9rem;
-  text-align: center;
-  color: white;
   background: rgba(0, 0, 0, 0.4);
   border-radius: 0 0 12px 12px;
+  color: #fff;
+  font-size: 0.9rem;
   font-weight: 500;
   line-height: 1.4;
+  padding: 12px;
+  text-align: center;
   transition: background 0.3s ease-in-out;
 }
-
-/* ✅ Aprašymas išryškėja užvedus pelę */
 .flooring-card:hover .flooring-description {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
   transform: scale(1.05);
-  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
   transition: all 0.3s ease-in-out;
 }
-
-/* ✅ Modalinis langas */
 .flooring-modal-overlay {
-  z-index: 1000;
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(10px);
-  display: flex;
   align-items: flex-start;
-  justify-content: center;
+  backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.1);
   cursor: pointer;
-}
-
-.flooring-modal-content {
-  z-index: 1001;
-  background: rgba(255, 255, 255, 0.1); /* 🔹 Lengvas peršviečiamumas */
-  border-radius: 12px; /* 🔹 Švelnesni kampai */
   display: flex;
-  align-items: center;
+  inset: 0;
   justify-content: center;
-  width: 100vh;
-  max-height: 100vh; /* Prevent modal from being too tall */
-
+  position: fixed;
+  z-index: 1000;
+}
+.flooring-modal-content {
+  background: hsla(0, 0%, 100%, 0.1);
+  border-radius: 12px;
   margin-top: 20px;
+  max-height: 100vh;
   max-width: 650px;
   padding: 20px;
   position: relative;
+  width: 100vh;
+  z-index: 1001;
 }
-.flooring-modal-caption {
+.flooring-modal-caption,
+.flooring-modal-content {
   align-items: center;
   display: flex;
   justify-content: center;
-  color: white;
 }
-/* ✅ Mygtukas uždaryti */
+.flooring-modal-caption {
+  color: #fff;
+}
 .flooring-modal-close {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  width: 40px; /* ✅ Apskritas mygtukas */
-  height: 40px;
-  background: white;
+  background: #fff;
   border: none;
-  font-size: 22px;
-  cursor: pointer;
-  padding: 8px;
   border-radius: 50%;
-  transition: background 0.3s ease, transform 0.2s ease;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  font-size: 22px;
+  height: 40px;
+  padding: 8px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  transition: background 0.3s ease, transform 0.2s ease;
+  width: 40px;
 }
-
 .flooring-modal-close:hover {
   background: #ddd;
   transform: scale(1.1);
 }
-
-/* ✅ Rodyklės */
-/* ✅ Vienodi rodyklių stiliai */
-.flooring-modal-prev,
-.flooring-modal-next {
+.flooring-modal-next,
+.flooring-modal-prev {
+  align-items: center;
+  background: hsla(0, 0%, 100%, 0.5);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  height: 50px;
+  justify-content: center;
+  padding: 12px;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: 50px;
-  height: 50px;
-  background: rgba(255, 255, 255, 0.5);
-  border: none;
-  cursor: pointer;
-  border-radius: 50%;
-  padding: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   transition: background 0.3s ease, transform 0.3s ease;
+  width: 50px;
 }
-
 .flooring-modal-prev {
   left: -60px;
 }
-
 .flooring-modal-next {
   right: -60px;
 }
-
-.flooring-modal-prev:hover,
-.flooring-modal-next:hover {
-  background: rgba(255, 255, 255, 0.8);
+.flooring-modal-next:hover,
+.flooring-modal-prev:hover {
+  background: hsla(0, 0%, 100%, 0.8);
   transform: translateY(-50%) scale(1.1);
 }
 .flooring-modal-img {
-  max-width: 90%; /* Nuotrauka neviršys 90% ekrano pločio */
-  max-height: 80vh; /* Neviršys 80% ekrano aukščio */
-  object-fit: contain; /* Užtikrina, kad neišsikraipytų */
   display: block;
-  margin: auto; /* Centruoja nuotrauką */
+  margin: auto;
+  max-height: 80vh;
+  max-width: 90%;
+  object-fit: contain;
 }
-/* 🔹 Navigacijos tarp kategorijų mygtukai */
 .flooring-category-navigation {
   display: flex;
-  flex-wrap: wrap; /* Jei netelpa, keliasi žemyn */
-  justify-content: center;
+  flex-wrap: wrap;
   gap: 10px;
+  justify-content: center;
   margin-bottom: 20px;
   padding: 10px 0;
 }
-
 .nav-button {
-  background: #ffffff; /* Balta spalva */
-  color: #2c3e50; /* Tamsiai mėlyna, geras kontrastas */
-  padding: 12px 20px;
-  font-size: 1.1rem;
-  font-weight: bold;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: all 0.3s ease-in-out;
+  background: #fff;
   border: 2px solid #2c3e50;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  color: #2c3e50;
+  font-size: 1.1rem;
+  font-weight: 700;
+  padding: 12px 20px;
+  text-decoration: none;
   text-overflow: ellipsis;
+  transition: all 0.3s ease-in-out;
   white-space: nowrap;
 }
-
 .nav-button:hover {
   background: #2c3e50;
-  color: white;
   border-color: #2c3e50;
+  color: #fff;
 }
-/* ✅ Kitchen puslapio optimizavimas mažiems ekranams */
 @media (max-width: 1024px) {
   .flooring-container {
     gap: 10px;
   }
-
   .flooring-card {
-    width: 200px; /* Sumažiname korteles planšetėje */
+    width: 200px;
   }
 }
-
-/* ✅ Telefonams */
 @media (max-width: 768px) {
   .flooring-container {
-    flex-direction: column; /* Kad būtų viena kortelė per eilutę */
     align-items: center;
+    flex-direction: column;
   }
   .flooring-modal-overlay {
     display: none !important;
   }
   .flooring-card {
-    width: 90%; /* Kortelės užima beveik visą ekraną */
+    width: 90%;
   }
-
   .flooring-description {
     font-size: 0.8rem;
   }
-
   .flooring-category-navigation {
-    flex-wrap: wrap; /* Išdėsto eilutėje, jei netelpa - keliasi žemyn */
+    flex-wrap: wrap;
     justify-content: center;
   }
-
   .nav-button {
-    width: 80%; /* Užima daugiau vietos, lengviau paspausti */
-    text-align: center;
     font-size: 1rem;
     padding: 10px 15px;
+    text-align: center;
+    width: 80%;
   }
-
-  /* ✅ Modalinis langas mobiliesiems */
   .flooring-modal-content {
-    width: 95%;
     padding: 15px;
+    width: 95%;
   }
-
-  .flooring-modal-prev,
-  .flooring-modal-next {
-    padding: 5px;
+  .flooring-modal-next,
+  .flooring-modal-prev {
     font-size: 16px;
+    padding: 5px;
   }
-
   .flooring-modal-img {
-    max-width: 100%;
     max-height: 70vh;
+    max-width: 100%;
   }
 }
 @media (max-width: 480px) {
   .flooring-navigation {
-    gap: 8px; /* Sumažiname tarpą tarp mygtukų */
+    gap: 8px;
   }
-
   .nav-button {
-    width: 90%; /* Mygtukai užima beveik visą plotį */
-    font-size: 0.8rem; /* Mažesnis šriftas, kad neiškryptų iš ekrano */
-    padding: 8px 12px; /* Kompaktiškesnis dizainas */
+    font-size: 0.8rem;
+    padding: 8px 12px;
+    width: 90%;
   }
-
   .flooring-card {
-    width: 95%; /* Kortelės beveik per visą ekraną */
+    width: 95%;
   }
-
   .flooring-modal-content {
-    width: 98%; /* Modalinis langas mažesnis */
     padding: 10px;
+    width: 98%;
   }
-
   .flooring-modal-img {
+    max-height: 60vh;
     max-width: 100%;
-    max-height: 60vh; /* Neleidžiame modalui per daug užimti ekrano */
   }
 }

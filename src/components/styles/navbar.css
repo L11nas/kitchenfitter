@@ -1,162 +1,131 @@
 .navbar {
+  backdrop-filter: blur(10px);
+  background: hsla(0, 0%, 100%, 0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  height: 80px;
+  left: 0;
   position: fixed;
   top: 0;
-  left: 0;
   width: 100%;
-  height: 80px;
-  background: rgba(255, 255, 255, 0.1); /* Skaidrumas */
-  backdrop-filter: blur(10px);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   z-index: 1000;
 }
-
 .navbar-container {
+  align-items: center;
   display: flex;
   justify-content: space-between;
-  align-items: center;
   position: relative;
 }
-
 .logo {
-  text-decoration: none;
   color: #fff;
   margin-left: 20px;
+  text-decoration: none;
 }
-
 .logo-main {
   font-size: 24px;
-  font-weight: bold;
+  font-weight: 700;
 }
-
 .logo-sub {
   font-size: 14px;
 }
-
-/* Desktop navigacija */
 .desktop-nav {
-  display: flex;
   align-items: center;
+  display: flex;
   gap: 30px;
 }
-
 .nav-links {
   display: flex;
-  list-style: none;
   gap: 30px;
+  list-style: none;
   margin: 20px;
   padding: 10px;
 }
-
 .nav-links a {
   color: #fff;
-  text-decoration: none;
   font-weight: 500;
+  text-decoration: none;
   transition: color 0.3s;
 }
-
 .nav-links a:hover {
   color: #f5a623;
 }
-
 .contact-links {
   display: flex;
   gap: 15px;
   margin-right: 20px;
 }
-
 .contact-link {
-  display: flex;
   align-items: center;
-  gap: 5px;
   color: #fff;
+  display: flex;
+  gap: 5px;
   text-decoration: none;
   transition: color 0.3s;
 }
-
 .contact-link:hover {
   color: #f5a623;
 }
-
-/* Mobilūs kontrolės elementai */
 .mobile-controls {
   display: none;
 }
-
 .mobile-contacts {
   display: flex;
   gap: 15px;
   margin-right: 15px;
 }
-
 .mobile-contact-link {
   color: #fff;
   text-decoration: none;
   transition: color 0.3s;
 }
-
 .mobile-contact-link:hover {
   color: #f5a623;
 }
-
 .menu-toggle {
   color: #fff;
   cursor: pointer;
 }
-
-/* Mobilusis meniu */
 .mobile-menu {
   display: none;
 }
-
-/* Responsive dizainas */
 @media (max-width: 768px) {
   .navbar {
     padding: 15px 20px;
   }
-
   .desktop-nav {
     display: none;
   }
-
   .mobile-controls {
-    display: flex;
     align-items: center;
+    display: flex;
   }
-
   .mobile-menu {
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 15px;
     display: none;
+    left: 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
     position: absolute;
     top: 95%;
-    left: 0;
     width: 95%;
-    background: rgba(0, 0, 0, 0.8); /* Pusiau permatomas sluoksnis */
-
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    border-radius: 15px;
   }
-
   .mobile-menu.active {
     display: block;
   }
-
   .mobile-menu li {
     padding: 15px 20px;
     text-align: center;
   }
-
   .mobile-menu a {
     color: #fff;
-    text-decoration: none;
     font-weight: 500;
+    text-decoration: none;
     transition: color 0.3s;
   }
-
   .mobile-menu a:hover {
     color: #f5a623;
   }
-
   .logo-sub {
     font-size: 12px;
   }
