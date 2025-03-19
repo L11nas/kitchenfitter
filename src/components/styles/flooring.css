@@ -102,7 +102,7 @@
   background: rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(10px);
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   cursor: pointer;
 }

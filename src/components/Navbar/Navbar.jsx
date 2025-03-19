@@ -1,10 +1,37 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { FaWhatsapp, FaBars, FaTimes, FaSms } from 'react-icons/fa'; // Import FaSms
+import { FaWhatsapp, FaBars, FaTimes, FaSms } from 'react-icons/fa';
 import '../styles/navbar.css';
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const menuRef = useRef(null); // Create a ref to the menu
+
+  // Function to close the menu
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
+
+  useEffect(() => {
+    // Function to handle clicks outside the menu
+    const handleClickOutside = (event) => {
+      if (
+        menuOpen &&
+        menuRef.current &&
+        !menuRef.current.contains(event.target)
+      ) {
+        closeMenu();
+      }
+    };
+
+    // Add event listener when the component mounts
+    document.addEventListener('mousedown', handleClickOutside);
+
+    // Remove event listener when the component unmounts
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [menuOpen]); // Re-run effect when menuOpen changes
 
   return (
     <nav className='navbar'>
@@ -37,8 +64,7 @@ export default function Navbar() {
 
           <div className='contact-links'>
             <div className='contact-link'>
-              <FaSms aria-label='SMS icon' title='Send SMS' />{' '}
-              {/* Changed to FaSms for desktop as well for consistency */}
+              <FaSms aria-label='SMS icon' title='Send SMS' />
               <span className='contact-text'>+44 7414 460648 (SMS only)</span>
             </div>
             <a
@@ -62,7 +88,7 @@ export default function Navbar() {
               className='mobile-contact-link'
               aria-label='Send us an SMS'
             >
-              <FaSms /> {/* Changed to FaSms */}
+              <FaSms />
             </a>
             <a
               href='https://wa.me/447414460648'
@@ -81,19 +107,22 @@ export default function Navbar() {
         </div>
 
         {/* Mobilusis meniu */}
-        <ul className={`mobile-menu ${menuOpen ? 'active' : ''}`}>
+        <ul
+          className={`mobile-menu ${menuOpen ? 'active' : ''}`}
+          ref={menuRef} // Attach the ref to the menu
+        >
           <li>
-            <Link to='/about' onClick={() => setMenuOpen(false)}>
+            <Link to='/about' onClick={closeMenu}>
               About
             </Link>
           </li>
           <li>
-            <Link to='/services' onClick={() => setMenuOpen(false)}>
+            <Link to='/services' onClick={closeMenu}>
               Services
             </Link>
           </li>
           <li>
-            <Link to='/projects' onClick={() => setMenuOpen(false)}>
+            <Link to='/projects' onClick={closeMenu}>
               Projects
             </Link>
           </li>

@@ -53,7 +53,7 @@ export default function Footer() {
             <iframe
               src='https://www.google.com/maps/d/u/0/embed?mid=14HW21weW7r_NS8dsaUHVN_agE8A0KuI&ehbc=2E312F&noprof=1'
               width='100%'
-              height='180'
+              height='150'
               style={{ border: 0 }}
               allowFullScreen=''
               loading='lazy'
