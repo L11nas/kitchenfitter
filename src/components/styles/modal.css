@@ -1,0 +1,99 @@
+/* Modal.css - Updated with CTA Class Names */
+
+.cta-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.cta-modal-overlay.open {
+  opacity: 1;
+}
+
+.cta-modal-content {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+  max-width: 600px;
+  width: 90%;
+  position: relative;
+  transform: translateY(-50px);
+  transition: transform 0.3s ease-in-out;
+  z-index: 1000;
+}
+
+.cta-modal-overlay.open .cta-modal-content {
+  transform: translateY(0);
+}
+
+.cta-modal-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: #888;
+  transition: color 0.2s ease-in-out;
+}
+
+.cta-modal-close:hover {
+  color: #333;
+}
+
+.cta-modal-content h2 {
+  margin-top: 0;
+  margin-bottom: 25px;
+  text-align: center;
+  font-size: 24px;
+  color: #333;
+}
+
+.cta-modal-content input,
+.cta-modal-content textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  box-sizing: border-box;
+  font-size: 16px;
+  transition: border-color 0.2s ease-in-out;
+}
+
+.cta-modal-content input:focus,
+.cta-modal-content textarea:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+.cta-modal-content textarea {
+  height: 120px;
+  resize: vertical;
+}
+
+.cta-modal-content button[type='submit'] {
+  background: linear-gradient(45deg, #ff8c00, #ffcc33);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+}
+
+.cta-modal-content button[type='submit']:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 4px 15px rgba(255, 140, 0, 0.5);
+}

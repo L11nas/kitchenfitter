@@ -1,9 +1,20 @@
 import { Link } from 'react-router-dom';
 import '../../components/styles/staircase.css';
+import { useEffect } from 'react';
 
 const staircaseProjects = [];
 
 export default function StaircaseProjects() {
+  useEffect(() => {
+    // Scroll to the top of the page after the component has rendered
+    const timeoutId = setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 0); // Use a timeout to ensure it runs after rendering
+
+    // Cleanup function to clear the timeout if the component unmounts
+    return () => clearTimeout(timeoutId);
+  }, []);
+
   return (
     <section className='staircase-page'>
       <h1 className='staircase-title'>Staircase Renovation</h1>
