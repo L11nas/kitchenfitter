@@ -1,5 +1,5 @@
 import React from 'react';
-import './styles/Modal.css'; // Patikrink, ar šiame faile nėra `target="_blank"`
+import './styles/modal.css'; // Patikrink, ar šiame faile nėra `target="_blank"`
 
 export default function Modal({
   isOpen,
