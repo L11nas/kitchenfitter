@@ -1,3 +1,5 @@
+import React, { useEffect } from 'react';
+
 import { Link } from 'react-router-dom';
 import '../../components/styles/projects.css';
 import kitchenBg from '/assets/Kitchenimg/k3.jpg';
@@ -9,6 +11,9 @@ import backgroundImage from '/assets/valeria.jpg'; // ✅ Importuotas bendras fo
 import Reviews from '../../components/Reviews';
 
 export default function Projects() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const categories = [
     {
       title: 'Kitchen Installations',

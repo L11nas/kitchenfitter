@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+
 import '../../components/styles/services.css';
 import { FaBookmark } from 'react-icons/fa';
 import { Helmet } from 'react-helmet-async';
@@ -94,6 +95,9 @@ const services = [
 ];
 
 export default function ServiceCards() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <section className='services-hero-container'>
       {/* ✅ SEO: Page Title and Meta Description */}

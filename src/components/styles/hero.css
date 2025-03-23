@@ -236,9 +236,10 @@
 
 @media (max-width: 480px) {
   .hero-content {
-    max-width: 90%;
-    margin: 100px auto 20px;
+    max-width: 100%;
+    margin: 90px auto 20px;
     padding: 20px;
+    margin-top: 40px;
   }
 
   .hero-content h1 {

@@ -72,6 +72,7 @@ const processSteps = [
 export default function About() {
   useEffect(() => {
     AOS.init({ duration: 1000 });
+    window.scrollTo(0, 0);
   }, []);
 
   return (
