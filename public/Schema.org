@@ -1,0 +1,21 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Kitchen Fitters UK",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "UK" 
+  "description": "Expert kitchen installations, flooring, staircases, and outdoor cladding services across the UK.",
+  "url": "https://yourwebsite.com",
+  "address": {
+   
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+447414460648",
+    "contactType": "customer service"
+    "name": "United Kingdom"
+  }
+}
+</script>

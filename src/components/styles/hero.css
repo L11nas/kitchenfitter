@@ -24,11 +24,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(
-    circle,
-    rgba(0, 0, 0, 0.6) 10%,
-    rgba(0, 0, 0, 0.3) 60%
-  );
+  background: rgba(0, 0, 0, 0.2);
 }
 .hero-overlay::after {
   content: '';
@@ -39,17 +35,29 @@
   height: 100%;
   background: linear-gradient(
     to bottom,
-    rgba(255, 255, 255, 0.4) 5%,
+    rgba(255, 255, 255, 0.3) 5%,
     rgba(255, 255, 255, 0) 40%
   );
 }
+.cta-button {
+  background: linear-gradient(135deg, #ff7800, #e65100);
+  box-shadow: 0 4px 10px rgba(255, 87, 34, 0.3);
+  border-radius: 8px;
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+.cta-button:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 15px rgba(255, 87, 34, 0.5);
+  background: linear-gradient(135deg, #ffcc33, #ff5a99);
+}
 
 .hero-content {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.25);
   backdrop-filter: blur(25px);
   padding: 35px;
   border-radius: 15px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
   max-width: 700px;
   color: white;
   animation: fadeIn 1.2s ease-in-out;

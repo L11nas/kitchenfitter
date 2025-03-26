@@ -13,7 +13,7 @@ export default function Footer() {
       <div className='footer-container'>
         {/* Contact Information (left) */}
         <div className='footer-column contact-info'>
-          <h4>Contact Information</h4>
+          <h3>Contact Our Expert Fitters</h3>
           <address>
             <p>
               <FaSms aria-label='SMS icon' title='SMS' />{' '}
@@ -21,7 +21,9 @@ export default function Footer() {
             </p>
             <p>
               <FaEnvelope aria-label='Email icon' title='Email' />{' '}
-              <a href='mailto:info@fittersuk.com'>info@fittersuk.com</a>
+              <a href='mailto:info@fittersuk.com' title='Send us an email'>
+                info@fittersuk.com
+              </a>
             </p>
           </address>
           <div className='social-icons' aria-label='Social media links'>
@@ -48,12 +50,12 @@ export default function Footer() {
 
         {/* Map (center) */}
         <div className='footer-column service-area'>
-          <h4>Service Area</h4>
+          <h3>Service Area</h3>
           <div className='map-container'>
             <iframe
               src='https://www.google.com/maps/d/u/0/embed?mid=14HW21weW7r_NS8dsaUHVN_agE8A0KuI&ehbc=2E312F&noprof=1'
-              width='100%'
-              height='150'
+              width='300'
+              height='250'
               style={{ border: 0 }}
               allowFullScreen=''
               loading='lazy'
@@ -65,7 +67,7 @@ export default function Footer() {
 
         {/* Service Areas (right) */}
         <div className='footer-column services'>
-          <h4>We provide services in</h4>
+          <h3>We provide services in</h3>
           <div className='service-areas-container'>
             <ul className='service-areas'>
               {[

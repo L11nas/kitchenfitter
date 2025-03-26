@@ -4,14 +4,15 @@
   left: 0;
   width: 100%;
   height: 80px;
-  background: rgba(0, 0, 0, 0.3); /* Slightly darker background */
+  background: rgba(20, 20, 20, 0.7); /* Slightly darker background */
   backdrop-filter: blur(10px); /* Add a blur effect */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   z-index: 1000;
   transition: background-color 0.3s ease; /* Add a transition for smooth color change */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
 }
 .navbar.scrolled {
-  background: rgba(0, 0, 0, 0.6); /* Darker background when scrolled */
+  background: rgba(0, 0, 0, 0.8); /* Darker background when scrolled */
 }
 
 .navbar-container {
@@ -29,6 +30,11 @@
   color: #fff;
   margin-left: 20px;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Add a text-shadow for better readability */
+}
+.logo:hover {
+  color: #f5a623;
+  text-shadow: 0 0 10px rgba(245, 166, 35, 0.8);
+  transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
 .logo-main {
@@ -56,16 +62,16 @@
 }
 
 .nav-links a {
-  color: #fff;
+  color: #fdfdfd;
   text-decoration: none;
   font-weight: 500;
-  transition: color 0.3s, text-shadow 0.3s; /* Add a transition for text-shadow */
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Add a text-shadow for better readability */
+  transition: color 0.3s, ease-in-out; /* Add a transition for text-shadow */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6); /* Add a text-shadow for better readability */
 }
 
 .nav-links a:hover {
-  color: #f5a623;
-  text-shadow: 1px 1px 3px rgba(245, 166, 35, 0.8); /* Add a text-shadow for better readability */
+  color: #ff9900;
+  text-shadow: 2px 2px 5px rgba(255, 153, 0, 1);
 }
 
 .contact-links {
@@ -78,15 +84,15 @@
   display: flex;
   align-items: center;
   gap: 5px;
-  color: #fff;
+  color: #fdfdfd;
   text-decoration: none;
   transition: color 0.3s, text-shadow 0.3s; /* Add a transition for text-shadow */
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Add a text-shadow for better readability */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
 }
 
 .contact-link:hover {
-  color: #f5a623;
-  text-shadow: 1px 1px 3px rgba(245, 166, 35, 0.8); /* Add a text-shadow for better readability */
+  color: #ff9900;
+  text-shadow: 2px 2px 5px rgba(255, 153, 0, 1);
 }
 
 /* Mobilūs kontrolės elementai */
@@ -119,7 +125,15 @@
 .mobile-menu {
   display: none;
 }
+.mobile-menu a {
+  color: #fdfdfd;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+}
 
+.mobile-menu a:hover {
+  color: #ff9900;
+  text-shadow: 2px 2px 5px rgba(255, 153, 0, 1);
+}
 /* Responsive dizainas */
 @media (max-width: 768px) {
   .navbar {
@@ -194,7 +208,7 @@
 /* Extra small screens */
 @media (max-width: 480px) {
   .navbar {
-    height: 60px; /* Reduce navbar height */
+    height: 80px; /* Reduce navbar height */
     padding: 10px 15px; /* Reduce padding */
   }
 

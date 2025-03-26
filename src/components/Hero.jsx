@@ -18,7 +18,9 @@ import './styles/hero.css';
 
 export default function Hero() {
   useEffect(() => {
-    AOS.init({ duration: 500, once: true });
+    if (window.innerWidth > 768) {
+      AOS.init({ duration: 500, once: true });
+    }
   }, []);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -116,19 +118,19 @@ export default function Hero() {
           <div className='hero-projects-images'>
             <img
               src={project1}
-              alt='Modern kitchen installation with premium finishes'
+              alt='Expert UK kitchen installation - modern high-end design'
               loading='lazy'
               className='blur-up'
             />
             <img
               src={project2}
-              alt='Luxury staircase renovation with elegant wooden design'
+              alt='Luxury staircase renovation in the UK - premium wood finish'
               loading='lazy'
               className='blur-up'
             />
             <img
               src={project3}
-              alt='Outdoor decking project with durable wood panels'
+              alt='Durable outdoor decking installation - UK home improvement'
               loading='lazy'
               className='blur-up'
             />
