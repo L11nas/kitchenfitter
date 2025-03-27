@@ -18,10 +18,10 @@ import './styles/hero.css';
 
 export default function Hero() {
   useEffect(() => {
-    if (window.innerWidth > 768) {
-      AOS.init({ duration: 500, once: true });
-    }
-  }, []);
+  if (window.innerWidth > 768) {
+    AOS.init({ duration: 500, once: true });
+  }
+}, []);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [formData, setFormData] = useState({
