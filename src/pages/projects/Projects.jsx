@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
+
 import '../../components/styles/projects.css';
 import kitchenBg from '/assets/Kitchenimg/k3.jpg';
 import flooringBg from '/assets/Kitchenimg/floor.jpg';
@@ -40,13 +42,27 @@ export default function Projects() {
         backgroundRepeat: 'no-repeat',
       }}
     >
+      <Helmet>
+        <title>
+          Completed Home Renovation Projects | Kitchen, Flooring & More
+        </title>
+        <meta
+          name='description'
+          content='Explore our successfully completed home renovation projects, including kitchen installations, flooring, decking, staircase renovations, and custom remodeling.'
+        />
+      </Helmet>
       <div className='projects-overlay'></div>
 
       <h1 className='projects-title'>Explore Our Completed Projects</h1>
 
       <div className='projects-categories'>
         {categories.map((category, index) => (
-          <Link to={category.link} key={index} className='projects-category'>
+          <Link
+            to={category.link}
+            key={index}
+            className='projects-category'
+            aria-label={`View our ${category.title} projects`}
+          >
             <div
               className='category-overlay'
               style={{

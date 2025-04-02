@@ -18,9 +18,7 @@ import './styles/hero.css';
 
 export default function Hero() {
   useEffect(() => {
-    if (window.innerWidth > 768) {
-      AOS.init({ duration: 500, once: true });
-    }
+    AOS.init({ duration: 500, once: true });
   }, []);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -63,7 +61,7 @@ export default function Hero() {
             renovations across the UK.
           </p>
           <button className='cta-button' onClick={() => setIsModalOpen(true)}>
-            Get a quote
+            Request a Quote
           </button>
         </div>
 

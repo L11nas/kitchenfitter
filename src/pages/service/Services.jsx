@@ -111,9 +111,9 @@ export default function ServiceCards() {
         />
         <meta
           name='keywords'
-          content={services
-            .map((service) => service.keywords.join(', '))
-            .join(', ')}
+          content={[
+            ...new Set(services.flatMap((service) => service.keywords)),
+          ].join(', ')}
         />
       </Helmet>
       <div className='services-hero-overlay'></div>
@@ -122,17 +122,24 @@ export default function ServiceCards() {
         <h2>Our Services</h2>
         <div className='services-hero-cards'>
           {services.map((service, index) => (
-            <div key={index} className='services-hero-card'>
+            <div key={index} className='services-hero-card' role='article'>
               {/* ✅ SEO: Descriptive Alt Text */}
               <img
                 src={service.image}
-                alt={`${service.title} - high-quality service`}
+                alt={`${
+                  service.title
+                } - professional ${service.title.toLowerCase()} service`}
                 className='services-hero-image'
               />
               <div className='services-hero-text'>
                 {/* ✅ SEO: Service Title as H3 */}
                 <h3>
-                  <FaBookmark className='services-hero-icon' /> {service.title}
+                  <FaBookmark
+                    className='services-hero-icon'
+                    aria-label={`${service.title} bookmark`}
+                    title='Bookmark icon'
+                  />{' '}
+                  {service.title}
                 </h3>
                 {/* ✅ SEO: Service Description */}
                 <p>{service.description}</p>

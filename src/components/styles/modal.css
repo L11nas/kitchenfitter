@@ -21,7 +21,7 @@ body.modal-open .cta-modal-overlay {
 
 /* Modalas pats */
 .cta-modal-content {
-  background: rgba(0, 0, 0, 0.2); /* Pusiau permatomas juodas fonas */
+  background: #fff;
   padding: 20px;
   border-radius: 8px;
   max-width: 500px;
@@ -48,7 +48,7 @@ body.modal-open .cta-modal-content {
   cursor: pointer;
   padding: 5px;
   line-height: 1;
-  color: white;
+  color: #333;
 }
 
 .cta-modal-close:hover {
@@ -61,7 +61,7 @@ body.modal-open .cta-modal-content {
   margin-bottom: 25px;
   text-align: center;
   font-size: 22px;
-  color: white;
+  color: #333;
 }
 
 .cta-modal-content input,

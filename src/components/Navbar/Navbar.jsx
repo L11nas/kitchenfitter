@@ -20,8 +20,18 @@ function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleLogoClick = () => {
+  const handleLogoClick = (e) => {
     if (location.pathname === '/') {
+      e.preventDefault(); // Neleidžia įprastai naviguoti
+      window.scrollTo(0, 0); // Grąžina į viršų
+      window.location.reload(); // Persikrauna puslapis
+    }
+  };
+
+  const handleHomeClick = (e) => {
+    if (location.pathname === '/') {
+      e.preventDefault();
+      window.scrollTo(0, 0);
       window.location.reload();
     }
   };
@@ -45,7 +55,7 @@ function Navbar() {
         <div className='desktop-nav'>
           <ul className='nav-links'>
             <li>
-              <Link to='/' title='Go to Home Page'>
+              <Link to='/' onClick={handleHomeClick} title='Go to Home Page'>
                 Home
               </Link>
             </li>
@@ -67,7 +77,7 @@ function Navbar() {
           </ul>
           <div className='contact-links'>
             <a
-              href='sms:+440000000000'
+              href='sms:+44 7414 460648'
               className='contact-link'
               target='_blank'
               rel='noopener noreferrer'
@@ -76,7 +86,7 @@ function Navbar() {
               <FaSms aria-label='SMS' /> SMS only
             </a>
             <a
-              href='https://wa.me/+440000000000'
+              href='https://wa.me/+44 7414 460648 '
               className='contact-link'
               target='_blank'
               rel='noopener noreferrer'
@@ -90,7 +100,7 @@ function Navbar() {
         <div className='mobile-controls'>
           <div className='mobile-contacts'>
             <a
-              href='sms:+440000000000'
+              href='sms:+44 7414 460648'
               className='mobile-contact-link'
               target='_blank'
               rel='noopener noreferrer'
@@ -99,7 +109,7 @@ function Navbar() {
               <FaSms aria-label='SMS' />
             </a>
             <a
-              href='https://wa.me/+440000000000'
+              href='https://wa.me/+44 7414 460648'
               className='mobile-contact-link'
               target='_blank'
               rel='noopener noreferrer'

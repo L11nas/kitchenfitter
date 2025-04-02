@@ -16,7 +16,7 @@ export default function Modal({
         <button className='cta-modal-close' onClick={onClose}>
           ✖
         </button>
-        <h2>Get quote</h2>
+        <h2>Request a Quote</h2>
         <form onSubmit={onSubmit}>
           <input
             type='text'
@@ -29,7 +29,7 @@ export default function Modal({
           <input
             type='email'
             name='email'
-            placeholder='Your e-mail post office'
+            placeholder='Your email address'
             value={formData.email}
             onChange={handleChange}
             required
@@ -41,7 +41,7 @@ export default function Modal({
             onChange={handleChange}
             required
           />
-          <button type='submit'>Send</button>
+          <button type='submit'>Submit Request</button>
         </form>
       </div>
     </div>

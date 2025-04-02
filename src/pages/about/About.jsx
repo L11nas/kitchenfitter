@@ -52,7 +52,7 @@ const processSteps = [
   {
     title: 'Consultation & Planning',
     description:
-      'We start by understanding your vision, offering expert recommendations, and creating a clear plan tailored to your needs.',
+      'We begin by understanding your vision and crafting a tailored plan with expert guidance.',
     icon: <FaComments />,
   },
   {
@@ -78,10 +78,12 @@ export default function About() {
   return (
     <section className='about'>
       <Helmet>
-        <title>About Us - Kitchen & Home Renovation Experts | Fitters UK</title>
+        <title>
+          About Us - Kitchen & Home Renovation Experts | S.L. BUILDERS LTD
+        </title>
         <meta
           name='description'
-          content='Learn about Fitters UK, your trusted experts for kitchen installations, flooring, decking, and home renovations. Discover our commitment to quality and craftsmanship.'
+          content='Learn about S.L. BUILDERS LTD, your trusted experts for kitchen installations, flooring, decking, and home renovations. Discover our commitment to quality and craftsmanship.'
         />
         <meta
           name='keywords'
@@ -91,10 +93,10 @@ export default function About() {
       <div className='about-info'>
         <h1 data-aos='fade-up'>About Us</h1>
         <p data-aos='fade-up'>
-          At Fitters UK, we specialize in high-quality kitchen installations,
-          flooring, decking, and home renovations, backed by over 15 years of
-          expertise. Our team of certified professionals ensures precision,
-          efficiency, and exceptional craftsmanship in every project,
+          At S.L. BUILDERS LTD, we specialize in high-quality kitchen
+          installations, flooring, decking, and home renovations, backed by over
+          15 years of expertise. Our team of certified professionals ensures
+          precision, efficiency, and exceptional craftsmanship in every project,
           transforming homes with durability and style. Whether you’re upgrading
           your kitchen, enhancing your outdoor space, or renovating your entire
           home, we deliver results that stand the test of time.
@@ -109,7 +111,7 @@ export default function About() {
             className='highlight-item blur-card'
             data-aos='fade-up'
           >
-            <div className='icon' aria-hidden='true'>
+            <div className='icon' aria-hidden={point.title} title={point.title}>
               {point.icon}
             </div>
             <h2>{point.title}</h2>
@@ -128,7 +130,7 @@ export default function About() {
               className='process-step blur-card'
               data-aos='fade-up'
             >
-              <div className='icon' aria-hidden='true'>
+              <div className='icon' aria-hidden={step.title} title={step.title}>
                 {step.icon}
               </div>
               <h3>{step.title}</h3>
