@@ -16,6 +16,8 @@
   overflow: hidden;
   padding-top: 100px;
   box-sizing: border-box;
+  margin-bottom: 0; /* pridėkite šią eilutę */
+  padding-bottom: 0; /* pridėkite šią eilutę */
 }
 
 .hero-overlay {
@@ -190,31 +192,29 @@
 }
 
 .hero-cta-button {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 15px 30px;
-  font-size: 1.2rem;
-  font-weight: bold;
-  text-decoration: none;
-  border-radius: 25px;
+  background: linear-gradient(135deg, #ff7800, #e65100);
+  box-shadow: 0 4px 10px rgba(255, 87, 34, 0.3);
+  border-radius: 8px;
   color: white;
-  background: linear-gradient(135deg, #ffcc33, #ff7eb9);
-  transition: all 0.3s ease-in-out;
-  box-shadow: 0 5px 15px rgba(255, 102, 0, 0.3);
-  animation: glow 1.5s infinite alternate;
-}
-@keyframes glow {
-  from {
-    box-shadow: 0 5px 15px rgba(255, 102, 0, 0.3);
-  }
-  to {
-    box-shadow: 0 5px 25px rgba(255, 165, 0, 0.5);
-  }
-}
-.hero-cta-button:hover {
-  transform: scale(1.05);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  margin: 15px auto;
+  padding: 8px 16px;
 }
 
+/* Atnaujintas glow efektas, kad būtų subtilesnis */
+@keyframes glow {
+  from {
+    box-shadow: 0 3px 10px rgba(255, 102, 0, 0.25);
+  }
+  to {
+    box-shadow: 0 3px 15px rgba(255, 165, 0, 0.4);
+  }
+}
+
+/* Hover efektas */
+.hero-cta-button:hover {
+  transform: scale(1.03); /* sumažintas scale efektas */
+}
 /* 🔹 RESPONSYVUMAS */
 @media (max-width: 1024px) {
   .hero-container {

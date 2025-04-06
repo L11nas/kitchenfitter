@@ -1,11 +1,12 @@
 /* Main footer style */
 .footer {
+  margin: 0;
+  padding: 40px 10% 0; /* pakeista iš padding: 40px 10% */
+  width: 100%;
+  position: relative;
   background: rgba(26, 37, 47, 0.95);
   backdrop-filter: blur(5px);
-
   color: rgba(255, 255, 255, 0.9);
-
-  padding: 40px 10%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -175,6 +176,7 @@ iframe {
   width: 100%;
   height: 250px; /* Arba kitas tinkamas aukštis */
 }
+
 /* For smaller screens */
 @media (max-width: 768px) {
   .footer-container {

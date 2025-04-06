@@ -2,7 +2,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
 import Hero from './components/Hero';
-
+import CookieConsent from './components/CookieConsent/CookieConsentPage';
+import PrivacyPolicity from './components/PrivacyPolicity/PrivacyPolicity';
 import About from './pages/about/About'; // ✅ Apie mus puslapis
 import './components/styles/App.css'; // ✅ Importuojame bendrą stilių failą
 import Services from './pages/service/Services';
@@ -29,8 +30,12 @@ export default function App() {
           <Route path='/projects/decking' element={<DeckingProjects />} />
           <Route path='/projects/staircase' element={<StaircaseProjects />} />
           <Route path='/projects/custom' element={<CustomProjects />} />
+          <Route path='/cookie-policy' element={<CookieConsent />} />
+          <Route path='/privacy-policy' element={<PrivacyPolicity />} />
         </Routes>
+
         <Footer />
+        <CookieConsent />
       </Router>
     </HelmetProvider>
   );

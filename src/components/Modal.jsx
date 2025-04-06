@@ -1,5 +1,5 @@
 import React from 'react';
-import './styles/modal.css'; // Patikrink, ar šiame faile nėra `target="_blank"`
+import './styles/modal.css';
 
 export default function Modal({
   isOpen,
@@ -7,24 +7,35 @@ export default function Modal({
   onSubmit,
   formData,
   handleChange,
+  isSubmitting,
+  submitStatus,
+  submitMessage,
 }) {
   if (!isOpen) return null; // Nerenderinam, jei modalas uždarytas
 
   return (
     <div className={`cta-modal-overlay ${isOpen ? 'open' : ''}`}>
       <div className='cta-modal-content'>
-        <button className='cta-modal-close' onClick={onClose}>
+        <button className='cta-modal-close' onClick={onClose} type='button'>
           ✖
         </button>
         <h2>Request a Quote</h2>
+
+        {submitMessage && (
+          <div className={`submission-message ${submitStatus}`}>
+            {submitMessage}
+          </div>
+        )}
+
         <form onSubmit={onSubmit}>
           <input
             type='text'
             name='name'
-            placeholder='your name'
+            placeholder='Your name'
             value={formData.name}
             onChange={handleChange}
             required
+            disabled={isSubmitting}
           />
           <input
             type='email'
@@ -33,6 +44,7 @@ export default function Modal({
             value={formData.email}
             onChange={handleChange}
             required
+            disabled={isSubmitting}
           />
           <textarea
             name='message'
@@ -40,8 +52,11 @@ export default function Modal({
             value={formData.message}
             onChange={handleChange}
             required
+            disabled={isSubmitting}
           />
-          <button type='submit'>Submit Request</button>
+          <button type='submit' disabled={isSubmitting}>
+            {isSubmitting ? 'Sending...' : 'Submit Request'}
+          </button>
         </form>
       </div>
     </div>

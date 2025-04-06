@@ -8,6 +8,17 @@
   box-sizing: border-box;
   word-wrap: break-word;
 }
+#root {
+  width: 100%;
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  gap: 0; /* pridėkite šią eilutę */
+}
 
 /* ================= BODY & GENERAL ================= */
 html,
@@ -89,6 +100,7 @@ button:hover {
 }
 
 /* ================= FOOTER ================= */
+/* Pašalinkite šį globalų stilių arba pakeiskite jį */
 footer {
   width: 100%;
   padding: 10px 0;
@@ -98,7 +110,6 @@ footer {
   position: relative;
   bottom: 0;
 }
-
 /* ================= RESPONSIVE DESIGN ================= */
 @media (max-width: 768px) {
   .container {

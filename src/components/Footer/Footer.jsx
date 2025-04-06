@@ -53,14 +53,10 @@ export default function Footer() {
           <h3>Service Area</h3>
           <div className='map-container'>
             <iframe
-              src='https://www.google.com/maps/d/u/0/embed?mid=14HW21weW7r_NS8dsaUHVN_agE8A0KuI&ehbc=2E312F&noprof=1'
+              src='https://www.google.com/maps/d/u/0/embed?mid=1dJoAlYFdyWLCkoAgli21m5J6qsvyj2A&ehbc=2E312F&hl=en'
+              frameBorder='0'
               width='300'
               height='250'
-              style={{ border: 0 }}
-              allowFullScreen=''
-              loading='lazy'
-              title='Kitchen Fitters UK Service Area'
-              aria-label='Kitchen Fitters UK Service Area'
             ></iframe>
           </div>
         </div>
@@ -94,7 +90,10 @@ export default function Footer() {
 
       {/* Copyright (center, bottom) */}
       <div className='footer-copyright'>
-        &copy; 2025 Kitchen Fitters UK. All rights reserved.
+        &copy; 2025 Kitchen Fitters UK. All rights reserved.{' '}
+        <a href='/privacy-policy' className='privacy-link'>
+          Privacy Policy
+        </a>
       </div>
     </footer>
   );
