@@ -13,6 +13,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-bottom: 0; /* pridėkite šią eilutę */
+  padding-bottom: 0; /* pridėkite šią eilutę */
 }
 
 /* ✅ Tamsesnis overlay, kad kortelės būtų geriau matomos */

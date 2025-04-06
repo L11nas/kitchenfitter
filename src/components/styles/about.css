@@ -12,6 +12,8 @@
   position: relative;
   z-index: 10;
   padding: 100px 20px;
+  margin-bottom: 0; /* pridėkite šią eilutę */
+  padding-bottom: 0; /* pridėkite šią eilutę */
 }
 
 /* Overlay efektas suteikia lengvą spalvos perėjimą */

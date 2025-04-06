@@ -11,6 +11,8 @@
   align-items: center;
   justify-content: flex-start;
   padding: 50px 20px;
+  margin-bottom: 0; /* pridėkite šią eilutę */
+  padding-bottom: 0; /* pridėkite šią eilutę */
 }
 
 .services-hero-overlay {
