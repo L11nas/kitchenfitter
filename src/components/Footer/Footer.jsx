@@ -21,8 +21,13 @@ export default function Footer() {
             </p>
             <p>
               <FaEnvelope aria-label='Email icon' title='Email' />{' '}
-              <a href='mailto:info@fittersuk.com' title='Send us an email'>
-                info@fittersuk.com
+              <a
+                href='mailto:slbuilderswork@gmail.com'
+                target='_blank'
+                rel='noopener noreferrer'
+                title='Send us an email'
+              >
+                slbuilderswork@gmail.com
               </a>
             </p>
           </address>
