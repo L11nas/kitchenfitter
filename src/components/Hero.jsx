@@ -30,65 +30,16 @@ export default function Hero() {
     email: '',
     message: '',
   });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState('');
-  const [submitMessage, setSubmitMessage] = useState('');
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    setIsSubmitting(true);
-    setSubmitMessage('');
-    setSubmitStatus('');
-
-    try {
-      // Backend API endpoint URL - adjust according to your setup
-      const response = await fetch(
-        'http://localhost:3001/api/send-quote-request',
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(formData),
-        }
-      );
-
-      const data = await response.json();
-
-      if (data.success) {
-        setSubmitStatus('success');
-        setSubmitMessage('Your quote request has been sent successfully!');
-        // Reset form after successful submission
-        setFormData({
-          name: '',
-          email: '',
-          message: '',
-        });
-
-        // Close modal after 3 seconds
-        setTimeout(() => {
-          setIsModalOpen(false);
-          setSubmitMessage('');
-        }, 3000);
-      } else {
-        setSubmitStatus('error');
-        setSubmitMessage(
-          data.message || 'Failed to send request. Please try again.'
-        );
-      }
-    } catch (error) {
-      console.error('Error submitting form:', error);
-      setSubmitStatus('error');
-      setSubmitMessage(
-        'Network error. Please check your connection and try again.'
-      );
-    } finally {
-      setIsSubmitting(false);
-    }
+    const mailtoLink = `mailto:info@example.com?subject=Paslaugų užklausa&body=Vardas: ${formData.name}%0D%0AEl. paštas: ${formData.email}%0D%0AŽinutė: ${formData.message}`;
+    window.location.href = mailtoLink;
+    setIsModalOpen(false);
   };
 
   return (
@@ -102,9 +53,6 @@ export default function Hero() {
           onSubmit={handleSubmit}
           formData={formData}
           handleChange={handleChange}
-          isSubmitting={isSubmitting}
-          submitStatus={submitStatus}
-          submitMessage={submitMessage}
         />
 
         <div className='hero-overlay'></div>
@@ -115,9 +63,6 @@ export default function Hero() {
             flooring, staircases, and outdoor cladding, delivering high-quality
             renovations across the UK.
           </p>
-          <button className='cta-button' onClick={() => setIsModalOpen(true)}>
-            Request a Quote
-          </button>
         </div>
 
         <section className='hero-services' data-aos='fade-up'>
