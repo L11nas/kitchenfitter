@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../styles/CookieConsentPage.css';
+import '../styles/cookieConsentPage.css';
 
 const CookieConsent = () => {
   const [visible, setVisible] = useState(true);
