@@ -168,7 +168,7 @@ const PrivacyPolicy = () => {
           <p>
             You can manage your cookie preferences through our cookie consent
             banner or your browser settings. For detailed information, please
-            see our <a href='/cookie-policy'>Cookie Policy</a>.
+            see our <a>Cookie Policy</a>.
           </p>
         </section>
 

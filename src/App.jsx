@@ -14,27 +14,29 @@ import DeckingProjects from './pages/projects/Decking';
 import StaircaseProjects from './pages/projects/Staircase';
 import CustomProjects from './pages/projects/Custom';
 import { HelmetProvider } from 'react-helmet-async';
+import ViewportHeightFix from './components/ViewportHeightFix'; // pridėk kelią kaip reikia
 
 export default function App() {
   return (
     <HelmetProvider>
       <Router>
+        <ViewportHeightFix />
         <Navbar />
-        <main style={{ flex: 1 }}>
-          <Routes>
-            <Route path='/' element={<Hero />} />
-            <Route path='/about' element={<About />} />
-            <Route path='/services' element={<Services />} />
-            <Route path='/projects' element={<Projects />} />
-            <Route path='/projects/kitchens' element={<KitchenProjects />} />
-            <Route path='/projects/flooring' element={<FlooringProjects />} />
-            <Route path='/projects/decking' element={<DeckingProjects />} />
-            <Route path='/projects/staircase' element={<StaircaseProjects />} />
-            <Route path='/projects/custom' element={<CustomProjects />} />
-            <Route path='/cookie-policy' element={<CookieConsent />} />
-            <Route path='/privacy-policy' element={<PrivacyPolicity />} />
-          </Routes>
-        </main>
+
+        <Routes>
+          <Route path='/' element={<Hero />} />
+          <Route path='/about' element={<About />} />
+          <Route path='/services' element={<Services />} />
+          <Route path='/projects' element={<Projects />} />
+          <Route path='/projects/kitchens' element={<KitchenProjects />} />
+          <Route path='/projects/flooring' element={<FlooringProjects />} />
+          <Route path='/projects/decking' element={<DeckingProjects />} />
+          <Route path='/projects/staircase' element={<StaircaseProjects />} />
+          <Route path='/projects/custom' element={<CustomProjects />} />
+          <Route path='/cookie-policy' element={<CookieConsent />} />
+          <Route path='/privacy-policy' element={<PrivacyPolicity />} />
+        </Routes>
+
         <Footer />
         <CookieConsent />
       </Router>
