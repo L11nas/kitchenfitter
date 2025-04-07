@@ -40,10 +40,10 @@
 }
 /* ✅ Kortelių išdėstymas */
 .kitchen-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 15px;
-  justify-items: center;
+  display: flex; /* Naudojame flexbox */
+  flex-wrap: wrap; /* Leidžiame kortelėms persikelti į kitą eilutę, jei trūksta vietos */
+  gap: 15px; /* Tarpas tarp kortelių */
+  justify-content: center; /* Centruojame korteles horizontaliai */
 }
 
 /* ✅ Kortelės */
