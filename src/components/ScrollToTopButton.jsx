@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowUp } from 'lucide-react'; // Arba naudok bet kokią ikoną
-import './styles/ScrollToTopButton.css';
+import './styles/scrollToTopButton.css';
 
 const ScrollToTopButton = () => {
   const [visible, setVisible] = useState(false);
