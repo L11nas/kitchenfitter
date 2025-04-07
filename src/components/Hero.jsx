@@ -37,7 +37,7 @@ export default function Hero() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const mailtoLink = `mailto:info@example.com?subject=Paslaugų užklausa&body=Vardas: ${formData.name}%0D%0AEl. paštas: ${formData.email}%0D%0AŽinutė: ${formData.message}`;
+    const mailtoLink = `mailto:slbuilderswork@gmail.com?subject=Paslaugų užklausa&body=Vardas: ${formData.name}%0D%0AEl. paštas: ${formData.email}%0D%0AŽinutė: ${formData.message}`;
     window.location.href = mailtoLink;
     setIsModalOpen(false);
   };
