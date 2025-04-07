@@ -19,7 +19,9 @@
   margin-bottom: 0; /* pridėkite šią eilutę */
   padding-bottom: 0; /* pridėkite šią eilutę */
 }
-
+.hero-container::before {
+  position: fixed;
+}
 .hero-overlay {
   position: absolute;
   top: 0;
