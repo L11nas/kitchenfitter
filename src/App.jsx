@@ -14,13 +14,12 @@ import DeckingProjects from './pages/projects/Decking';
 import StaircaseProjects from './pages/projects/Staircase';
 import CustomProjects from './pages/projects/Custom';
 import { HelmetProvider } from 'react-helmet-async';
-import ViewportHeightFix from './components/ViewportHeightFix'; // pridėk kelią kaip reikia
+import ScrollToTopButton from './components/ScrollToTopButton';
 
 export default function App() {
   return (
     <HelmetProvider>
       <Router>
-        <ViewportHeightFix />
         <Navbar />
 
         <Routes>
@@ -36,7 +35,7 @@ export default function App() {
           <Route path='/cookie-policy' element={<CookieConsent />} />
           <Route path='/privacy-policy' element={<PrivacyPolicity />} />
         </Routes>
-
+        <ScrollToTopButton />
         <Footer />
         <CookieConsent />
       </Router>

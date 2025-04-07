@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta
+      name="google-site-verification"
+      content="_N4sU9zPBuXls-azMw12FwPLwEFMFHZCWZ-VIgkcqVg"
+    />
+
     <meta charset="UTF-8" />
     <meta
       name="viewport"
@@ -41,14 +46,48 @@
     <meta property="og:url" content="https://slbuildersltd.co.uk/" />
     <meta property="og:type" content="website" />
 
+    <!-- Robots Meta Tag (Optional, but good practice for SEO control) -->
+    <meta name="robots" content="index, follow" />
+
     <!-- ✅ Favicon: Corrected Path (Assuming it's in the 'public' folder) -->
     <link rel="icon" type="image/png" href="/favicon.png" />
 
     <!-- Canonical URL (Good Practice) -->
     <link rel="canonical" href="https://slbuildersltd.co.uk/" />
+
+    <!-- ✅ Structured Data - JSON-LD Schema (Optional for better visibility) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "SL Builders LTD",
+        "url": "https://slbuildersltd.co.uk",
+        "logo": "https://slbuildersltd.co.uk/assets/logo.png",
+        "sameAs": [
+          "https://www.facebook.com/SLBuildersLtd",
+          "https://twitter.com/SLBuildersLtd"
+        ]
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+
+    <!-- ✅ Google Analytics: Add your GA Tracking Code -->
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-1R8LMGQD61"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'G-1R8LMGQD61');
+    </script>
   </body>
 </html>

@@ -151,6 +151,7 @@
 }
 
 /* Responsive adjustments */
+/* Responsive adjustments */
 @media screen and (max-width: 480px) {
   .cookie-consent-overlay {
     bottom: 10px;
@@ -160,5 +161,30 @@
 
   .cookie-consent-container {
     max-width: none;
+    padding: 12px;
+    font-size: 10px;
+  }
+
+  .cookie-consent-header h2 {
+    font-size: 14px;
+  }
+
+  .cookie-consent-header p,
+  .cookie-consent-content p,
+  .cookie-category p {
+    font-size: 12px;
+  }
+
+  .cookie-consent-btn {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+
+  .cookie-details-toggle {
+    font-size: 11px;
+  }
+
+  .cookie-consent-footer {
+    font-size: 10px;
   }
 }
