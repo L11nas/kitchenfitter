@@ -11,6 +11,8 @@
   align-items: center; /* Centruoja turinį horizontaliai */
   text-align: center; /* Užtikrina, kad tekstas būtų centruotas */
   padding: 40px 20px;
+  margin-bottom: 0; /* pridėkite šią eilutę */
+  padding-bottom: 0; /* pridėkite šią eilutę */
 }
 
 /* ✅ Projekto pavadinimas */

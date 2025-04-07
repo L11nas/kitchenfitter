@@ -12,6 +12,8 @@
   background: linear-gradient(135deg, #2c3e50, #34495e);
   color: white;
   color: #333; /* Tamsiai pilkas tekstas, kad nebūtų per daug aštrus */
+  margin-bottom: 0; /* pridėkite šią eilutę */
+  padding-bottom: 0; /* pridėkite šią eilutę */
 }
 
 /* ✅ Pavadinimas */

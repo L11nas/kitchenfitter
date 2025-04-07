@@ -10,6 +10,8 @@
   text-align: center;
   padding: 100px 20px 40px; /* Added top padding to avoid navbar overlap */
   position: relative; /* For absolute positioning of elements if needed */
+  margin-bottom: 0; /* pridėkite šią eilutę */
+  padding-bottom: 0; /* pridėkite šią eilutę */
 }
 
 /* ✅ Projekto pavadinimas */
