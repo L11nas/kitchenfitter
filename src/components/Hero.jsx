@@ -66,7 +66,7 @@ export default function Hero() {
         </div>
 
         <section className='hero-services' data-aos='fade-up'>
-          <h2>Our Services – Precision & Style in Every Project</h2>
+          <h2>Our Services Precision & Style in Every Project</h2>
           <div className='hero-services-cards'>
             <article className='hero-service-card' data-aos='zoom-in'>
               <FaTools size={40} aria-hidden='true' />
@@ -112,7 +112,7 @@ export default function Hero() {
         </section>
 
         <section className='hero-projects' data-aos='fade-up'>
-          <h2>Recent Projects – See Our Work</h2>
+          <h2>Recent Projects See Our Work</h2>
           <div className='hero-projects-images'>
             <img
               src={project1}

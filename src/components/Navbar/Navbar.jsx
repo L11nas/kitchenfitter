@@ -24,7 +24,7 @@ function Navbar() {
     if (location.pathname === '/') {
       e.preventDefault(); // Neleidžia įprastai naviguoti
       window.scrollTo(0, 0); // Grąžina į viršų
-      window.location.reload(); // Persikrauna puslapis
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   };
 
@@ -32,7 +32,7 @@ function Navbar() {
     if (location.pathname === '/') {
       e.preventDefault();
       window.scrollTo(0, 0);
-      window.location.reload();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   };
 
