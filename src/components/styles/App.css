@@ -8,10 +8,9 @@
   box-sizing: border-box;
   word-wrap: break-word;
 }
-
 #root {
   width: 100%;
-  --vh: 100vh; /* fallback */
+  min-height: 100vh;
   padding: 0;
   margin: 0;
   text-align: center;
@@ -32,9 +31,6 @@ body {
   background-color: transparent;
   display: flex;
   flex-direction: column;
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
 }
 
 /* ================= TYPOGRAPHY ================= */
