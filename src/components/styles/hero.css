@@ -230,8 +230,7 @@ background-position: center;
   width: calc(50% - 15px); /* 2 nuotraukos per eilutę */
 }
 @media (max-width: 768px) {
-.hero-container {
-    background-position: top center;}
+
   .hero-content {
     max-width: 500px;
     padding: 25px;
@@ -249,8 +248,6 @@ background-position: center;
 }
 
 @media (max-width: 480px) {
-.hero-container {
-    background-position: top center;}
   .hero-content {
     max-width: 100%;
     margin: 90px auto 20px;
