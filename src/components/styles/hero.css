@@ -10,7 +10,7 @@
     url('/assets/Kitchenimg/background.jpg') no-repeat center center;
   background-size: cover;
 background-repeat: no-repeat;
-  background-attachment: scroll; /* Parallax efektas */
+  background-attachment: fixed; /* Parallax efektas */
 background-position: center;
   position: relative;
   z-index: 10;
