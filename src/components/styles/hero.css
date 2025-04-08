@@ -9,6 +9,7 @@
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)),
     url('/assets/Kitchenimg/background.jpg') no-repeat center center;
   background-size: cover;
+background-repeat: no-repeat;
   background-attachment: scroll; /* Parallax efektas */
 
   position: relative;
