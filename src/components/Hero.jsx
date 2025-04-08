@@ -47,6 +47,7 @@ export default function Hero() {
       {!isModalOpen && <Navbar />}
 
       <section className='hero-container' role='banner'>
+        <div className='hero-fixed-bg' /> {/* <<< Naujas fono sluoksnis */}
         <Modal
           isOpen={isModalOpen}
           onClose={() => setIsModalOpen(false)}
@@ -54,7 +55,6 @@ export default function Hero() {
           formData={formData}
           handleChange={handleChange}
         />
-
         <div className='hero-overlay'></div>
         <div className='hero-content'>
           <h1>Transform Your Home with Expert Craftsmanship</h1>
@@ -64,7 +64,6 @@ export default function Hero() {
             renovations across the UK.
           </p>
         </div>
-
         <section className='hero-services' data-aos='fade-up'>
           <h2>Our Services Precision & Style in Every Project</h2>
           <div className='hero-services-cards'>
@@ -110,7 +109,6 @@ export default function Hero() {
             </article>
           </div>
         </section>
-
         <section className='hero-projects' data-aos='fade-up'>
           <h2>Recent Projects See Our Work</h2>
           <div className='hero-projects-images'>
