@@ -57,12 +57,23 @@ export default function Hero() {
         />
         <div className='hero-overlay'></div>
         <div className='hero-content'>
-          <h1>Transform Your Home with Expert Craftsmanship</h1>
+          <h1>
+            Transform Your Home with{' '}
+            <span className='hero-main-phrase'>Expert Craftsmanship</span>
+          </h1>
           <p>
-            Our skilled professionals specialize in kitchen installations,
-            flooring, staircases, and outdoor cladding, delivering high-quality
-            renovations across the UK.
+            Our <span className='hero-key-phrase'>skilled professionals</span>{' '}
+            specialize in kitchen installations, flooring, staircases, and
+            exterior cladding, delivering{' '}
+            <span className='hero-key-phrase'>high-quality</span> renovations
+            throughout the UK
           </p>
+          <button
+            className='hero-cta-button'
+            onClick={() => setIsModalOpen(true)}
+          >
+            Get a consultation
+          </button>
         </div>
         <section className='hero-services' data-aos='fade-up'>
           <h2>Our Services Precision & Style in Every Project</h2>
@@ -71,40 +82,43 @@ export default function Hero() {
               <FaTools size={40} aria-hidden='true' />
               <h3>Kitchen Installation</h3>
               <p>
-                Custom kitchen fitting services designed for functionality and
-                aesthetics.
+                Tailored kitchen fitting solutions that combine functionality,
+                modern design, and lasting quality.
               </p>
             </article>
             <article className='hero-service-card' data-aos='zoom-in'>
               <FaClock size={40} aria-hidden='true' />
               <h3>Flooring Installation</h3>
               <p>
-                Professional installation of wooden, laminate, and vinyl
-                flooring for a flawless finish.
+                We install wooden, laminate, and vinyl flooring with
+                precision—delivering smooth, long-lasting results that enhance
+                any space.
               </p>
             </article>
             <article className='hero-service-card' data-aos='zoom-in'>
               <FaThumbsUp size={40} aria-hidden='true' />
               <h3>Custom Renovations</h3>
               <p>
-                Bespoke renovations that elevate your home, from single rooms to
-                full property upgrades.
+                Tailored home renovation solutions, from individual room
+                makeovers to complete property refurbishments, designed to
+                elevate both style and function.
               </p>
             </article>
             <article className='hero-service-card' data-aos='zoom-in'>
               <FaTree size={40} aria-hidden='true' />
               <h3>Outdoor Decking</h3>
               <p>
-                Premium decking solutions for durable, stylish, and
-                weather-resistant outdoor spaces.
+                Transform your garden or patio with premium decking designed for
+                strength, style, and all-weather durability.
               </p>
             </article>
             <article className='hero-service-card' data-aos='zoom-in'>
               <FaLayerGroup size={40} aria-hidden='true' />
               <h3>Staircase Renovation</h3>
               <p>
-                Upgrade staircases with expert craftsmanship, including steps,
-                handrails, and balustrades.
+                Transform outdated staircases with custom renovations—covering
+                steps, handrails, and balustrades—for a safer and more stylish
+                interior.
               </p>
             </article>
           </div>

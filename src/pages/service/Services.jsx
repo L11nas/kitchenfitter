@@ -15,7 +15,7 @@ const services = [
   {
     title: 'Kitchen Installation',
     description:
-      'Our expert kitchen fitting services cover everything from cabinet installation, countertops, plumbing, electrical work, and final finishing. We ensure a seamless, functional, and stylish kitchen design, optimizing storage space and workflow for a perfect balance of aesthetics and practicality.',
+      'Looking for expert kitchen fitters in the UK? At S.L. BUILDERS LTD, we offer full-service kitchen installations, including cabinet fitting, worktop installation, plumbing, electrical work, and professional finishing. Our custom kitchen fitting solutions are designed for style, practicality, and optimal space use—delivering beautiful, functional kitchens that meet your everyday needs.',
     image: kitchenImg,
     link: '/services/kitchen-installation',
     keywords: [
@@ -32,7 +32,7 @@ const services = [
   {
     title: 'Flooring Installation',
     description:
-      'We offer hardwood, laminate, vinyl, and tile flooring installations, ensuring a smooth, durable, and perfectly leveled finish. Whether you prefer the warmth of wood or the resilience of modern vinyl, our precise craftsmanship guarantees long-lasting beauty and functionality.',
+      ' we provide professional flooring installation services across the UK, specialising in hardwood, laminate, vinyl, and tile flooring. Whether youre after the natural warmth of wood or the durability of vinyl, our expert fitters ensure a smooth, level, and long-lasting finish. Every installation is completed with precision—combining beauty, resilience, and style for high-traffic living spaces.',
     image: flooringImg,
     link: '/services/flooring',
     keywords: [
@@ -48,7 +48,7 @@ const services = [
   {
     title: 'Custom Renovations',
     description:
-      'Reimagine your home with tailor-made renovation solutions. We specialize in modernizing outdated spaces, optimizing layouts, and integrating smart home features. From wall remodeling to bespoke furniture installations, we bring style and practicality together.',
+      'Transform your home with our bespoke renovation services, tailored to your lifestyle and space. We specialize in modernising outdated interiors, reconfiguring layouts for better flow, and integrating smart home features. From structural wall remodeling to custom furniture installations, we combine style, efficiency, and long-term value in every project.',
     image: renovationImg,
     link: '/services/renovations',
     keywords: [
@@ -64,7 +64,7 @@ const services = [
   {
     title: 'Outdoor Decking Installation',
     description:
-      'Create a stunning outdoor space with our professional decking services. We use premium materials like composite, hardwood, and pressure-treated wood to deliver weather-resistant, durable, and visually striking decking solutions. Services include custom deck designs, railing installation, and waterproofing.',
+      'Enhance your garden or patio with our expert outdoor decking installation services. We build durable, weather-resistant decks using premium materials such as composite, hardwood, and pressure-treated timber. Our services include custom deck design, handrail and balustrade installation, and full waterproofing—perfect for creating stylish, functional outdoor living areas that last.',
     image: deckingImg,
     link: '/services/decking',
     keywords: [
@@ -80,7 +80,7 @@ const services = [
   {
     title: 'Staircase Renovation',
     description:
-      'Upgrade your home’s aesthetics and safety with a staircase renovation. We replace worn-out steps, install modern handrails, and reinforce structures for enhanced durability. Choose from wood, glass, or metal to match your home’s architecture while adding a modern touch.',
+      'Modernise your interior with our professional staircase renovation services. We upgrade worn or outdated stairs by replacing treads, fitting contemporary handrails, and strengthening the overall structure for long-term safety. Whether you prefer timber, glass, or metal finishes, we tailor each staircase to match your home’s design and add a sleek, modern look.',
     image: staircaseImg,
     link: '/services/staircase',
     keywords: [

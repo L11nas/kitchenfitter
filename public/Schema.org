@@ -4,14 +4,14 @@
   "@type": "LocalBusiness",
   "name": "Kitchen Fitters UK",
   "description": "Expert kitchen installations, flooring, staircases, and outdoor cladding services across the UK.",
-  "url": "https://yourwebsite.com",
-  "image": "https://yourwebsite.com/path-to-image.jpg",
+  "url": "https://slbuildersltd.co.uk",
+  "image": "https://slbuildersltd.co.uk/assets/Kitchenimg/project1/1.jpg",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "123 Main Street",
-    "addressLocality": "London",
-    "addressRegion": "Greater London",
-    "postalCode": "SW1A 1AA",
+    "streetAddress": "Annesley Rd",
+    "addressLocality": "Nottingham",
+    "addressRegion": "Nottinghamshire",
+    "postalCode": "NG15",
     "addressCountry": "UK"
   },
   "contactPoint": {
@@ -19,7 +19,7 @@
     "telephone": "+447414460648",
     "contactType": "customer service"
   },
-  "openingHours": "Mo-Sa 08:00-18:00",
+  "openingHours": "Mo-Sa 09:00-17:00",
   "priceRange": "£££",
   "geo": {
     "@type": "GeoCoordinates",
@@ -27,9 +27,8 @@
     "longitude": "-0.1278"
   },
   "sameAs": [
-    "https://www.facebook.com/KitchenFittersUK",
-    "https://www.instagram.com/KitchenFittersUK",
-    "https://www.linkedin.com/company/KitchenFittersUK"
+    "https://www.facebook.com/S.L.BUILDERS.LTD",
+   
   ]
 }
 </script>

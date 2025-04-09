@@ -93,13 +93,14 @@ export default function About() {
       <div className='about-info'>
         <h1 data-aos='fade-up'>About Us</h1>
         <p data-aos='fade-up'>
-          At S.L. BUILDERS LTD, we specialize in high-quality kitchen
-          installations, flooring, decking, and home renovations, backed by over
-          15 years of expertise. Our team of certified professionals ensures
-          precision, efficiency, and exceptional craftsmanship in every project,
-          transforming homes with durability and style. Whether you’re upgrading
-          your kitchen, enhancing your outdoor space, or renovating your entire
-          home, we deliver results that stand the test of time.
+          At S.L. BUILDERS LTD, we specialize in premium kitchen installations,
+          flooring, decking, staircases, and full home renovations—backed by
+          over 15 years of industry experience. Our team of certified
+          professionals ensures precision, efficiency, and exceptional
+          craftsmanship in every project, transforming homes with style and
+          lasting quality. Whether you're upgrading your kitchen, enhancing your
+          outdoor space, or renovating your entire property, we deliver results
+          that stand the test of time.
         </p>
       </div>
 
