@@ -1,37 +1,41 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, memo, lazy, Suspense } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { FaWhatsapp, FaSms, FaBars, FaTimes } from 'react-icons/fa';
+// Import icons only when needed - lazy load for performance
+const IconComponents = lazy(() => import('../IconComponent'));
 import '../styles/navbar.css';
 
-function Navbar() {
+// Pre-rendered placeholder for lazy-loaded icons
+const IconPlaceholder = () => <span className='icon-placeholder'></span>;
+
+const Navbar = memo(function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
+
+  // Optimize scroll listener with throttling
+  useEffect(() => {
+    let ticking = false;
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setIsScrolled(window.scrollY > 50);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   const handleLogoClick = (e) => {
     if (location.pathname === '/') {
-      e.preventDefault(); // Neleidžia įprastai naviguoti
-      window.scrollTo(0, 0); // Grąžina į viršų
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-  };
-
-  const handleHomeClick = (e) => {
-    if (location.pathname === '/') {
       e.preventDefault();
-      window.scrollTo(0, 0);
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   };
@@ -39,11 +43,13 @@ function Navbar() {
   return (
     <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
       <div className='navbar-container'>
+        {/* Optimize logo for LCP */}
         <Link
           to='/'
           className='logo'
           onClick={handleLogoClick}
           title='S.L. BUILDERS LTD - Home'
+          data-discover='true'
         >
           <span className='logo-main'>S.L. BUILDERS LTD</span>
           <br />
@@ -55,7 +61,7 @@ function Navbar() {
         <div className='desktop-nav'>
           <ul className='nav-links'>
             <li>
-              <Link to='/' onClick={handleHomeClick} title='Go to Home Page'>
+              <Link to='/' onClick={handleLogoClick} title='Go to Home Page'>
                 Home
               </Link>
             </li>
@@ -75,95 +81,69 @@ function Navbar() {
               </Link>
             </li>
           </ul>
+
           <div className='contact-links'>
-            <a
-              href='sms:+44 7414 460648'
-              className='contact-link'
-              target='_blank'
-              rel='noopener noreferrer'
-              title='Send us an SMS'
-            >
-              <FaSms aria-label='SMS' /> SMS only
-            </a>
-            <a
-              href='https://wa.me/+44 7414 460648 '
-              className='contact-link'
-              target='_blank'
-              rel='noopener noreferrer'
-              title='Chat with us on WhatsApp'
-            >
-              <FaWhatsapp aria-label='WhatsApp' /> WhatsApp only
-            </a>
+            <Suspense fallback={<IconPlaceholder />}>
+              <IconComponents type='desktop' />
+            </Suspense>
           </div>
         </div>
 
         <div className='mobile-controls'>
           <div className='mobile-contacts'>
-            <a
-              href='sms:+44 7414 460648'
-              className='mobile-contact-link'
-              target='_blank'
-              rel='noopener noreferrer'
-              title='Send us an SMS'
-            >
-              <FaSms aria-label='SMS' />
-            </a>
-            <a
-              href='https://wa.me/+44 7414 460648'
-              className='mobile-contact-link'
-              target='_blank'
-              rel='noopener noreferrer'
-              title='Chat with us on WhatsApp'
-            >
-              <FaWhatsapp aria-label='WhatsApp' />
-            </a>
+            <Suspense fallback={<IconPlaceholder />}>
+              <IconComponents type='mobile' />
+            </Suspense>
           </div>
           <div
             className='menu-toggle'
             onClick={toggleMobileMenu}
             title='Toggle Menu'
           >
-            {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
+            {isMobileMenuOpen ? '✕' : '☰'}
           </div>
         </div>
 
-        <ul className={`mobile-menu ${isMobileMenuOpen ? 'active' : ''}`}>
-          <li>
-            <Link to='/' onClick={toggleMobileMenu} title='Go to Home Page'>
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link
-              to='/about'
-              onClick={toggleMobileMenu}
-              title='Learn more About Us'
-            >
-              About
-            </Link>
-          </li>
-          <li>
-            <Link
-              to='/services'
-              onClick={toggleMobileMenu}
-              title='View our Services'
-            >
-              Services
-            </Link>
-          </li>
-          <li>
-            <Link
-              to='/projects'
-              onClick={toggleMobileMenu}
-              title='See our Latest Projects'
-            >
-              Projects
-            </Link>
-          </li>
-        </ul>
+        {/* Only render when needed */}
+        {isMobileMenuOpen && (
+          <ul className={`mobile-menu active`}>
+            <li>
+              <Link to='/' onClick={toggleMobileMenu} title='Go to Home Page'>
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link
+                to='/about'
+                onClick={toggleMobileMenu}
+                title='Learn more About Us'
+              >
+                About
+              </Link>
+            </li>
+            <li>
+              <Link
+                to='/services'
+                onClick={toggleMobileMenu}
+                title='View our Services'
+              >
+                Services
+              </Link>
+            </li>
+            <li>
+              <Link
+                to='/projects'
+                onClick={toggleMobileMenu}
+                title='See our Latest Projects'
+              >
+                Projects
+              </Link>
+            </li>
+          </ul>
+        )}
       </div>
     </nav>
   );
-}
+});
 
 export default Navbar;

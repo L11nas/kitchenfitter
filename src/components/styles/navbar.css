@@ -4,15 +4,13 @@
   left: 0;
   width: 100%;
   height: 80px;
-  background: rgba(20, 20, 20, 0.7); /* Slightly darker background */
-  backdrop-filter: blur(10px); /* Add a blur effect */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  background: rgba(20, 20, 20, 0.8); /* Slightly darker background */
+
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   z-index: 1000;
-  transition: background-color 0.3s ease; /* Add a transition for smooth color change */
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
 }
 .navbar.scrolled {
-  background: rgba(0, 0, 0, 0.8); /* Darker background when scrolled */
+  background: rgba(0, 0, 0, 0.9); /* Darker background when scrolled */
 }
 
 .navbar-container {
@@ -23,18 +21,17 @@
   max-width: 1200px; /* Add a max-width for better readability */
   margin: 0 auto; /* Center the container */
   width: 95%;
+  height: 100%;
 }
 
 .logo {
   text-decoration: none;
   color: #fff;
   margin-left: 20px;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Add a text-shadow for better readability */
+  font-display: swap;
 }
 .logo:hover {
   color: #f5a623;
-  text-shadow: 0 0 10px rgba(245, 166, 35, 0.8);
-  transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
 .logo-main {
@@ -65,13 +62,10 @@
   color: #fdfdfd;
   text-decoration: none;
   font-weight: 500;
-  transition: color 0.3s, ease-in-out; /* Add a transition for text-shadow */
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6); /* Add a text-shadow for better readability */
 }
 
 .nav-links a:hover {
   color: #ff9900;
-  text-shadow: 2px 2px 5px rgba(255, 153, 0, 1);
 }
 
 .contact-links {
@@ -86,13 +80,10 @@
   gap: 5px;
   color: #fdfdfd;
   text-decoration: none;
-  transition: color 0.3s, text-shadow 0.3s; /* Add a transition for text-shadow */
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
 }
 
 .contact-link:hover {
   color: #ff9900;
-  text-shadow: 2px 2px 5px rgba(255, 153, 0, 1);
 }
 
 /* Mobilūs kontrolės elementai */
@@ -109,7 +100,6 @@
 .mobile-contact-link {
   color: #fff;
   text-decoration: none;
-  transition: color 0.3s;
 }
 
 .mobile-contact-link:hover {
@@ -127,19 +117,13 @@
 }
 .mobile-menu a {
   color: #fdfdfd;
-  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
 }
 
 .mobile-menu a:hover {
   color: #ff9900;
-  text-shadow: 2px 2px 5px rgba(255, 153, 0, 1);
 }
 /* Responsive dizainas */
 @media (max-width: 768px) {
-  .navbar {
-    padding: 15px 20px;
-  }
-
   .desktop-nav {
     display: none;
   }
@@ -155,31 +139,22 @@
     top: 95%;
     left: 0;
     width: 95%;
-    background: linear-gradient(
-      180deg,
-      rgba(30, 30, 30, 0.85),
-      rgba(50, 50, 50, 0.75)
-    );
-    backdrop-filter: blur(20px);
+    background: rgba(30, 30, 30, 0.9);
+
     list-style: none;
     padding: 0;
     margin: 0;
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6); /* Add a box-shadow */
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
     opacity: 0;
-    transform: translateY(-20px);
-    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    transform: translateY(-10px);
+    transition: opacity 0.2s ease-out, transform 0.2s ease-out;
   }
 
   .mobile-menu.active {
     display: block;
     opacity: 1;
     transform: translateY(0);
-  }
-  .mobile-menu a:hover {
-    color: #f5a623;
-    text-shadow: 1px 1px 5px rgba(245, 166, 35, 0.6);
   }
 
   .mobile-menu li {
@@ -191,9 +166,6 @@
     color: #fff;
     text-decoration: none;
     font-weight: 500;
-    transition: color 0.3s;
-
-    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.2);
   }
 
   .mobile-menu a:hover {
@@ -208,8 +180,8 @@
 /* Extra small screens */
 @media (max-width: 480px) {
   .navbar {
-    height: 80px; /* Reduce navbar height */
-    padding: 10px 15px; /* Reduce padding */
+    height: 70px; /* Reduce navbar height */
+    padding: 5px 10px; /* Reduce padding */
   }
 
   .logo-main {
@@ -228,10 +200,6 @@
   .mobile-contact-link svg {
     width: 18px; /* Reduce icon size */
     height: 18px;
-  }
-
-  .menu-toggle {
-    font-size: 20px; /* Reduce menu toggle size */
   }
 
   .mobile-menu {
