@@ -57,7 +57,7 @@
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
   border-radius: 8px;
   color: white;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+
   margin: 20px 0 0 0;
   padding: 12px 24px;
   font-weight: 500;
@@ -67,7 +67,6 @@
 }
 .hero-cta-button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 .hero-content {
@@ -75,7 +74,7 @@
   backdrop-filter: blur(12px);
   padding: 30px;
   border-radius: 15px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+
   width: 90%; /* Use percentage instead of max-width */
   max-width: 700px; /* Still keep a max-width for larger screens */
   margin: 0 auto;
@@ -140,7 +139,6 @@
   margin-top: 15px;
   line-height: 1.6;
   font-weight: 400;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 }
 .hero-key-phrase {
   font-weight: 600;
@@ -181,7 +179,6 @@
   max-width: 350px;
   text-align: center;
   border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .hero-service-card:hover {
