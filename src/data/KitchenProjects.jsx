@@ -33,7 +33,7 @@ import kitchen28 from '/assets/Kitchenimg/project5/16.jpg';
 import kitchen29 from '/assets/Kitchenimg/project5/19.jpg';
 import kitchen30 from '/assets/Kitchenimg/project5/23.jpg';
 import kitchen31 from '/assets/Kitchenimg/project5/24.jpg';
-import kitchen32 from '/assets/Kitchenimg/project5/25.jpg';
+import kitchen32 from '/assets/Kitchenimg/project5/25.webp';
 import kitchen34 from '/assets/Kitchenimg/project5/33.jpg';
 import kitchen35 from '/assets/Kitchenimg/project5/34.jpg';
 
@@ -45,7 +45,7 @@ import kitchen39 from '/assets/Kitchenimg/project7/56.jpg';
 import kitchen40 from '/assets/Kitchenimg/project8/48.jpg';
 import kitchen41 from '/assets/Kitchenimg/project8/49.jpg';
 import kitchen42 from '/assets/Kitchenimg/project8/51.jpg';
-import kitchen43 from '/assets/Kitchenimg/project8/54.jpg';
+import kitchen43 from '/assets/Kitchenimg/project8/54.webp';
 import kitchen44 from '/assets/Kitchenimg/project8/55.jpg';
 import kitchen45 from '/assets/Kitchenimg/project7/56.jpg';
 

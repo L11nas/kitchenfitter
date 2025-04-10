@@ -197,6 +197,20 @@ main,
   color: #f39c12;
   text-decoration: underline;
 }
+.show-map-button {
+  padding: 10px 20px;
+  background-color: #f5a623;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+.show-map-button:hover {
+  background-color: #e5941f;
+}
 
 /* For smaller screens */
 @media (max-width: 768px) {
