@@ -87,14 +87,15 @@
 .hero-content h1 {
   font-size: clamp(1.8rem, 5vw, 4rem); /* Responsive font size */
   font-weight: 700;
-  color: #fff;
-  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+  color: #f0f0f0;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
   margin-bottom: 15px;
   line-height: 1.2;
 }
 .hero-main-phrase {
   position: relative;
   display: inline-block;
+  color: #f0f0f0;
 }
 
 .hero-main-phrase::after {
