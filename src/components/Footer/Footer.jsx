@@ -58,11 +58,15 @@ export default function Footer() {
           <h3>Service Area</h3>
           <div className='map-container'>
             <iframe
-              src='https://www.google.com/maps/d/u/0/embed?mid=1dJoAlYFdyWLCkoAgli21m5J6qsvyj2A&ehbc=2E312F&hl=en'
-              frameBorder='0'
+              src='https://www.google.com/maps?q=S.L.+BUILDERS+LTD,+UK&output=embed'
               width='300'
               height='250'
-            ></iframe>
+              style={{ border: 0 }}
+              allowFullScreen=''
+              loading='lazy'
+              referrerPolicy='no-referrer-when-downgrade'
+              title='S.L. BUILDERS LTD Location on Google Maps'
+            />
           </div>
         </div>
 
