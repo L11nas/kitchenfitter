@@ -6,8 +6,11 @@ import {
   FaMapMarkerAlt,
 } from 'react-icons/fa';
 import '../styles/footer.css';
+import { useState } from 'react';
 
 export default function Footer() {
+  const [showMap, setShowMap] = useState(false); // <-- čia įkelk
+
   return (
     <footer className='footer'>
       <div className='footer-container'>
@@ -57,16 +60,24 @@ export default function Footer() {
         <div className='footer-column service-area'>
           <h3>Service Area</h3>
           <div className='map-container'>
-            <iframe
-              src='https://www.google.com/maps?q=S.L.+BUILDERS+LTD,+UK&output=embed'
-              width='300'
-              height='250'
-              style={{ border: 0 }}
-              allowFullScreen=''
-              loading='lazy'
-              referrerPolicy='no-referrer-when-downgrade'
-              title='S.L. BUILDERS LTD Location on Google Maps'
-            />
+            {showMap ? (
+              <iframe
+                src='https://www.google.com/maps?q=S.L.+BUILDERS+LTD,+UK&output=embed&hl=en'
+                width='300'
+                height='250'
+                style={{ border: 0 }}
+                loading='lazy'
+                referrerPolicy='no-referrer-when-downgrade'
+                title='S.L. BUILDERS LTD Location on Google Maps'
+              />
+            ) : (
+              <button
+                className='show-map-button'
+                onClick={() => setShowMap(true)}
+              >
+                Show Map
+              </button>
+            )}
           </div>
         </div>
 
