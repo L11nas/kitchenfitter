@@ -62,20 +62,20 @@ export default function Footer() {
           <div className='map-container'>
             {showMap ? (
               <iframe
-                src='https://www.google.com/maps?q=S.L.+BUILDERS+LTD,+UK&output=embed&hl=en'
-                width='300'
-                height='250'
+                src='https://www.google.com/maps/d/u/0/embed?mid=1dJoAlYFdyWLCkoAgli21m5J6qsvyj2A&ehbc=2E312F&hl=en'
+                width='100%'
+                height='300'
                 style={{ border: 0 }}
                 loading='lazy'
                 referrerPolicy='no-referrer-when-downgrade'
-                title='S.L. BUILDERS LTD Location on Google Maps'
+                title='Our Service Areas'
               />
             ) : (
               <button
                 className='show-map-button'
                 onClick={() => setShowMap(true)}
               >
-                Show Map
+                Show Service Areas
               </button>
             )}
           </div>
