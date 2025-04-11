@@ -37,20 +37,11 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.45);
+  z-index: -2;
 }
 .hero-overlay::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    to bottom,
-    rgba(255, 255, 255, 0.3) 5%,
-    rgba(255, 255, 255, 0) 40%
-  );
+  display: none;
 }
 .hero-cta-button {
   background: linear-gradient(135deg, #ff7800, #e65100);
@@ -70,8 +61,8 @@
 }
 
 .hero-content {
-  background: rgba(255, 255, 255, 0.18);
-  backdrop-filter: blur(12px);
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: none;
   padding: 30px;
   border-radius: 15px;
 
@@ -288,9 +279,11 @@
     position: fixed;
   }
   .hero-content {
+    background: rgba(0, 0, 0, 0.6); /* Even darker on mobile */
     padding: 25px;
     width: 90%;
   }
+
   .hero-cta-button {
     padding: 10px 20px;
     width: 100%; /* Full width button on smaller screens */
@@ -298,6 +291,7 @@
   }
   .hero-projects-images img {
     width: 100%; /* 1 nuotrauka per eilutę */
+    letter-spacing: 0.5px; /* Slightly increase letter spacing for readability */
   }
   .hero-content h1 {
     font-size: 2.8rem;

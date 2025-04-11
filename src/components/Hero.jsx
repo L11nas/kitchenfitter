@@ -18,10 +18,26 @@ import './styles/hero.css';
 
 export default function Hero() {
   useEffect(() => {
-    AOS.init({
-      duration: window.innerWidth > 768 ? 500 : 300,
-      once: true,
-    });
+    if ('requestIdleCallback' in window) {
+      requestIdleCallback(() => {
+        import('aos').then((AOS) => {
+          AOS.init({
+            duration: window.innerWidth > 768 ? 500 : 300,
+            once: true,
+          });
+        });
+      });
+    } else {
+      // Jei naršyklė nepalaiko (pvz. Safari) – fallback
+      setTimeout(() => {
+        import('aos').then((AOS) => {
+          AOS.init({
+            duration: window.innerWidth > 768 ? 500 : 300,
+            once: true,
+          });
+        });
+      }, 200);
+    }
   }, []);
 
   const [isModalOpen, setIsModalOpen] = useState(false);

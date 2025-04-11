@@ -9,9 +9,9 @@
   padding-top: 100px;
   padding-bottom: 20px;
   position: relative;
-  background: linear-gradient(135deg, #2c3e50, #34495e);
-  color: white;
-  color: #333; /* Tamsiai pilkas tekstas, kad nebūtų per daug aštrus */
+  background: linear-gradient(to bottom, #2f2f2f, #1f1f1f);
+
+  color: #f8f8f8; /* arba white, jei ant tamsaus fono */
   margin-bottom: 0; /* pridėkite šią eilutę */
   padding-bottom: 0; /* pridėkite šią eilutę */
 }
@@ -57,16 +57,15 @@
   background: rgba(255, 255, 255, 0.9); /* Balta, šiek tiek peršviečiama */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Švelnus šešėlis */
+  height: 100%;
 }
 
 .flooring-card:hover {
   transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease-in-out;
 }
 /* ✅ Kortelės konteineris */
-
-.flooring-card:hover {
-  transform: scale(1.05);
-}
 
 /* ✅ Nuotrauka kortelėje */
 .flooring-card img {
@@ -81,8 +80,9 @@
   padding: 12px;
   font-size: 0.9rem;
   text-align: center;
-  color: white;
-  background: rgba(0, 0, 0, 0.4);
+
+  background: transparent;
+  color: #333;
   border-radius: 0 0 12px 12px;
   font-weight: 500;
   line-height: 1.4;
@@ -118,7 +118,7 @@
   justify-content: center;
   width: 100vh;
   max-height: 100vh; /* Prevent modal from being too tall */
-
+  border: 1px solid rgba(255, 255, 255, 0.1);
   margin-top: 20px;
   max-width: 650px;
   padding: 20px;

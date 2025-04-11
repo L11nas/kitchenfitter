@@ -1,6 +1,6 @@
 /* ✅ Pagrindinė sekcija su tinkamu fono dydžiu */
 .projects-page {
-  background: linear-gradient(135deg, #222 0%, #444 100%);
+  background: linear-gradient(to bottom, #2c2c2c, #1a1a1a);
   width: 100%;
   min-height: 100vh; /* ✅ Užtikrina, kad puslapis užims visą ekrano aukštį */
   background-size: cover;
@@ -98,7 +98,8 @@
 /* ✅ Kortelės hover efektas */
 .projects-category:hover {
   transform: scale(1.05);
-  box-shadow: 0 10px 20px rgba(255, 102, 0, 0.3);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
 }
 
 /* ✅ Kortelės fono efektas */
