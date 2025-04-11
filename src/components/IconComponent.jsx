@@ -2,23 +2,34 @@ import React from 'react';
 import { FaWhatsapp, FaSms } from 'react-icons/fa';
 
 const IconComponents = ({ type }) => {
+  const rawNumber = '447414460648';
+  const formattedNumber = '+44 7414 460648';
+
+  const handleSmsClick = (e) => {
+    e.preventDefault();
+    window.location.href = `sms:${rawNumber}`;
+  };
+
+  const handleWhatsAppClick = (e) => {
+    e.preventDefault();
+    window.open(`https://wa.me/${rawNumber}`, '_blank');
+  };
+
   if (type === 'desktop') {
     return (
       <>
         <a
-          href='sms:+44 7414 460648'
+          href='#'
+          onClick={handleSmsClick}
           className='contact-link'
-          target='_blank'
-          rel='noopener noreferrer'
           title='Send us an SMS'
         >
           <FaSms aria-label='SMS' /> SMS only
         </a>
         <a
-          href='https://wa.me/+44 7414 460648'
+          href='#'
+          onClick={handleWhatsAppClick}
           className='contact-link'
-          target='_blank'
-          rel='noopener noreferrer'
           title='Chat with us on WhatsApp'
         >
           <FaWhatsapp aria-label='WhatsApp' /> WhatsApp only
@@ -29,19 +40,17 @@ const IconComponents = ({ type }) => {
     return (
       <>
         <a
-          href='sms:+44 7414 460648'
+          href='#'
+          onClick={handleSmsClick}
           className='mobile-contact-link'
-          target='_blank'
-          rel='noopener noreferrer'
           title='Send us an SMS'
         >
           <FaSms aria-label='SMS' />
         </a>
         <a
-          href='https://wa.me/+44 7414 460648'
+          href='#'
+          onClick={handleWhatsAppClick}
           className='mobile-contact-link'
-          target='_blank'
-          rel='noopener noreferrer'
           title='Chat with us on WhatsApp'
         >
           <FaWhatsapp aria-label='WhatsApp' />

@@ -9,7 +9,20 @@ import '../styles/footer.css';
 import { useState } from 'react';
 
 export default function Footer() {
-  const [showMap, setShowMap] = useState(false); // <-- čia įkelk
+  const [showMap, setShowMap] = useState(false);
+
+  const phoneNumber = '+44 7414 460648';
+  const rawNumber = '447414460648';
+
+  const handleWhatsAppClick = (e) => {
+    e.preventDefault();
+    window.open(`https://wa.me/${rawNumber}`, '_blank');
+  };
+
+  const handleSmsClick = (e) => {
+    e.preventDefault();
+    window.location.href = `sms:${rawNumber}`;
+  };
 
   return (
     <footer className='footer'>
@@ -20,14 +33,19 @@ export default function Footer() {
           <address>
             <p>
               <FaSms aria-label='SMS icon' title='SMS' />{' '}
-              <a href='sms:+447414460648'>+44 7414 460648 (SMS only)</a>
+              <a href='#' onClick={handleSmsClick}>
+                {phoneNumber} (SMS only)
+              </a>
             </p>
             <p>
               <FaEnvelope aria-label='Email icon' title='Email' />{' '}
               <a
-                href='mailto:slbuilderswork@gmail.com'
-                target='_blank'
-                rel='noopener noreferrer'
+                href='#'
+                onClick={(e) => {
+                  e.preventDefault();
+                  const email = 'slbuilderswork' + '@' + 'gmail.com';
+                  window.location.href = `mailto:${email}`;
+                }}
                 title='Send us an email'
               >
                 slbuilderswork@gmail.com
@@ -45,9 +63,8 @@ export default function Footer() {
               <FaFacebook title='Facebook' /> <span>Facebook</span>
             </a>
             <a
-              href='https://wa.me/447414460648'
-              target='_blank'
-              rel='noopener noreferrer'
+              href='#'
+              onClick={handleWhatsAppClick}
               className='social-icon-link'
               aria-label='Chat with us on WhatsApp'
             >
@@ -108,7 +125,7 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Copyright (center, bottom) */}
+      {/* Copyright */}
       <div className='footer-copyright'>
         &copy; 2025 Kitchen Fitters UK. All rights reserved.{' '}
         <a href='/privacy-policy' className='privacy-link'>
