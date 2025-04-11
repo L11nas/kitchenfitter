@@ -34,7 +34,7 @@ export default function Footer() {
             <p>
               <FaSms aria-label='SMS icon' title='SMS' />{' '}
               <a href='#' onClick={handleSmsClick}>
-                {phoneNumber} (SMS only)
+                SMS only
               </a>
             </p>
             <p>
