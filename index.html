@@ -1,46 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <style>
-      .logo {
-        font-size: 22px;
-        font-weight: 700;
-        color: #fff;
-        font-family: system-ui, sans-serif;
-        margin-left: 20px;
-        text-decoration: none;
-      }
-      .logo-sub {
-        font-size: 14px;
-        color: #fff;
-      }
-    </style>
-    <meta
-      name="google-site-verification"
-      content="b7dkwIp3vf24ONAFjZgkM8cmCYb0R8b3ZuyK-Yc4Id4"
-    />
-
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- ✅ SEO: More Specific and Engaging Title -->
+    <!-- SEO Meta Tags -->
     <title>
       Expert Kitchen Fitters UK | Bespoke Kitchen Design & Installation
     </title>
-
-    <!-- ✅ SEO: Improved Description - More Action-Oriented -->
     <meta
       name="description"
       content="Expert kitchen installations, flooring, and renovations across the UK. Transform your home with professional craftsmanship."
     />
-
-    <!-- ✅ SEO: Refined Keywords - More Specific and Relevant -->
+    <meta name="author" content="SL Builders LTD" />
+    <meta name="robots" content="index, follow" />
     <meta
       name="keywords"
       content="kitchen fitters UK, bespoke kitchen design, kitchen installation, kitchen renovation, custom kitchen, luxury kitchen, kitchen remodel, kitchen fitter, kitchen fitter near me"
     />
 
-    <!-- ✅ Open Graph Meta Tags (For Social Media Sharing) - More Engaging -->
+    <!-- Open Graph Meta Tags -->
     <meta
       property="og:title"
       content="Expert Kitchen Fitters UK | Bespoke Kitchen Design & Installation"
@@ -49,7 +28,6 @@
       property="og:description"
       content="Transform your home with our expert kitchen fitting services in the UK. We offer bespoke kitchen design and installation. Contact us for a free quote!"
     />
-    <!-- ✅ Open Graph: Use a more descriptive image -->
     <meta
       property="og:image"
       content="https://slbuildersltd.co.uk/assets/kitchen-installation-example.jpg"
@@ -57,16 +35,34 @@
     <meta property="og:url" content="https://slbuildersltd.co.uk/" />
     <meta property="og:type" content="website" />
 
-    <!-- Robots Meta Tag (Optional, but good practice for SEO control) -->
-    <meta name="robots" content="index, follow" />
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Expert Kitchen Fitters UK | Bespoke Kitchen Design & Installation"
+    />
+    <meta
+      name="twitter:description"
+      content="Transform your home with our expert kitchen fitting services in the UK. We offer bespoke kitchen design and installation. Contact us for a free quote!"
+    />
+    <meta
+      name="twitter:image"
+      content="https://slbuildersltd.co.uk/assets/kitchen-installation-example.jpg"
+    />
 
-    <!-- ✅ Favicon: Corrected Path (Assuming it's in the 'public' folder) -->
-    <link rel="icon" type="image/png" href="/assets/logo.png" />
-
-    <!-- Canonical URL (Good Practice) -->
+    <!-- Canonical URL -->
     <link rel="canonical" href="https://slbuildersltd.co.uk/" />
 
-    <!-- ✅ Structured Data - JSON-LD Schema (Optional for better visibility) -->
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/assets/logo.png" />
+
+    <!-- Google Site Verification -->
+    <meta
+      name="google-site-verification"
+      content="b7dkwIp3vf24ONAFjZgkM8cmCYb0R8b3ZuyK-Yc4Id4"
+    />
+
+    <!-- Structured Data: Organization -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -80,16 +76,39 @@
         ]
       }
     </script>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
 
-    <!-- ✅ Google Analytics: Add your GA Tracking Code -->
-    <!-- Google tag (gtag.js) -->
+    <!-- Structured Data: LocalBusiness -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "SL Builders LTD",
+        "image": "https://slbuildersltd.co.uk/assets/logo.png",
+        "url": "https://slbuildersltd.co.uk",
+        "telephone": "+44 7414 460648",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Daniels Way",
+          "addressLocality": "Nottingham",
+          "addressRegion": "Nottinghamshire",
+          "postalCode": "NG15 7LL",
+          "addressCountry": "GB"
+        },
+        "areaServed": [
+          { "@type": "Place", "name": "Lincolnshire, UK" },
+          { "@type": "Place", "name": "Nottinghamshire, UK" },
+          { "@type": "Place", "name": "Leicestershire, UK" },
+          { "@type": "Place", "name": "Doncaster, UK" },
+          { "@type": "Place", "name": "Hucknall, UK" },
+          { "@type": "Place", "name": "Leeds, UK" }
+        ]
+      }
+    </script>
+
+    <!-- Google Analytics GA4 -->
     <script
       async
-      src="https://www.googletagmanager.com/gtag/js?id=G-1R8LMGQD61"
+      src="https://www.googletagmanager.com/gtag/js?id=G-DYHBRH3BWH"
     ></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -97,8 +116,15 @@
         dataLayer.push(arguments);
       }
       gtag('js', new Date());
-
       gtag('config', 'G-DYHBRH3BWH');
     </script>
+  </head>
+
+  <body>
+    <!-- React "Mount Point" -->
+    <div id="root"></div>
+
+    <!-- React / Vite Entry Point -->
+    <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
