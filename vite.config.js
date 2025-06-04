@@ -3,5 +3,6 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
-  base: '/', // 🔥 Užtikrina, kad maršrutai veiktų tinkamai
+  base: '/',
+  publicDir: 'public', // 🔥 Tai būtina, kad public failai būtų nukopijuoti į dist/
 });
