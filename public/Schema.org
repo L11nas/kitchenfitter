@@ -20,14 +20,14 @@
     "contactType": "customer service"
   },
   "openingHours": "Mo-Sa 09:00-17:00",
-  "priceRange": "£££",
+  "priceRange": "££",
   "geo": {
     "@type": "GeoCoordinates",
-    "latitude": "51.5074",
-    "longitude": "-0.1278"
+    "latitude": "53.0006",
+    "longitude": "-1.1970"
   },
   "sameAs": [
-    "https://www.facebook.com/S.L.BUILDERS.LTD",
+    "https://www.facebook.com/S.L.BUILDERS.LTD"
    
   ]
 }
