@@ -2,8 +2,9 @@
 {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  "name": "Kitchen Fitters UK",
-  "description": "Expert kitchen installations, flooring, staircases, and outdoor cladding services across the UK.",
+  "name": "SL Builders LTD",
+  "alternateName": ["Kitchen Fitters UK", "slbuildersltd", "sl.builders.ltd"],
+  "description": "SL Builders LTD – expert kitchen installations, flooring, staircases, and outdoor cladding services across the UK.",
   "url": "https://slbuildersltd.co.uk",
   "image": "https://slbuildersltd.co.uk/assets/Kitchenimg/project1/1.jpg",
   "address": {
@@ -28,7 +29,6 @@
   },
   "sameAs": [
     "https://www.facebook.com/S.L.BUILDERS.LTD"
-   
   ]
 }
 </script>
