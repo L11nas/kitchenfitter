@@ -48,10 +48,10 @@ const Navbar = memo(function Navbar() {
           to='/'
           className='logo'
           onClick={handleLogoClick}
-          title='S.L. BUILDERS LTD - Home'
+          title='SL BUILDERS LTD - Home'
           data-discover='true'
         >
-          <span className='logo-main'>S.L. BUILDERS LTD</span>
+          <span className='logo-main'>SL BUILDERS LTD</span>
           <br />
           <span className='logo-sub'>
             Kitchen Installations, Flooring & Home Renovations.

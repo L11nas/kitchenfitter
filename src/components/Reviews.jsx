@@ -84,7 +84,7 @@ export default function Reviews() {
   return (
     <section className='reviews-section'>
       <Helmet>
-        <title>Customer Reviews - S.L. Builders</title>
+        <title>Customer Reviews - SL Builders LTD</title>
         <meta
           name='description'
           content="Read real customer reviews about S.L. Builders' services. High-quality work and professional service."
