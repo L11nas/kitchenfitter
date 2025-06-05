@@ -1,0 +1,67 @@
+/* CityPage.css */
+
+.city-page {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+/* Hero užima visą sekciją – nuo krašto iki krašto */
+.city-banner {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Tamsus overlay per visą foną */
+.city-banner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(
+    20,
+    20,
+    20,
+    0.55
+  ); /* arba daugiau/mažiau priklausomai nuo nuotraukos */
+  z-index: 1;
+}
+
+/* Kortelė virš overlay */
+.city-content {
+  position: relative;
+  z-index: 2;
+  background: rgba(30, 30, 30, 0.85); /* tamsesnis, mažiau permatomas */
+  color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 24px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.32);
+  max-width: 800px;
+  width: 90%;
+  text-align: center;
+  backdrop-filter: blur(2px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.city-content h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+.city-content .city-icon {
+  font-size: 3rem;
+  margin-bottom: 1.2rem;
+  color: #ffc107; /* geltona kaip pavyzdyje */
+}
+.city-content p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  color: #fff;
+}

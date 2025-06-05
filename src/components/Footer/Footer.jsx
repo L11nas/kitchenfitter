@@ -104,20 +104,27 @@ export default function Footer() {
           <div className='service-areas-container'>
             <ul className='service-areas'>
               {[
-                'Lincolnshire, UK',
-                'Nottinghamshire, UK',
-                'Leicestershire, UK',
-                'Doncaster, UK',
-                'Hucknall, UK',
-                'Leeds, UK',
+                { name: 'Lincolnshire, UK', path: '/lincolnshire' },
+                { name: 'Nottinghamshire, UK', path: '/nottingham' },
+                { name: 'Leicestershire, UK', path: '/leicestershire' },
+                { name: 'Doncaster, UK', path: '/doncaster' },
+                { name: 'Hucknall, UK', path: '/hucknall' },
+                { name: 'Leeds, UK', path: '/leeds' },
               ].map((area, index) => (
                 <li key={index}>
                   <FaMapMarkerAlt
                     className='location-icon'
-                    aria-label={`Location: ${area}`}
-                    title={area}
+                    aria-label={`Location: ${area.name}`}
+                    title={area.name}
                   />{' '}
-                  {area}
+                  <a
+                    href={area.path}
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    className='location-link'
+                  >
+                    {area.name}
+                  </a>
                 </li>
               ))}
             </ul>

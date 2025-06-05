@@ -15,6 +15,12 @@ import StaircaseProjects from './pages/projects/Staircase';
 import CustomProjects from './pages/projects/Custom';
 import { HelmetProvider } from 'react-helmet-async';
 import ScrollToTopButton from './components/ScrollToTopButton';
+import Leeds from './pages/cities/Leeds';
+import Nottingham from './pages/cities/Nottingham';
+import Hucknall from './pages/cities/Hucknall';
+import Doncaster from './pages/cities/Doncaster';
+import Lincolnshire from './pages/cities/Lincolnshire';
+import Leicestershire from './pages/cities/Leicestershire';
 
 export default function App() {
   return (
@@ -34,6 +40,12 @@ export default function App() {
           <Route path='/projects/custom' element={<CustomProjects />} />
           <Route path='/cookie-policy' element={<CookieConsent />} />
           <Route path='/privacy-policy' element={<PrivacyPolicity />} />
+          <Route path='/leeds' element={<Leeds />} />
+          <Route path='/nottingham' element={<Nottingham />} />
+          <Route path='/hucknall' element={<Hucknall />} />
+          <Route path='/doncaster' element={<Doncaster />} />
+          <Route path='/lincolnshire' element={<Lincolnshire />} />
+          <Route path='/leicestershire' element={<Leicestershire />} />
         </Routes>
         <ScrollToTopButton />
         <Footer />
