@@ -132,11 +132,7 @@
   line-height: 1.6;
   font-weight: 400;
 }
-.hero-key-phrase {
-  font-weight: 600;
-  color: #fff;
-  text-shadow: 0 0 10px rgba(255, 204, 51, 0.5);
-}
+
 /* 🔹 HERO SERVICES SECTION */
 .hero-services {
   padding: 20px;
