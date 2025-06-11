@@ -81,11 +81,9 @@ export default function Hero() {
           </h1>
 
           <p>
-            Our <span className='hero-key-phrase'>skilled professionals</span>{' '}
-            specialize in kitchen installations, flooring, staircases, and
-            exterior cladding, delivering{' '}
-            <span className='hero-key-phrase'>high-quality</span> renovations
-            throughout the UK
+            Our skilled professionals specialize in kitchen installations,
+            flooring, staircases, and exterior cladding, delivering high-quality
+            renovations throughout the UK
           </p>
           <button
             className='hero-cta-button'
