@@ -6,7 +6,7 @@ export default function Nottingham() {
   return (
     <div className='city-page'>
       <Helmet>
-        <title>Kitchen Renovation in Nottingham | SL Builders LTD</title>
+        <title>Kitchen Renovation in Nottingham | S.L. Builders LTD</title>
         <meta
           name='description'
           content='Top-rated kitchen fitters in Nottingham. Bespoke kitchen design, full installation & renovations tailored to your home.'
@@ -31,7 +31,7 @@ export default function Nottingham() {
             lasting quality in every installation.
           </p>
           <p>
-            Whether you're renovating your home or fitting a new kitchen, SL
+            Whether you're renovating your home or fitting a new kitchen, S.L.
             Builders LTD in Nottingham delivers reliable, professional results.
           </p>
           <p>

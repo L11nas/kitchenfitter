@@ -6,10 +6,10 @@ export default function Doncaster() {
   return (
     <div className='city-page'>
       <Helmet>
-        <title>Kitchen Renovation in Doncaster | SL Builders LTD</title>
+        <title>Kitchen Renovation in Doncaster | S.L. Builders LTD</title>
         <meta
           name='description'
-          content='Leading kitchen fitters in Doncaster. SL Builders LTD offers tailored kitchen renovations, custom design, and professional installations.'
+          content='Leading kitchen fitters in Doncaster. S.L. Builders LTD offers tailored kitchen renovations, custom design, and professional installations.'
         />
         <link rel='canonical' href='https://slbuildersltd.co.uk/doncaster' />
       </Helmet>
@@ -26,7 +26,7 @@ export default function Doncaster() {
           </span>
           <h1>Professional Kitchen Fitters in Doncaster</h1>
           <p>
-            At SL Builders LTD, we provide expert kitchen renovations in
+            At S.L. Builders LTD, we provide expert kitchen renovations in
             Doncaster. Whether you're planning a complete transformation or
             upgrading specific elements, we ensure a perfect finish.
           </p>

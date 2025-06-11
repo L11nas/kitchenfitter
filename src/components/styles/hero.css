@@ -144,7 +144,7 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 20px;
-  color: #fff;
+  color: #f2f2f2;
   border-radius: 15px;
 }
 

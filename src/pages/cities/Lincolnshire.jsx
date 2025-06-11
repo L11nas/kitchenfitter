@@ -6,10 +6,10 @@ export default function Lincolnshire() {
   return (
     <div className='city-page'>
       <Helmet>
-        <title>Kitchen Renovation in Lincolnshire | SL Builders LTD</title>
+        <title>Kitchen Renovation in Lincolnshire | S.L. Builders LTD</title>
         <meta
           name='description'
-          content='Trusted kitchen fitters in Lincolnshire. SL Builders LTD provides bespoke kitchen renovations and installations across the region.'
+          content='Trusted kitchen fitters in Lincolnshire. S.L. Builders LTD provides bespoke kitchen renovations and installations across the region.'
         />
         <link rel='canonical' href='https://slbuildersltd.co.uk/lincolnshire' />
       </Helmet>
@@ -26,7 +26,7 @@ export default function Lincolnshire() {
           </span>
           <h1>Top Kitchen Fitters in Lincolnshire</h1>
           <p>
-            SL Builders LTD delivers high-end kitchen renovation services
+            S.L. Builders LTD delivers high-end kitchen renovation services
             throughout Lincolnshire. From traditional to modern styles, our
             custom approach ensures every kitchen fits your lifestyle.
           </p>

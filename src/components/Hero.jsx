@@ -74,9 +74,12 @@ export default function Hero() {
         <div className='hero-overlay'></div>
         <div className='hero-content'>
           <h1>
-            Transform Your Home with{' '}
-            <span className='hero-main-phrase'>Expert Craftsmanship</span>
+            Expert Kitchen Fitters in the UK{' '}
+            <span className='hero-main-phrase'>
+              Bespoke Installation & Renovation
+            </span>
           </h1>
+
           <p>
             Our <span className='hero-key-phrase'>skilled professionals</span>{' '}
             specialize in kitchen installations, flooring, staircases, and
@@ -88,11 +91,29 @@ export default function Hero() {
             className='hero-cta-button'
             onClick={() => setIsModalOpen(true)}
           >
-            Get a consultation
+            Get a free consultation
           </button>
         </div>
         <section className='hero-services' data-aos='fade-up'>
-          <h2>Our Services Precision & Style in Every Project</h2>
+          <h2>Why Choose S.L. Builders LTD for Kitchen Installations?</h2>
+          <p>
+            At S.L. Builders LTD, we specialize in expert kitchen fitting
+            services across <strong>Nottingham</strong>, <strong>Leeds</strong>,{' '}
+            <strong>Doncaster</strong> and beyond. With years of experience in
+            bespoke kitchen design and renovation, our team delivers exceptional
+            craftsmanship, attention to detail, and premium-quality materials in
+            every project. Whether you’re planning a full renovation or a simple
+            upgrade, our services cover flooring, staircase refurbishment,
+            decking, and more.
+          </p>
+          <p>
+            We work closely with homeowners to ensure every installation is
+            tailored to your lifestyle and design preferences. Our clients
+            appreciate fast turnarounds, durable finishes, and our commitment to
+            transforming living spaces with both function and elegance. Contact
+            us today for a free consultation and see how we can transform your
+            home.
+          </p>
           <div className='hero-services-cards'>
             <article className='hero-service-card' data-aos='zoom-in'>
               <FaTools size={40} aria-hidden='true' />

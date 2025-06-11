@@ -83,7 +83,7 @@ export default function About() {
         </title>
         <meta
           name='description'
-          content='Learn about SL BUILDERS LTD, your trusted experts for kitchen installations, flooring, decking, and home renovations. Discover our commitment to quality and craftsmanship.'
+          content='Learn about S.L. BUILDERS LTD, your trusted experts for kitchen installations, flooring, decking, and home renovations. Discover our commitment to quality and craftsmanship.'
         />
         <meta
           name='keywords'
@@ -93,7 +93,7 @@ export default function About() {
       <div className='about-info'>
         <h1 data-aos='fade-up'>About Us</h1>
         <p data-aos='fade-up'>
-          At SL BUILDERS LTD, we specialize in premium kitchen installations,
+          At S.L. BUILDERS LTD, we specialize in premium kitchen installations,
           flooring, decking, staircases, and full home renovations—backed by
           over 15 years of industry experience. Our team of certified
           professionals ensures precision, efficiency, and exceptional

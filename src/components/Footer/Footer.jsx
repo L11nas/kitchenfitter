@@ -7,6 +7,7 @@ import {
 } from 'react-icons/fa';
 import '../styles/footer.css';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Footer() {
   const [showMap, setShowMap] = useState(false);
@@ -117,27 +118,59 @@ export default function Footer() {
                     aria-label={`Location: ${area.name}`}
                     title={area.name}
                   />{' '}
-                  <a
-                    href={area.path}
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    className='location-link'
-                  >
+                  <Link to={area.path} className='location-link'>
                     {area.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
           </div>
         </div>
       </div>
+      <div className='social-sharing' aria-label='Share on Facebook'>
+        <p>Share our page</p>
+        <a
+          href='https://www.facebook.com/S.L.BUILDERS.LTD'
+          target='_blank'
+          rel='noopener noreferrer'
+          className='social-share-button'
+        >
+          Facebook
+        </a>
+        <a
+          href='https://wa.me/?text=Check%20out%20this%20kitchen%20fitting%20company:%20https://slbuildersltd.co.uk'
+          target='_blank'
+          rel='noopener noreferrer'
+          className='social-share-button'
+        >
+          Share via WhatsApp
+        </a>
+
+        <a
+          href='#'
+          onClick={(e) => {
+            e.preventDefault();
+            const email = 'slbuilderswork' + '@' + 'gmail.com';
+            const subject = encodeURIComponent(
+              'Check this site: Kitchen Fitters UK'
+            );
+            const body = encodeURIComponent(
+              'Visit: https://slbuildersltd.co.uk'
+            );
+            window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
+          }}
+          className='social-share-button'
+        >
+          Share via Email
+        </a>
+      </div>
 
       {/* Copyright */}
       <div className='footer-copyright'>
         &copy; 2025 Kitchen Fitters UK. All rights reserved.{' '}
-        <a href='/privacy-policy' className='privacy-link'>
+        <Link to='/privacy-policy' className='privacy-link'>
           Privacy Policy
-        </a>
+        </Link>
       </div>
     </footer>
   );

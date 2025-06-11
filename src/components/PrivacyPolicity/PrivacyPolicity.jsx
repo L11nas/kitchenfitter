@@ -19,8 +19,8 @@ const PrivacyPolicy = () => {
         <section>
           <h2>Introduction</h2>
           <p>
-            Welcome to SL BUILDERS LTD ("we," "our," or "us"). We are committed
-            to protecting your privacy and providing you with a secure
+            Welcome to S.L. BUILDERS LTD ("we," "our," or "us"). We are
+            committed to protecting your privacy and providing you with a secure
             experience when using our website and services. This Privacy Policy
             explains how we collect, use, and protect your personal information
             when you visit our website or use our services.
@@ -35,7 +35,7 @@ const PrivacyPolicy = () => {
         <section>
           <h2>Who We Are</h2>
           <p>
-            [SL BUILDERS LTD] provides kitchen installation, flooring, and
+            [S.L. BUILDERS LTD] provides kitchen installation, flooring, and
             outdoor cladding services in the United Kingdom. We are registered
             as a data controller with the Information Commissioner's Office
             (ICO) under registration number.

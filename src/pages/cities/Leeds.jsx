@@ -6,10 +6,10 @@ export default function Leeds() {
   return (
     <div className='city-page'>
       <Helmet>
-        <title>Kitchen Renovation in Leeds | SL Builders LTD</title>
+        <title>Kitchen Renovation in Leeds | S.L. Builders LTD</title>
         <meta
           name='description'
-          content='Professional kitchen renovation, design, and installation in Leeds. SL Builders LTD offers bespoke, high-quality solutions for your home.'
+          content='Professional kitchen renovation, design, and installation in Leeds. S.L. Builders LTD offers bespoke, high-quality solutions for your home.'
         />
         <link rel='canonical' href='https://slbuildersltd.co.uk/leeds' />
       </Helmet>
@@ -31,7 +31,7 @@ export default function Leeds() {
             – we ensure a perfect finish every time.
           </p>
           <p>
-            Whether you live in Headingley, Beeston, Roundhay or nearby, SL
+            Whether you live in Headingley, Beeston, Roundhay or nearby, S.L.
             Builders LTD is ready to help bring your kitchen vision to life.
           </p>
           <p>

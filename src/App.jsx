@@ -21,11 +21,13 @@ import Hucknall from './pages/cities/Hucknall';
 import Doncaster from './pages/cities/Doncaster';
 import Lincolnshire from './pages/cities/Lincolnshire';
 import Leicestershire from './pages/cities/Leicestershire';
+import ScrollToTop from './components/ScrollToTop';
 
 export default function App() {
   return (
     <HelmetProvider>
       <Router>
+        <ScrollToTop />
         <Navbar />
 
         <Routes>

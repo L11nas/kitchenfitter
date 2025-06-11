@@ -6,10 +6,10 @@ export default function Leicestershire() {
   return (
     <div className='city-page'>
       <Helmet>
-        <title>Kitchen Renovation in Leicestershire | SL Builders LTD</title>
+        <title>Kitchen Renovation in Leicestershire | S.L. Builders LTD</title>
         <meta
           name='description'
-          content='Reliable kitchen fitters in Leicestershire. SL Builders LTD offers expert kitchen design, installation, and renovation services throughout the county.'
+          content='Reliable kitchen fitters in Leicestershire. S.L. Builders LTD offers expert kitchen design, installation, and renovation services throughout the county.'
         />
         <link
           rel='canonical'
@@ -29,9 +29,9 @@ export default function Leicestershire() {
           </span>
           <h1>Professional Kitchen Fitters in Leicestershire</h1>
           <p>
-            At SL Builders LTD, we provide comprehensive kitchen renovations in
-            Leicestershire — from tailored design concepts to full installation
-            and project management.
+            At S.L. Builders LTD, we provide comprehensive kitchen renovations
+            in Leicestershire — from tailored design concepts to full
+            installation and project management.
           </p>
           <p>
             Whether you live in Leicester, Loughborough, Hinckley, or

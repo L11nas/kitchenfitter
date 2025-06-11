@@ -6,7 +6,7 @@ export default function Hucknall() {
   return (
     <div className='city-page'>
       <Helmet>
-        <title>Kitchen Renovation in Hucknall | SL Builders LTD</title>
+        <title>Kitchen Renovation in Hucknall | S.L. Builders LTD</title>
         <meta
           name='description'
           content='Professional kitchen fitters in Hucknall. We offer full kitchen renovations, custom design, and expert installations tailored to your needs.'
@@ -26,7 +26,7 @@ export default function Hucknall() {
           </span>
           <h1>Reliable Kitchen Fitters in Hucknall</h1>
           <p>
-            SL Builders LTD brings premium kitchen fitting and renovation
+            S.L. Builders LTD brings premium kitchen fitting and renovation
             services to Hucknall and surrounding areas. We specialize in
             tailored designs and flawless installations.
           </p>
