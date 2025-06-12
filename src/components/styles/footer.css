@@ -212,31 +212,47 @@ main,
   background-color: #e5941f;
 }
 .social-sharing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin-top: 20px;
-  text-align: center;
-  color: #fff;
 }
 
 .social-sharing p {
+  margin-bottom: 10px;
   font-weight: bold;
-  margin-bottom: 8px;
 }
 
-.social-share-button {
-  display: inline-block;
-  margin-right: 10px;
-  margin-bottom: 8px;
-  padding: 6px 12px;
-  background-color: #4267b2; /* Facebook default */
-  border-radius: 5px;
+.social-sharing a.social-share-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 15px;
+  background-color: #0072c6; /* pradiniam Facebook stiliui */
   color: #fff;
+  border-radius: 5px;
   text-decoration: none;
-  font-weight: 500;
   font-size: 14px;
+  transition: background-color 0.3s ease;
 }
 
-.social-share-button:hover {
-  opacity: 0.85;
+.social-sharing a.social-share-button:nth-child(3) {
+  background-color: #0072c6; /* WhatsApp spalva */
+}
+
+.social-sharing a.social-share-button:nth-child(4) {
+  background-color: #0072c6; /* Email – švelni mėlyna */
+}
+
+.social-sharing a.social-share-button:hover {
+  opacity: 0.9;
+}
+
+.social-sharing-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 /* For smaller screens */

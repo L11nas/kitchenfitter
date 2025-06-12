@@ -127,42 +127,42 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div className='social-sharing' aria-label='Share on Facebook'>
-        <p>Share our page</p>
-        <a
-          href='https://www.facebook.com/S.L.BUILDERS.LTD'
-          target='_blank'
-          rel='noopener noreferrer'
-          className='social-share-button'
-        >
-          Facebook
-        </a>
-        <a
-          href='https://wa.me/?text=Check%20out%20this%20kitchen%20fitting%20company:%20https://slbuildersltd.co.uk'
-          target='_blank'
-          rel='noopener noreferrer'
-          className='social-share-button'
-        >
-          Share via WhatsApp
-        </a>
-
-        <a
-          href='#'
-          onClick={(e) => {
-            e.preventDefault();
-            const email = 'slbuilderswork' + '@' + 'gmail.com';
-            const subject = encodeURIComponent(
-              'Check this site: Kitchen Fitters UK'
-            );
-            const body = encodeURIComponent(
-              'Visit: https://slbuildersltd.co.uk'
-            );
-            window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
-          }}
-          className='social-share-button'
-        >
-          Share via Email
-        </a>
+      <div className='social-sharing' aria-label='Share this page via social'>
+        <p>Send this page via:</p>
+        <div className='social-sharing-buttons'>
+          <a
+            href='https://www.facebook.com/sharer/sharer.php?u=https://slbuildersltd.co.uk'
+            target='_blank'
+            rel='noopener noreferrer'
+            className='social-share-button'
+          >
+            <FaFacebook /> Share via Facebook
+          </a>
+          <a
+            href='https://wa.me/?text=Check%20out%20this%20kitchen%20fitting%20company:%20https://slbuildersltd.co.uk'
+            target='_blank'
+            rel='noopener noreferrer'
+            className='social-share-button'
+          >
+            <FaWhatsapp /> Share via WhatsApp
+          </a>
+          <a
+            href='#'
+            onClick={(e) => {
+              e.preventDefault();
+              const subject = encodeURIComponent(
+                'Check this site: Kitchen Fitters UK'
+              );
+              const body = encodeURIComponent(
+                'Visit: https://slbuildersltd.co.uk'
+              );
+              window.location.href = `mailto:?subject=${subject}&body=${body}`;
+            }}
+            className='social-share-button'
+          >
+            <FaEnvelope /> Share via Email
+          </a>
+        </div>
       </div>
 
       {/* Copyright */}
