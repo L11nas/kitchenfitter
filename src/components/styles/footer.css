@@ -1,3 +1,4 @@
+/* ================= FOOTER ================= */
 .footer {
   margin: 0;
   padding: 56px 6% 24px;
@@ -10,35 +11,20 @@
   align-items: center;
   text-align: center;
   z-index: 10;
-  clear: both;
   border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
-body {
-  position: relative;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-main,
-#root,
-.App {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
+/* ================= CONTAINER ================= */
 .footer-container {
   display: flex;
   justify-content: center;
   width: 100%;
   max-width: 1240px;
-  text-align: center;
   gap: 32px;
   flex-wrap: wrap;
 }
 
+/* ================= COLUMNS ================= */
 .footer-column {
   flex: 1;
   min-width: 280px;
@@ -53,12 +39,10 @@ main,
 .footer-column h3 {
   font-size: 1.3rem;
   font-weight: 700;
-  line-height: 1.4;
   margin-bottom: 18px;
   color: #f7c35f;
   position: relative;
   padding-bottom: 12px;
-  text-align: center;
 }
 
 .footer-column h3::after {
@@ -73,7 +57,7 @@ main,
   border-radius: 999px;
 }
 
-/* Contact info */
+/* ================= CONTACT ================= */
 .contact-info address {
   font-style: normal;
 }
@@ -84,11 +68,11 @@ main,
   text-decoration: none;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
   margin-bottom: 10px;
   transition: color 0.25s ease;
   line-height: 1.6;
-  justify-content: center;
 }
 
 .contact-info a:hover {
@@ -97,10 +81,9 @@ main,
 
 .contact-info svg {
   color: #f7c35f;
-  flex-shrink: 0;
 }
 
-/* Social links */
+/* ================= SOCIAL ================= */
 .social-icons {
   display: flex;
   flex-direction: column;
@@ -118,9 +101,9 @@ main,
   border-radius: 10px;
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.06);
-  transition: all 0.25s ease;
   min-width: 220px;
   color: rgba(255, 255, 255, 0.92);
+  transition: all 0.25s ease;
 }
 
 .social-icon-link:hover {
@@ -135,20 +118,16 @@ main,
   color: #f7c35f;
 }
 
-/* Map */
-.service-area {
-  text-align: center;
-}
-
+/* ================= MAP ================= */
 .map-container {
   border-radius: 16px;
   overflow: hidden;
-  transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease;
   width: 100%;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.06);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 .map-container iframe {
@@ -168,11 +147,10 @@ main,
   padding: 14px 18px;
   background: #f7c35f;
   color: #111418;
-  border: none;
   border-radius: 12px;
-  cursor: pointer;
   font-weight: 700;
   font-size: 0.98rem;
+  cursor: pointer;
   transition: all 0.25s ease;
 }
 
@@ -181,19 +159,15 @@ main,
   transform: translateY(-1px);
 }
 
-/* Service areas */
-.service-areas-container {
-  width: 100%;
-}
-
+/* ================= SERVICE AREAS ================= */
 .service-areas {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 10px;
-  padding: 0;
   list-style: none;
   margin-top: 15px;
+  padding: 0;
 }
 
 .service-areas li {
@@ -216,24 +190,19 @@ main,
 .location-icon {
   color: #f7c35f;
   font-size: 0.92rem;
-  flex-shrink: 0;
 }
 
 .location-link {
   color: rgba(255, 255, 255, 0.92);
   text-decoration: none;
-  transition: color 0.25s ease;
 }
 
 .location-link:hover {
   color: #f7c35f;
 }
 
-/* Share section */
+/* ================= SHARE ================= */
 .social-sharing {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   margin-top: 34px;
   padding-top: 26px;
   border-top: 1px solid rgba(255, 255, 255, 0.06);
@@ -254,7 +223,7 @@ main,
   justify-content: center;
 }
 
-.social-sharing a.social-share-button {
+.social-share-button {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -262,36 +231,29 @@ main,
   background: rgba(255, 255, 255, 0.04);
   color: rgba(255, 255, 255, 0.92);
   border-radius: 10px;
-  text-decoration: none;
   font-size: 0.95rem;
   font-weight: 600;
   border: 1px solid rgba(255, 255, 255, 0.06);
   transition: all 0.25s ease;
 }
 
-.social-sharing a.social-share-button:hover {
+.social-share-button:hover {
   background: rgba(247, 195, 95, 0.08);
   color: #f7c35f;
   border-color: rgba(247, 195, 95, 0.22);
   transform: translateY(-2px);
 }
 
-.social-sharing a.social-share-button svg {
-  color: #f7c35f;
-}
-
-/* Copyright */
+/* ================= COPYRIGHT ================= */
 .footer-copyright {
   font-size: 0.92rem;
   margin-top: 28px;
-  text-align: center;
   padding-top: 18px;
   border-top: 1px solid rgba(255, 255, 255, 0.06);
   width: 100%;
   max-width: 1240px;
   display: flex;
   justify-content: center;
-  align-items: center;
   gap: 10px;
   flex-wrap: wrap;
   color: rgba(255, 255, 255, 0.72);
@@ -308,14 +270,10 @@ main,
   text-decoration: underline;
 }
 
-/* Tablet */
+/* ================= RESPONSIVE ================= */
 @media (max-width: 900px) {
   .footer {
     padding: 46px 5% 22px;
-  }
-
-  .footer-container {
-    gap: 24px;
   }
 
   .footer-column {
@@ -324,7 +282,6 @@ main,
   }
 }
 
-/* Mobile */
 @media (max-width: 768px) {
   .footer-container {
     display: grid;
@@ -332,42 +289,22 @@ main,
     gap: 22px;
   }
 
-  .footer-column {
-    text-align: center;
-    margin-bottom: 6px;
-  }
-
-  .contact-info p,
-  .contact-info a {
-    justify-content: center;
-  }
-
-  .social-icons {
-    align-items: center;
-  }
-
   .social-icon-link {
     width: 100%;
     max-width: 280px;
   }
 
-  .service-areas {
-    gap: 8px;
-  }
-
   .service-areas li {
     width: calc(50% - 4px);
     justify-content: center;
-    box-sizing: border-box;
   }
 
   .social-sharing-buttons {
     flex-direction: column;
-    width: 100%;
     align-items: center;
   }
 
-  .social-sharing a.social-share-button {
+  .social-share-button {
     width: 100%;
     max-width: 320px;
     justify-content: center;
@@ -377,10 +314,6 @@ main,
 @media (max-width: 480px) {
   .footer {
     padding: 40px 16px 20px;
-  }
-
-  .footer-column h3 {
-    font-size: 1.16rem;
   }
 
   .service-areas li {

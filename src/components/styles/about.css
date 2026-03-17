@@ -15,7 +15,11 @@
   margin-bottom: 0; /* pridėkite šią eilutę */
   padding-bottom: 0; /* pridėkite šią eilutę */
 }
-
+html,
+body,
+#root {
+  background: #111418;
+}
 /* Overlay efektas suteikia lengvą spalvos perėjimą */
 .about::before {
   content: '';
@@ -67,7 +71,9 @@
   backdrop-filter: blur(15px);
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
   text-align: center;
   z-index: 1;
   color: #fff;
