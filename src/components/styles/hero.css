@@ -3,121 +3,240 @@
   min-height: 100dvh;
   position: relative;
   z-index: 1;
-  padding: 20px;
-  padding-top: 100px;
+  padding: 110px 20px 70px;
   overflow: hidden;
-  margin-bottom: 0;
-  padding-bottom: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  margin-bottom: 0; /* pridėkite šią eilutę */
-  padding-bottom: 0; /* pridėkite šią eilutę */
+  justify-content: flex-start;
 }
-.hero-container::before {
-  position: fixed;
-}
+
 .hero-fixed-bg {
   position: fixed;
-  top: 0;
-  left: 0;
+  inset: 0;
   width: 100%;
   height: 100%;
-  background: url('/public/assets/Kitchenimg/background.webp') no-repeat center
-    center;
+  background: url('/assets/Kitchenimg/background.webp') no-repeat center center;
   background-size: cover;
-  background-attachment: fixed;
   z-index: -5;
   pointer-events: none;
 }
+
 .hero-overlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.45);
+  inset: 0;
+  background: rgba(0, 0, 0, 0.58);
   z-index: -2;
-}
-.hero-overlay::after {
-  display: none;
-}
-.hero-cta-button {
-  background: linear-gradient(135deg, #ff7800, #e65100);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-  border-radius: 8px;
-  color: white;
-
-  margin: 20px 0 0 0;
-  padding: 12px 24px;
-  font-weight: 500;
-  letter-spacing: 0.5px;
-  border: none;
-  transition: all 0.3s ease;
-}
-.hero-cta-button:hover {
-  transform: translateY(-2px);
 }
 
 .hero-content {
-  background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: none;
-  padding: 30px;
-  border-radius: 15px;
-
-  width: 90%; /* Use percentage instead of max-width */
-  max-width: 700px; /* Still keep a max-width for larger screens */
-  margin: 0 auto;
+  background: rgba(20, 20, 20, 0.76);
+  backdrop-filter: blur(4px);
+  padding: 32px;
+  border-radius: 18px;
+  width: 90%;
+  max-width: 760px;
+  margin: 0 auto 34px;
   color: white;
-  animation: fadeIn 1.2s ease-in-out;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  overflow-wrap: break-word; /* Ensures text doesn't overflow */
+  animation: fadeIn 1s ease-in-out;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  overflow-wrap: break-word;
+  text-align: center;
+  box-shadow: 0 18px 38px rgba(0, 0, 0, 0.28);
 }
 
 .hero-content h1 {
-  font-size: clamp(1.8rem, 5vw, 4rem); /* Responsive font size */
+  position: relative;
+  font-size: clamp(2.1rem, 5vw, 4rem);
   font-weight: 700;
-  color: #f0f0f0;
-  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
-  margin-bottom: 15px;
-  line-height: 1.2;
+  color: #f5f5f5;
+  text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.45);
+  margin-bottom: 18px;
+  line-height: 1.15;
 }
+
 .hero-main-phrase {
   position: relative;
   display: inline-block;
-  color: #f0f0f0;
+  color: #f7c35f;
 }
 
 .hero-main-phrase::after {
   content: '';
   position: absolute;
-  bottom: -4px;
+  bottom: -5px;
   left: 0;
   width: 100%;
   height: 2px;
-  background: linear-gradient(
-    90deg,
-    rgba(255, 120, 0, 0.7),
-    rgba(255, 204, 51, 0.7)
-  );
-  border-radius: 1px;
+  background: rgba(247, 195, 95, 0.75);
+  border-radius: 999px;
 }
 
-.hero-content h1::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 80px;
-  height: 4px;
-
-  border-radius: 2px;
+.hero-content p {
+  font-size: clamp(1rem, 2.2vw, 1.18rem);
+  color: rgba(255, 255, 255, 0.92);
+  margin-top: 12px;
+  line-height: 1.8;
+  font-weight: 400;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
 }
+
+.hero-cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #f7c35f;
+  color: #111418;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
+  border-radius: 999px;
+  margin: 22px 0 0;
+  padding: 13px 24px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  border: none;
+  transition: all 0.28s ease;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.hero-cta-button:hover {
+  background: #e6b850;
+  transform: translateY(-2px);
+}
+
+/* SERVICES SECTION */
+.hero-services {
+  width: 100%;
+  max-width: 1200px;
+  padding: 24px 0;
+  margin: 8px 0 26px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+  color: #f2f2f2;
+  border-radius: 15px;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-services h2 {
+  margin-bottom: 8px;
+  font-size: clamp(1.9rem, 3vw, 2.5rem);
+  color: #fff;
+  text-align: center;
+}
+
+.hero-services > p {
+  max-width: 980px;
+  margin: 0 auto;
+  line-height: 1.85;
+  color: rgba(255, 255, 255, 0.88);
+  text-align: center;
+}
+
+.hero-services-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(260px, 1fr));
+  gap: 20px;
+  width: 100%;
+  margin-top: 12px;
+}
+
+.hero-service-card {
+  background: rgba(20, 20, 20, 0.72);
+  backdrop-filter: blur(8px);
+  padding: 28px 22px;
+  border-radius: 18px;
+  transition:
+    transform 0.28s ease,
+    box-shadow 0.28s ease,
+    border-color 0.28s ease;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.hero-service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 36px rgba(0, 0, 0, 0.32);
+  border-color: rgba(247, 195, 95, 0.2);
+}
+
+.hero-service-card h3 {
+  color: #fff;
+  margin: 14px 0 12px;
+  font-size: 1.35rem;
+}
+
+.hero-service-card p {
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 1rem;
+  line-height: 1.75;
+  margin: 0;
+}
+
+.hero-service-card svg {
+  color: #f7c35f;
+  margin-bottom: 6px;
+  font-size: 2rem;
+}
+
+/* PROJECTS SECTION */
+.hero-projects {
+  width: 100%;
+  max-width: 1200px;
+  padding: 12px 0 0;
+  margin: 12px 0 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  color: #fff;
+  border-radius: 15px;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-projects h2 {
+  margin-bottom: 4px;
+  font-size: clamp(1.9rem, 3vw, 2.5rem);
+  text-align: center;
+  color: #fff;
+}
+
+.hero-projects-images {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  justify-content: center;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.hero-projects-images img {
+  width: calc(33.333% - 12px);
+  max-width: 340px;
+  height: 220px;
+  border-radius: 14px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.22);
+  transition:
+    transform 0.28s ease,
+    box-shadow 0.28s ease;
+  object-fit: cover;
+  display: block;
+}
+
+.hero-projects-images img:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 28px rgba(0, 0, 0, 0.28);
+}
+
 @keyframes fadeIn {
   0% {
     opacity: 0;
-    transform: translateY(-20px);
+    transform: translateY(-18px);
   }
   100% {
     opacity: 1;
@@ -125,236 +244,139 @@
   }
 }
 
-.hero-content p {
-  font-size: clamp(1rem, 3vw, 1.4rem); /* Responsive font size */
-  color: #fff;
-  margin-top: 15px;
-  line-height: 1.6;
-  font-weight: 400;
-}
-
-/* 🔹 HERO SERVICES SECTION */
-.hero-services {
-  padding: 20px;
-  margin: 20px 0;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 20px;
-  color: #f2f2f2;
-  border-radius: 15px;
-}
-
-.hero-services h2 {
-  margin-bottom: 25px;
-  font-size: 2rem;
-}
-
-.hero-services-cards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-}
-
-.hero-service-card {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  padding: 30px;
-  border-radius: 15px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  flex: 1;
-  min-width: 250px;
-  max-width: 350px;
-  text-align: center;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.hero-service-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 5px 15px rgba(255, 102, 0, 0.3);
-}
-
-.hero-service-card h3 {
-  color: #fff;
-  margin: 15px 0;
-  font-size: 1.5rem;
-}
-
-.hero-service-card p {
-  color: rgba(255, 255, 255, 0.9);
-  font-size: 1rem;
-  line-height: 1.6;
-}
-
-.hero-service-card svg {
-  color: #ffcc33;
-  margin-bottom: 10px;
-  font-size: 2rem;
-}
-
-/* 🔹 HERO PROJECTS SECTION */
-.hero-projects {
-  padding: 20px;
-  margin: 20px 0;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 20px;
-  color: #fff;
-  border-radius: 15px;
-}
-
-.hero-projects h2 {
-  margin-bottom: 25px;
-  font-size: 2rem;
-}
-
-.hero-projects-images {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-  justify-content: center;
-  align-items: center;
-  max-width: 1100px;
-  margin: 0 auto;
-  gap: 15px;
-}
-
-.hero-projects-images img {
-  width: calc(33.333% - 15px); /* Lygi dalis 3 nuotraukoms */
-  max-width: 320px;
-  height: 200px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  object-fit: cover;
-}
-.hero-projects-images img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 12px rgba(255, 102, 0, 0.3);
-}
-
-.hero-cta-button {
-  background: linear-gradient(135deg, #ff7800, #e65100);
-  box-shadow: 0 4px 10px rgba(255, 87, 34, 0.3);
-  border-radius: 8px;
-  color: white;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-  margin: 15px auto;
-  padding: 8px 16px;
-}
-
-/* Atnaujintas glow efektas, kad būtų subtilesnis */
-@keyframes glow {
-  from {
-    box-shadow: 0 3px 10px rgba(255, 102, 0, 0.25);
-  }
-  to {
-    box-shadow: 0 3px 15px rgba(255, 165, 0, 0.4);
-  }
-}
-
-/* Hover efektas */
-.hero-cta-button:hover {
-  transform: scale(1.03); /* sumažintas scale efektas */
-}
-/* 🔹 RESPONSYVUMAS */
+/* Tablet */
 @media (max-width: 1024px) {
   .hero-container {
-    background-size: cover;
-    background-position: center center;
-  }
-}
-.hero-projects-images img {
-  width: calc(50% - 15px); /* 2 nuotraukos per eilutę */
-}
-@media (max-width: 768px) {
-  .hero-fixed-bg {
-    background-attachment: scroll; /* Pakeičia į scroll mobiliuose įrenginiuose dėl geresnio suderinamumo */
-    height: 100vh;
-    width: 100vw;
-    position: fixed;
-  }
-  .hero-content {
-    background: rgba(0, 0, 0, 0.6); /* Even darker on mobile */
-    padding: 25px;
-    width: 90%;
+    padding: 105px 18px 60px;
   }
 
-  .hero-cta-button {
-    padding: 10px 20px;
-    width: 100%; /* Full width button on smaller screens */
-    margin-top: 15px;
+  .hero-services-cards {
+    grid-template-columns: repeat(2, minmax(240px, 1fr));
   }
+
   .hero-projects-images img {
-    width: 100%; /* 1 nuotrauka per eilutę */
-    letter-spacing: 0.5px; /* Slightly increase letter spacing for readability */
+    width: calc(50% - 10px);
   }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .hero-fixed-bg {
+    background-attachment: scroll;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .hero-container {
+    padding: 95px 16px 50px;
+  }
+
+  .hero-content {
+    background: rgba(20, 20, 20, 0.8);
+    padding: 24px 20px;
+    width: 100%;
+    margin-bottom: 26px;
+  }
+
   .hero-content h1 {
-    font-size: 2.8rem;
+    font-size: 2.35rem;
   }
 
   .hero-content p {
     font-size: 1rem;
   }
+
+  .hero-cta-button {
+    width: 100%;
+    padding: 12px 18px;
+    margin-top: 18px;
+  }
+
+  .hero-services {
+    margin-top: 0;
+  }
+
+  .hero-services h2,
+  .hero-projects h2 {
+    font-size: 1.7rem;
+  }
+
+  .hero-services-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-projects-images img {
+    width: 100%;
+    max-width: 100%;
+    height: 220px;
+  }
 }
 
 @media (max-width: 480px) {
+  .hero-container {
+    padding: 88px 14px 44px;
+  }
+
   .hero-content {
-    padding: 20px 15px;
-    width: 95%; /* Even wider on very small screens */
-    margin-top: 20px;
+    padding: 20px 16px;
+    width: 100%;
+    margin-top: 12px;
   }
 
   .hero-content h1 {
-    font-size: 2.2rem;
+    font-size: 2rem;
   }
 
   .hero-content p {
-    font-size: 1.1rem;
+    font-size: 0.98rem;
+    line-height: 1.7;
   }
 
   .hero-cta-button {
-    padding: 10px 20px;
-    font-size: 0.9rem;
+    padding: 11px 16px;
+    font-size: 0.92rem;
   }
-  .hero-container {
-    padding-top: 80px; /* Ensure enough space below navbar */
+
+  .hero-service-card {
+    padding: 22px 18px;
+  }
+
+  .hero-projects-images img {
+    height: 200px;
   }
 }
-/* Extra small screens */
+
 @media (max-width: 320px) {
   .hero-content {
-    padding: 15px 10px;
-    width: 98%; /* Almost full width */
+    padding: 16px 12px;
   }
 
   .hero-cta-button {
-    padding: 8px 16px;
-    font-size: 0.9rem;
+    padding: 10px 14px;
+    font-size: 0.88rem;
   }
 }
-/* Add specific styling for laptop screens */
+
 @media (min-width: 769px) and (max-width: 1366px) {
   .hero-container {
-    /* Adjust container spacing for laptop screens */
-    padding-top: 90px;
-    min-height: 90vh; /* Slightly reduced from 100vh if you were using that */
+    padding-top: 100px;
+    min-height: 95vh;
   }
 
   .hero-content {
-    /* Make card more compact on laptop screens */
-    padding: 25px;
-    width: 85%;
-    max-width: 600px; /* More limited max-width for laptops */
+    padding: 28px;
+    width: 88%;
+    max-width: 680px;
   }
 
   .hero-content h1 {
-    font-size: 2.8rem; /* Smaller heading for laptop screens */
-    margin-bottom: 12px;
+    font-size: 3rem;
+    margin-bottom: 14px;
   }
 
   .hero-content p {
-    font-size: 1.2rem; /* Slightly smaller text */
+    font-size: 1.08rem;
     margin-top: 12px;
   }
 }

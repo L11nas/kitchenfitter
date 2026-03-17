@@ -1,4 +1,3 @@
-/* ✅ Puslapio fonas */
 .decking-page {
   display: flex;
   flex-direction: column;
@@ -6,300 +5,438 @@
   justify-content: flex-start;
   min-height: 100vh;
   width: 100%;
-  padding-top: 100px;
-  padding-bottom: 20px;
+  padding: 120px 20px 70px;
   position: relative;
-  background: linear-gradient(to bottom, #2f2f2f, #1f1f1f);
-
-  color: #f8f8f8; /* arba white, jei ant tamsaus fono */
-  margin-bottom: 0; /* pridėkite šią eilutę */
-  padding-bottom: 0; /* pridėkite šią eilutę */
+  background: linear-gradient(to bottom, #1c1f23, #111315);
+  color: #f8f8f8;
+  overflow: hidden;
 }
 
-/* ✅ Pavadinimas */
 .decking-title {
-  margin-top: 20px;
-  font-size: 2.2rem;
-  font-weight: bold;
+  margin-top: 0;
+  font-size: clamp(2.2rem, 4vw, 3.3rem);
+  font-weight: 700;
   color: white;
   text-align: center;
-  margin-bottom: 40px;
-}
-/* ✅ Nuotrauka kortelėje */
-.decking-img-container {
-  width: 100%;
-  height: 250px;
-  overflow: hidden;
-  border-radius: 12px 12px 0 0;
+  margin-bottom: 16px;
+  line-height: 1.15;
 }
 
-.decking-img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
+.decking-intro {
+  max-width: 820px;
+  margin: 0 auto 34px;
+  text-align: center;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.84);
 }
-/* ✅ Kortelių išdėstymas */
-.decking-container {
+
+/* Navigation */
+.decking-category-navigation {
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-wrap: wrap;
-  gap: 15px;
-  margin-top: 50px;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 34px;
+  padding: 0;
 }
 
-/* ✅ Kortelės */
+.nav-button {
+  background: rgba(255, 255, 255, 0.04);
+  color: rgba(255, 255, 255, 0.92);
+  padding: 11px 18px;
+  font-size: 0.98rem;
+  font-weight: 700;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+  white-space: nowrap;
+}
+
+.nav-button:hover {
+  background: rgba(247, 195, 95, 0.08);
+  color: #f7c35f;
+  border-color: rgba(247, 195, 95, 0.22);
+  transform: translateY(-2px);
+}
+
+.nav-button.active {
+  background: #f7c35f;
+  color: #111315;
+  border-color: #f7c35f;
+}
+
+/* Gallery */
+.decking-container {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(220px, 1fr));
+  gap: 20px;
+  width: 100%;
+  max-width: 1240px;
+}
+
 .decking-card {
   position: relative;
-  width: 250px; /* Pritaikyk pagal poreikį */
-  border-radius: 12px;
+  width: 100%;
+  border-radius: 18px;
   overflow: hidden;
-  background: rgba(255, 255, 255, 0.9); /* Balta, šiek tiek peršviečiama */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Švelnus šešėlis */
-  height: 100%;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition:
+    transform 0.28s ease,
+    box-shadow 0.28s ease,
+    border-color 0.28s ease;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
+  cursor: pointer;
+  padding: 0;
+  text-align: left;
+  appearance: none;
 }
 
 .decking-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
-  transition: all 0.3s ease-in-out;
+  transform: translateY(-6px);
+  box-shadow: 0 18px 34px rgba(0, 0, 0, 0.34);
+  border-color: rgba(247, 195, 95, 0.18);
 }
-/* ✅ Kortelės konteineris */
 
-/* ✅ Nuotrauka kortelėje */
+.decking-img-container {
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
+}
+
+.decking-img,
 .decking-card img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 12px 12px 0 0;
+  display: block;
 }
 
-/* ✅ Aprašymo konteineris */
 .decking-description {
-  padding: 12px;
-  font-size: 0.9rem;
+  padding: 14px 16px 16px;
+  font-size: 0.96rem;
   text-align: center;
   background: transparent;
-  color: #333;
-  border-radius: 0 0 12px 12px;
-  font-weight: 500;
-  line-height: 1.4;
-  transition: background 0.3s ease-in-out;
+  color: rgba(255, 255, 255, 0.92);
+  font-weight: 600;
+  line-height: 1.5;
+  margin: 0;
 }
 
-/* ✅ Aprašymas išryškėja užvedus pelę */
-.decking-card:hover .decking-description {
-  transform: scale(1.05);
-  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
-  transition: all 0.3s ease-in-out;
+/* Bottom CTA */
+.decking-bottom-text {
+  max-width: 820px;
+  margin: 52px auto 0;
+  text-align: center;
 }
 
-/* ✅ Modalinis langas */
+.decking-bottom-text h2 {
+  color: white;
+  font-size: clamp(1.7rem, 3vw, 2.3rem);
+  margin-bottom: 14px;
+}
+
+.decking-bottom-text p {
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 1.02rem;
+  line-height: 1.8;
+  margin: 0 0 18px;
+}
+
+.decking-cta-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 22px;
+  border-radius: 999px;
+  background: #f7c35f;
+  color: #111315;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.decking-cta-link:hover {
+  background: #e6b850;
+  transform: translateY(-2px);
+}
+
+/* Modal */
 .decking-modal-overlay {
   z-index: 1000;
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.68);
   backdrop-filter: blur(10px);
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
+  cursor: default;
+  padding: 20px;
 }
 
 .decking-modal-content {
-  background: rgba(255, 255, 255, 0.1); /* 🔹 Lengvas peršviečiamumas */
-  border-radius: 12px; /* 🔹 Švelnesni kampai */
+  background: rgba(20, 20, 20, 0.88);
+  border-radius: 18px;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 80%;
-  max-width: 850px;
-  padding: 20px;
+  width: 100%;
+  max-width: 980px;
+  min-height: 520px;
+  padding: 24px;
   position: relative;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.45);
 }
+
+.decking-modal-image-container {
+  width: 100%;
+  text-align: center;
+}
+
+.decking-modal-img {
+  max-width: 100%;
+  max-height: 72vh;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+  border-radius: 12px;
+}
+
 .decking-modal-caption {
   align-items: center;
   display: flex;
   justify-content: center;
   color: white;
+  margin-top: 14px;
+  font-size: 1rem;
+  line-height: 1.6;
+  text-align: center;
 }
-/* ✅ Mygtukas uždaryti */
+
 .decking-modal-close {
   position: absolute;
-  top: 10px;
-  right: 10px;
-  width: 40px; /* ✅ Apskritas mygtukas */
-  height: 40px;
-  background: white;
+  top: 14px;
+  right: 14px;
+  width: 42px;
+  height: 42px;
+  background: rgba(255, 255, 255, 0.92);
+  color: #111315;
   border: none;
-  font-size: 22px;
   cursor: pointer;
-  padding: 8px;
+  padding: 0;
   border-radius: 50%;
-  transition: background 0.3s ease, transform 0.2s ease;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .decking-modal-close:hover {
-  background: #ddd;
-  transform: scale(1.1);
+  background: #f7c35f;
+  transform: scale(1.06);
 }
 
-/* ✅ Rodyklės */
-/* ✅ Vienodi rodyklių stiliai */
 .decking-modal-prev,
 .decking-modal-next {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: 50px;
-  height: 50px;
-  background: rgba(255, 255, 255, 0.5);
+  width: 52px;
+  height: 52px;
+  background: rgba(255, 255, 255, 0.14);
+  color: white;
   border: none;
   cursor: pointer;
   border-radius: 50%;
-  padding: 12px;
+  padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background 0.3s ease, transform 0.3s ease;
+  transition: all 0.25s ease;
+  backdrop-filter: blur(4px);
 }
 
 .decking-modal-prev {
-  left: -60px;
+  left: 18px;
 }
 
 .decking-modal-next {
-  right: -60px;
+  right: 18px;
 }
 
 .decking-modal-prev:hover,
 .decking-modal-next:hover {
-  background: rgba(255, 255, 255, 0.8);
-  transform: translateY(-50%) scale(1.1);
-}
-.decking-modal-img {
-  max-width: 90%; /* Nuotrauka neviršys 90% ekrano pločio */
-  max-height: 80vh; /* Neviršys 80% ekrano aukščio */
-  object-fit: contain; /* Užtikrina, kad neišsikraipytų */
-  display: block;
-  margin: auto; /* Centruoja nuotrauką */
-}
-/* 🔹 Navigacijos tarp kategorijų mygtukai */
-.decking-category-navigation {
-  display: flex;
-  flex-wrap: wrap; /* Jei netelpa, keliasi žemyn */
-  justify-content: center;
-  gap: 10px;
-  margin-bottom: 20px;
-  padding: 10px 0;
+  background: rgba(247, 195, 95, 0.18);
+  color: #f7c35f;
+  transform: translateY(-50%) scale(1.06);
 }
 
-.nav-button {
-  background: #ffffff; /* Balta spalva */
-  color: #2c3e50; /* Tamsiai mėlyna, geras kontrastas */
-  padding: 12px 20px;
-  font-size: 1.1rem;
-  font-weight: bold;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: all 0.3s ease-in-out;
-  border: 2px solid #2c3e50;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.nav-button:hover {
-  background: #2c3e50;
-  color: white;
-  border-color: #2c3e50;
-}
-/* ✅ Kitchen puslapio optimizavimas mažiems ekranams */
-@media (max-width: 1024px) {
+/* Tablet */
+@media (max-width: 1100px) {
   .decking-container {
-    gap: 10px;
-  }
-
-  .decking-card {
-    width: 200px; /* Sumažiname korteles planšetėje */
+    grid-template-columns: repeat(3, minmax(220px, 1fr));
   }
 }
 
-/* ✅ Telefonams */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
+  .decking-page {
+    padding: 108px 18px 60px;
+  }
+
   .decking-container {
-    flex-direction: column; /* Kad būtų viena kortelė per eilutę */
-    align-items: center;
-  }
-  .decking-modal-overlay {
-    display: none !important;
-  }
-  .decking-card {
-    width: 90%; /* Kortelės užima beveik visą ekraną */
+    grid-template-columns: repeat(2, minmax(220px, 1fr));
   }
 
-  .decking-description {
-    font-size: 0.8rem;
-  }
-
-  .decking-category-navigation {
-    flex-wrap: wrap; /* Išdėsto eilutėje, jei netelpa - keliasi žemyn */
-    justify-content: center;
-  }
-
-  .nav-button {
-    width: 80%; /* Užima daugiau vietos, lengviau paspausti */
-    text-align: center;
-    font-size: 1rem;
-    padding: 10px 15px;
-  }
-
-  /* ✅ Modalinis langas mobiliesiems */
   .decking-modal-content {
-    width: 95%;
-    padding: 15px;
+    min-height: auto;
+    padding: 18px;
   }
 
   .decking-modal-prev,
   .decking-modal-next {
-    padding: 5px;
-    font-size: 16px;
-  }
-
-  .decking-modal-img {
-    max-width: 100%;
-    max-height: 70vh;
+    width: 46px;
+    height: 46px;
   }
 }
-@media (max-width: 480px) {
-  .decking-navigation {
-    gap: 8px; /* Sumažiname tarpą tarp mygtukų */
+
+/* Mobile */
+@media (max-width: 768px) {
+  .decking-page {
+    padding: 98px 16px 50px;
   }
 
-  .nav-button {
-    width: 90%; /* Mygtukai užima beveik visą plotį */
-    font-size: 0.8rem; /* Mažesnis šriftas, kad neiškryptų iš ekrano */
-    padding: 8px 12px; /* Kompaktiškesnis dizainas */
+  .decking-title {
+    font-size: 2rem;
+  }
+
+  .decking-intro {
+    font-size: 0.98rem;
+    line-height: 1.7;
+    margin-bottom: 26px;
+  }
+
+  .decking-container {
+    grid-template-columns: 1fr;
+    gap: 16px;
   }
 
   .decking-card {
-    width: 95%; /* Kortelės beveik per visą ekraną */
+    max-width: 100%;
+  }
+
+  .decking-img-container {
+    height: 220px;
+  }
+
+  .decking-description {
+    font-size: 0.92rem;
+  }
+
+  .decking-category-navigation {
+    gap: 10px;
+    margin-bottom: 26px;
+  }
+
+  .nav-button {
+    width: auto;
+    text-align: center;
+    font-size: 0.95rem;
+    padding: 10px 16px;
+  }
+
+  .decking-modal-overlay {
+    padding: 12px;
   }
 
   .decking-modal-content {
-    width: 98%; /* Modalinis langas mažesnis */
-    padding: 10px;
+    width: 100%;
+    padding: 16px;
+    border-radius: 14px;
+  }
+
+  .decking-modal-prev,
+  .decking-modal-next {
+    width: 42px;
+    height: 42px;
+    top: auto;
+    bottom: 14px;
+    transform: none;
+  }
+
+  .decking-modal-prev {
+    left: 16px;
+  }
+
+  .decking-modal-next {
+    right: 16px;
+  }
+
+  .decking-modal-prev:hover,
+  .decking-modal-next:hover {
+    transform: scale(1.04);
   }
 
   .decking-modal-img {
-    max-width: 100%;
-    max-height: 60vh; /* Neleidžiame modalui per daug užimti ekrano */
+    max-height: 62vh;
   }
+
+  .decking-bottom-text {
+    margin-top: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .decking-page {
+    padding: 90px 14px 44px;
+  }
+
   .decking-title {
     font-size: 1.8rem;
+  }
+
+  .decking-intro {
+    font-size: 0.94rem;
+  }
+
+  .nav-button {
+    width: 100%;
+    font-size: 0.9rem;
+    padding: 10px 14px;
+  }
+
+  .decking-img-container {
+    height: 200px;
+  }
+
+  .decking-description {
+    font-size: 0.9rem;
+    padding: 12px 14px 14px;
+  }
+
+  .decking-modal-content {
+    padding: 12px;
+  }
+
+  .decking-modal-img {
+    max-height: 56vh;
+  }
+
+  .decking-modal-caption {
+    font-size: 0.94rem;
+    margin-top: 10px;
+  }
+
+  .decking-bottom-text h2 {
+    font-size: 1.5rem;
+  }
+
+  .decking-bottom-text p {
+    font-size: 0.96rem;
   }
 }

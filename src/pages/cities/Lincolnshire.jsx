@@ -1,4 +1,5 @@
 import { Helmet } from 'react-helmet-async';
+import { Link } from 'react-router-dom';
 import { MdOutlineKitchen } from 'react-icons/md';
 import '../../components/styles/CityPage.css';
 
@@ -6,10 +7,10 @@ export default function Lincolnshire() {
   return (
     <div className='city-page'>
       <Helmet>
-        <title>Kitchen Renovation in Lincolnshire | S.L. Builders LTD</title>
+        <title>Kitchen Fitters in Lincolnshire | S.L. Builders LTD</title>
         <meta
           name='description'
-          content='Trusted kitchen fitters in Lincolnshire. S.L. Builders LTD provides bespoke kitchen renovations and installations across the region.'
+          content='S.L. Builders LTD provides expert kitchen fitting, kitchen renovation, flooring installation and home improvement services across Lincolnshire.'
         />
         <link rel='canonical' href='https://slbuildersltd.co.uk/lincolnshire' />
       </Helmet>
@@ -18,28 +19,115 @@ export default function Lincolnshire() {
         className='city-banner'
         style={{ backgroundImage: 'url("/assets/cities/lincolnshire.jpg")' }}
         role='img'
-        aria-label='High-quality kitchen renovation project in Lincolnshire, UK'
+        aria-label='Modern kitchen renovation project in Lincolnshire'
       >
         <div className='city-content'>
           <span className='city-icon'>
             <MdOutlineKitchen />
           </span>
+
           <h1>Top Kitchen Fitters in Lincolnshire</h1>
+
           <p>
-            S.L. Builders LTD delivers high-end kitchen renovation services
-            throughout Lincolnshire. From traditional to modern styles, our
-            custom approach ensures every kitchen fits your lifestyle.
+            S.L. Builders LTD provides expert kitchen fitting, kitchen
+            renovation and home improvement services across Lincolnshire. We
+            help homeowners create practical, stylish kitchens with a strong
+            focus on quality workmanship, durability and clean, professional
+            finishes.
           </p>
+
           <p>
-            Serving areas across the county, we specialize in full installations
-            and makeovers that add value to your home.
+            Whether you are planning a full kitchen renovation, replacing old
+            units, upgrading worktops or improving the layout of your space, our
+            team delivers reliable installation services tailored to your home
+            and everyday needs.
           </p>
-          <p>
-            Get in touch for a free quote and start your kitchen transformation
-            today.
-          </p>
+
+          <div className='city-actions'>
+            <Link to='/projects/kitchens' className='city-button'>
+              View Kitchen Projects
+            </Link>
+            <Link to='/services' className='city-button city-button-secondary'>
+              Explore Our Services
+            </Link>
+          </div>
         </div>
       </div>
+
+      <section className='city-section'>
+        <div className='city-section-inner'>
+          <h2>Kitchen Renovation Services in Lincolnshire</h2>
+          <p>
+            We work with homeowners across Lincolnshire who want high-quality
+            kitchen fitting and renovation work carried out with care and
+            attention to detail. Our kitchen services can include cabinet
+            fitting, worktop installation, flooring, finishing work and wider
+            renovation support where needed.
+          </p>
+          <p>
+            Every kitchen project is different, which is why we take a tailored
+            approach to every installation. We focus on creating kitchens that
+            not only look great, but also function well for storage, cooking,
+            family life and long-term everyday use.
+          </p>
+        </div>
+      </section>
+
+      <section className='city-section city-section-alt'>
+        <div className='city-section-inner'>
+          <h2>Areas We Cover Across Lincolnshire</h2>
+          <p>
+            We provide kitchen fitting and renovation services across
+            Lincolnshire, including <strong>Lincoln</strong>,{' '}
+            <strong>Grantham</strong>, <strong>Boston</strong>,{' '}
+            <strong>Scunthorpe</strong>, <strong>Spalding</strong> and nearby
+            areas.
+          </p>
+          <p>
+            If you are based in Lincolnshire and looking for trusted kitchen
+            fitters with a professional approach and strong attention to detail,
+            S.L. Builders LTD is ready to help.
+          </p>
+        </div>
+      </section>
+
+      <section className='city-section'>
+        <div className='city-section-inner'>
+          <h2>Why Homeowners Choose S.L. Builders LTD</h2>
+          <ul className='city-list'>
+            <li>Experienced kitchen fitters focused on quality finishes</li>
+            <li>
+              Reliable service and clear communication throughout the project
+            </li>
+            <li>Tailored solutions for both modern and traditional homes</li>
+            <li>Support with wider home improvement and renovation work</li>
+            <li>
+              Free consultation for projects across Lincolnshire and nearby
+              areas
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section className='city-section city-cta-section'>
+        <div className='city-section-inner'>
+          <h2>Planning a Kitchen Project in Lincolnshire?</h2>
+          <p>
+            Whether you need a full kitchen renovation or a professional team to
+            install your new kitchen properly, we are here to help. View our
+            recent work or get in touch to discuss your project.
+          </p>
+
+          <div className='city-actions'>
+            <Link to='/projects/kitchens' className='city-button'>
+              See Recent Kitchen Projects
+            </Link>
+            <Link to='/about' className='city-button city-button-secondary'>
+              Learn More About Us
+            </Link>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

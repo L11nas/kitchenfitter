@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import Modal from './Modal'; // Importuojam modalą
-import Navbar from './Navbar/Navbar';
+import Modal from './Modal';
+
+import { Helmet } from 'react-helmet-async';
+import { Link } from 'react-router-dom';
 
 import {
   FaTools,
@@ -11,6 +13,7 @@ import {
   FaTree,
   FaLayerGroup,
 } from 'react-icons/fa';
+
 import project1 from '/assets/Kitchenimg/project5/25.webp';
 import project2 from '/assets/Kitchenimg/project8/54.webp';
 import project3 from '/assets/Kitchenimg/project1/36.jpg';
@@ -28,7 +31,6 @@ export default function Hero() {
         });
       });
     } else {
-      // Jei naršyklė nepalaiko (pvz. Safari) – fallback
       setTimeout(() => {
         import('aos').then((AOS) => {
           AOS.init({
@@ -53,17 +55,28 @@ export default function Hero() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const mailtoLink = `mailto:slbuilderswork@gmail.com?subject=Paslaugų užklausa&body=Vardas: ${formData.name}%0D%0AEl. paštas: ${formData.email}%0D%0AŽinutė: ${formData.message}`;
+    const mailtoLink = `mailto:slbuilderswork@gmail.com?subject=Service enquiry&body=Name: ${formData.name}%0D%0AEmail: ${formData.email}%0D%0AMessage: ${formData.message}`;
     window.location.href = mailtoLink;
     setIsModalOpen(false);
   };
 
   return (
     <>
-      {!isModalOpen && <Navbar />}
+      <Helmet>
+        <title>
+          Kitchen Fitters in Nottingham, Leeds & Doncaster | S.L. Builders LTD
+        </title>
+        <meta
+          name='description'
+          content='S.L. Builders LTD provides expert kitchen fitting, flooring installation, staircase renovation, decking and bespoke home improvement services across Nottingham, Leeds, Doncaster and nearby areas.'
+        />
+        <link rel='canonical' href='https://slbuildersltd.co.uk/' />
+      </Helmet>
+
+      {!isModalOpen}
 
       <section className='hero-container' role='banner'>
-        <div className='hero-fixed-bg' /> {/* <<< Naujas fono sluoksnis */}
+        <div className='hero-fixed-bg' />
         <Modal
           isOpen={isModalOpen}
           onClose={() => setIsModalOpen(false)}
@@ -71,122 +84,128 @@ export default function Hero() {
           formData={formData}
           handleChange={handleChange}
         />
+
         <div className='hero-overlay'></div>
+
         <div className='hero-content'>
           <h1>
-            Expert Kitchen Fitters in the UK{' '}
+            Expert Kitchen Fitters in Nottingham, Leeds & Doncaster{' '}
             <span className='hero-main-phrase'>
-              Bespoke Installation & Renovation
+              Bespoke Installation & Home Renovation
             </span>
           </h1>
 
           <p>
-            Our skilled professionals specialize in kitchen installations,
-            flooring, staircases, and exterior cladding, delivering high-quality
-            renovations throughout the UK
+            We provide expert kitchen fitting, flooring installation, staircase
+            renovation and bespoke home improvement services across Nottingham,
+            Leeds, Doncaster and surrounding areas, with a strong focus on
+            quality craftsmanship, reliability and attention to detail.
           </p>
+
           <button
             className='hero-cta-button'
             onClick={() => setIsModalOpen(true)}
           >
-            Get a free consultation
+            Get a Free Consultation
           </button>
         </div>
+
         <section className='hero-services' data-aos='fade-up'>
-          <h2>Why Choose S.L. Builders LTD for Kitchen Installations?</h2>
+          <h2>Why Choose S.L. Builders LTD?</h2>
           <p>
-            At S.L. Builders LTD, we specialize in expert kitchen fitting
-            services across <strong>Nottingham</strong>, <strong>Leeds</strong>,{' '}
-            <strong>Doncaster</strong> and beyond. With years of experience in
-            bespoke kitchen design and renovation, our team delivers exceptional
-            craftsmanship, attention to detail, and premium-quality materials in
-            every project. Whether you’re planning a full renovation or a simple
-            upgrade, our services cover flooring, staircase refurbishment,
-            decking, and more.
+            At S.L. Builders LTD, we specialise in expert kitchen fitting and
+            home renovation services across <strong>Nottingham</strong>,{' '}
+            <strong>Leeds</strong>, <strong>Doncaster</strong> and surrounding
+            areas. With years of hands-on experience, we deliver exceptional
+            craftsmanship, careful attention to detail and durable, high-quality
+            finishes on every project.
           </p>
           <p>
-            We work closely with homeowners to ensure every installation is
-            tailored to your lifestyle and design preferences. Our clients
-            appreciate fast turnarounds, durable finishes, and our commitment to
-            transforming living spaces with both function and elegance. Contact
-            us today for a free consultation and see how we can transform your
-            home.
+            Whether you are planning a full kitchen renovation, new flooring,
+            staircase refurbishment or exterior decking, we work closely with
+            you to create practical, stylish spaces tailored to your home and
+            lifestyle. Our goal is simple: reliable service, quality results and
+            a smooth project from start to finish.
           </p>
+
           <div className='hero-services-cards'>
             <article className='hero-service-card' data-aos='zoom-in'>
               <FaTools size={40} aria-hidden='true' />
               <h3>Kitchen Installation</h3>
               <p>
-                Tailored kitchen fitting solutions that combine functionality,
-                modern design, and lasting quality.
+                Bespoke kitchen fitting solutions combining functionality,
+                modern design and long-lasting quality.
               </p>
             </article>
+
             <article className='hero-service-card' data-aos='zoom-in'>
               <FaClock size={40} aria-hidden='true' />
               <h3>Flooring Installation</h3>
               <p>
-                We install wooden, laminate, and vinyl flooring with
-                precision—delivering smooth, long-lasting results that enhance
-                any space.
+                Wooden, laminate and vinyl flooring installed with precision for
+                a clean, durable and professional finish.
               </p>
             </article>
+
             <article className='hero-service-card' data-aos='zoom-in'>
               <FaThumbsUp size={40} aria-hidden='true' />
               <h3>Custom Renovations</h3>
               <p>
-                Tailored home renovation solutions, from individual room
-                makeovers to complete property refurbishments, designed to
-                elevate both style and function.
+                Tailored home renovation solutions, from single-room upgrades to
+                full property refurbishments.
               </p>
             </article>
+
             <article className='hero-service-card' data-aos='zoom-in'>
               <FaTree size={40} aria-hidden='true' />
               <h3>Outdoor Decking</h3>
               <p>
-                Transform your garden or patio with premium decking designed for
-                strength, style, and all-weather durability.
+                Premium decking installations designed for style, strength and
+                year-round durability.
               </p>
             </article>
+
             <article className='hero-service-card' data-aos='zoom-in'>
               <FaLayerGroup size={40} aria-hidden='true' />
               <h3>Staircase Renovation</h3>
               <p>
-                Transform outdated staircases with custom renovations—covering
-                steps, handrails, and balustrades—for a safer and more stylish
-                interior.
+                Stair upgrades and renovations that improve both appearance,
+                safety and everyday durability.
               </p>
             </article>
           </div>
         </section>
+
         <section className='hero-projects' data-aos='fade-up'>
-          <h2>Recent Projects See Our Work</h2>
+          <h2>See Our Recent Work</h2>
           <div className='hero-projects-images'>
             <img
               src={project1}
-              alt='Expert UK kitchen installation - modern high-end design'
+              alt='Modern kitchen installation project completed by S.L. Builders LTD'
               loading='lazy'
               className='blur-up'
             />
             <img
               src={project2}
-              alt='Luxury staircase renovation in the UK - premium wood finish'
+              alt='Staircase renovation project with premium wood finish'
               loading='lazy'
               className='blur-up'
             />
             <img
               src={project3}
-              alt='Durable outdoor decking installation - UK home improvement'
+              alt='Outdoor decking installation for a residential property'
               loading='lazy'
               className='blur-up'
             />
           </div>
-          <a
-            href='/projects'
+
+          <Link
+            to='/projects'
             className='hero-cta-button'
             aria-label='View all renovation projects'
           >
             View All Projects
-          </a>
+          </Link>
         </section>
       </section>
     </>

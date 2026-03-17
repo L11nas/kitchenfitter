@@ -1,125 +1,276 @@
-/* ✅ Pagrindinis konteineris */
 .custom-page {
   width: 100%;
   min-height: 100vh;
-  background: linear-gradient(to bottom, #2f2f2f, #1f1f1f);
-
-  color: #333; /* Tamsiai pilkas tekstas */
+  background: linear-gradient(to bottom, #1c1f23, #111315);
+  color: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 100px 20px 40px; /* Added top padding to avoid navbar overlap */
-  position: relative; /* For absolute positioning of elements if needed */
-  margin-bottom: 0; /* pridėkite šią eilutę */
-  padding-bottom: 0; /* pridėkite šią eilutę */
+  padding: 120px 20px 70px;
+  position: relative;
+  overflow: hidden;
 }
 
-/* ✅ Projekto pavadinimas */
 .custom-title {
-  font-size: 2.5rem;
+  font-size: clamp(2.2rem, 4vw, 3.3rem);
   color: white;
-  margin-bottom: 30px;
-  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
-  z-index: 2; /* Ensure title is above overlay if used */
+  margin-bottom: 14px;
+  line-height: 1.15;
 }
 
-/* ✅ Kortelės konteineris */
-.custom-container {
+.custom-intro {
+  max-width: 820px;
+  margin: 0 auto 34px;
+  text-align: center;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.84);
+}
+
+.category-navigation {
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-wrap: wrap;
-  gap: 15px; /* Reduced gap for better spacing */
-  margin-top: 20px; /* Reduced margin for better spacing */
-  width: 100%; /* Ensure container takes full width */
-  max-width: 1200px; /* Limit the maximum width */
-  padding: 0 10px; /* Add horizontal padding */
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 34px;
+  padding: 0;
 }
 
-/* ✅ Projekto kortelė */
+.nav-button {
+  background: rgba(255, 255, 255, 0.04);
+  color: rgba(255, 255, 255, 0.92);
+  padding: 11px 18px;
+  font-size: 0.98rem;
+  font-weight: 700;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+  white-space: nowrap;
+}
+
+.nav-button:hover {
+  background: rgba(247, 195, 95, 0.08);
+  color: #f7c35f;
+  border-color: rgba(247, 195, 95, 0.22);
+  transform: translateY(-2px);
+}
+
+.nav-button.active {
+  background: #f7c35f;
+  color: #111315;
+  border-color: #f7c35f;
+}
+
+.custom-container {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(220px, 1fr));
+  gap: 20px;
+  width: 100%;
+  max-width: 1240px;
+}
+
 .custom-card {
   position: relative;
-  width: 250px; /* Reduced width for better layout */
-  border-radius: 12px; /* Slightly softer corners */
+  width: 100%;
+  border-radius: 18px;
   overflow: hidden;
-  background: rgba(255, 255, 255, 0.9); /* Lighter background */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition:
+    transform 0.28s ease,
+    box-shadow 0.28s ease,
+    border-color 0.28s ease;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
+  text-align: left;
 }
+
+.custom-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 34px rgba(0, 0, 0, 0.34);
+  border-color: rgba(247, 195, 95, 0.18);
+}
+
+.custom-img-wrap {
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
+}
+
 .custom-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
 }
 
-.custom-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
-  transition: all 0.3s ease-in-out;
-}
-
-.custom-card h3 {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  padding: 12px;
-  font-size: 0.9rem;
+.custom-card-title {
+  padding: 14px 16px 16px;
+  font-size: 0.96rem;
   text-align: center;
-  color: white;
-  background: rgba(0, 0, 0, 0.4);
-  border-radius: 0 0 12px 12px;
-  font-weight: 500;
-  line-height: 1.4;
-  transition: background 0.3s ease-in-out;
+  color: rgba(255, 255, 255, 0.92);
+  font-weight: 600;
+  line-height: 1.5;
+  margin: 0;
 }
 
-.custom-card:hover h3 {
-  transform: scale(1.05);
-  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
-  transition: all 0.3s ease-in-out;
-}
-
-/* ✅ „Coming Soon“ kortelė */
 .coming-soon {
-  background: rgba(0, 0, 0, 0.5);
-  color: white;
-  font-size: 1.2rem; /* Slightly smaller font */
+  max-width: 420px;
+  margin: 0 auto;
+  padding: 28px 22px;
   text-align: center;
-  padding: 20px;
-  border-radius: 12px; /* Softer corners */
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-  width: 100%; /* Take full width */
-  max-width: 300px; /* Limit the maximum width */
+  background: rgba(255, 255, 255, 0.04);
 }
 
-/* 🔹 RESPONSYVUMAS */
+.coming-soon h2 {
+  color: #f7c35f;
+  margin: 0 0 12px;
+  font-size: 1.5rem;
+}
+
+.coming-soon p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.82);
+  line-height: 1.7;
+}
+
+.custom-bottom-text {
+  max-width: 820px;
+  margin: 52px auto 0;
+  text-align: center;
+}
+
+.custom-bottom-text h2 {
+  color: white;
+  font-size: clamp(1.7rem, 3vw, 2.3rem);
+  margin-bottom: 14px;
+}
+
+.custom-bottom-text p {
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 1.02rem;
+  line-height: 1.8;
+  margin: 0 0 18px;
+}
+
+.custom-cta-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 22px;
+  border-radius: 999px;
+  background: #f7c35f;
+  color: #111315;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.custom-cta-link:hover {
+  background: #e6b850;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 1100px) {
+  .custom-container {
+    grid-template-columns: repeat(3, minmax(220px, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .custom-page {
+    padding: 108px 18px 60px;
+  }
+
+  .custom-container {
+    grid-template-columns: repeat(2, minmax(220px, 1fr));
+  }
+}
+
 @media (max-width: 768px) {
   .custom-page {
-    padding: 80px 10px 20px; /* Adjust padding for smaller screens */
+    padding: 98px 16px 50px;
   }
 
   .custom-title {
     font-size: 2rem;
   }
 
+  .custom-intro {
+    font-size: 0.98rem;
+    line-height: 1.7;
+    margin-bottom: 26px;
+  }
+
   .custom-container {
-    flex-direction: column; /* Stack cards vertically on smaller screens */
-    align-items: center;
-    gap: 10px;
+    grid-template-columns: 1fr;
+    gap: 16px;
   }
 
   .custom-card {
-    width: 90%; /* Cards take up more width on smaller screens */
-    max-width: 300px;
-  }
-  .custom-card h3 {
-    font-size: 0.8rem;
+    max-width: 100%;
   }
 
-  .coming-soon {
-    font-size: 1rem;
-    max-width: 90%;
+  .custom-img-wrap {
+    height: 220px;
+  }
+
+  .custom-card-title {
+    font-size: 0.92rem;
+  }
+
+  .category-navigation {
+    gap: 10px;
+    margin-bottom: 26px;
+  }
+
+  .nav-button {
+    width: auto;
+    text-align: center;
+    font-size: 0.95rem;
+    padding: 10px 16px;
+  }
+
+  .custom-bottom-text {
+    margin-top: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .custom-page {
+    padding: 90px 14px 44px;
+  }
+
+  .custom-title {
+    font-size: 1.8rem;
+  }
+
+  .custom-intro {
+    font-size: 0.94rem;
+  }
+
+  .nav-button {
+    width: 100%;
+    font-size: 0.9rem;
+    padding: 10px 14px;
+  }
+
+  .custom-img-wrap {
+    height: 200px;
+  }
+
+  .custom-card-title {
+    font-size: 0.9rem;
+    padding: 12px 14px 14px;
+  }
+
+  .custom-bottom-text h2 {
+    font-size: 1.5rem;
+  }
+
+  .custom-bottom-text p {
+    font-size: 0.96rem;
   }
 }

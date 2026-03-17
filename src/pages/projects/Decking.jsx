@@ -1,13 +1,17 @@
 import { Link } from 'react-router-dom';
 import '../../components/styles/decking.css';
 import deckingProjects from '../../data/DeckingProjects';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Dialog } from '@headlessui/react';
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 
 export default function DeckingProjects() {
   const [selectedIndex, setSelectedIndex] = useState(null);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const openModal = (index) => {
     setSelectedIndex(index);
@@ -20,7 +24,7 @@ export default function DeckingProjects() {
   const nextImage = () => {
     if (selectedIndex !== null) {
       setSelectedIndex((prevIndex) =>
-        prevIndex === deckingProjects.length - 1 ? 0 : prevIndex + 1
+        prevIndex === deckingProjects.length - 1 ? 0 : prevIndex + 1,
       );
     }
   };
@@ -28,25 +32,36 @@ export default function DeckingProjects() {
   const prevImage = () => {
     if (selectedIndex !== null) {
       setSelectedIndex((prevIndex) =>
-        prevIndex === 0 ? deckingProjects.length - 1 : prevIndex - 1
+        prevIndex === 0 ? deckingProjects.length - 1 : prevIndex - 1,
       );
     }
   };
 
   return (
     <section className='decking-page'>
-      {/* ✅ SEO: Page Title and Meta Description */}
       <Helmet>
-        <title>Outdoor Decking & Terrace Renovations | Our Projects</title>
+        <title>
+          Decking Projects | Outdoor Decking Installations | S.L. Builders LTD
+        </title>
         <meta
           name='description'
-          content='Explore our beautiful outdoor decking and terrace renovation projects. See examples of our work and get inspired for your own decking remodel.'
+          content='View outdoor decking and terrace renovation projects completed by S.L. Builders LTD across Nottingham, Leeds, Doncaster and surrounding areas.'
+        />
+        <link
+          rel='canonical'
+          href='https://slbuildersltd.co.uk/projects/decking'
         />
       </Helmet>
 
-      {/* ✅ SEO: Main Heading */}
-      <h1 className='decking-title'>Decking Renovations</h1>
-      {/* 🔹 Navigacijos tarp kategorijų mygtukai */}
+      <h1 className='decking-title'>Outdoor Decking Projects</h1>
+
+      <p className='decking-intro'>
+        Explore our recent outdoor decking and terrace renovation projects
+        completed across <strong>Nottingham</strong>, <strong>Leeds</strong>,{' '}
+        <strong>Doncaster</strong> and nearby areas. Our work focuses on durable
+        materials, clean finishes and practical outdoor spaces built to last.
+      </p>
+
       <div className='decking-category-navigation'>
         <Link to='/projects/kitchens' className='nav-button'>
           Kitchen
@@ -54,7 +69,7 @@ export default function DeckingProjects() {
         <Link to='/projects/flooring' className='nav-button'>
           Flooring
         </Link>
-        <Link to='/projects/decking' className='nav-button'>
+        <Link to='/projects/decking' className='nav-button active'>
           Decking
         </Link>
         <Link to='/projects/staircase' className='nav-button'>
@@ -67,62 +82,83 @@ export default function DeckingProjects() {
 
       <div className='decking-container'>
         {deckingProjects.map((project, index) => (
-          <div
+          <button
             key={project.id}
+            type='button'
             className='decking-card'
             onClick={() => openModal(index)}
           >
             <div className='decking-img-container'>
-              {/* ✅ SEO: Descriptive Alt Text */}
               <img
                 src={project.src}
-                alt={`Decking Renovation: ${project.title}`}
+                alt={`Outdoor decking project: ${project.title}`}
                 className='decking-img'
+                loading='lazy'
               />
             </div>
-            {/* ✅ Aprašymo laukas po nuotrauka */}
             <p className='decking-description'>{project.title}</p>
-          </div>
+          </button>
         ))}
       </div>
 
-      {/* Modalas su Headless UI Dialog */}
+      <section className='decking-bottom-text'>
+        <h2>Planning an Outdoor Decking Project?</h2>
+        <p>
+          If you are looking for a durable, stylish and professionally finished
+          decking installation, our team is ready to help. Get in touch to
+          discuss your outdoor renovation project.
+        </p>
+        <Link to='/services' className='decking-cta-link'>
+          Explore Our Services
+        </Link>
+      </section>
+
       <Dialog
         open={selectedIndex !== null}
         onClose={closeModal}
         className='decking-modal-overlay'
       >
-        <div
-          className='decking-modal-overlay'
-          onClick={closeModal} // Add this to handle clicks on the overlay background
-        >
+        <div className='decking-modal-overlay' onClick={closeModal}>
           <div
             className='decking-modal-content'
-            onClick={(e) => e.stopPropagation()} // Keep this to prevent clicks on content from closing
+            onClick={(e) => e.stopPropagation()}
           >
-            <button className='decking-modal-close' onClick={closeModal}>
+            <button
+              type='button'
+              className='decking-modal-close'
+              onClick={closeModal}
+            >
               <X size={24} />
             </button>
-            <button className='decking-modal-prev' onClick={prevImage}>
+
+            <button
+              type='button'
+              className='decking-modal-prev'
+              onClick={prevImage}
+            >
               <ChevronLeft size={24} />
             </button>
+
             <div className='decking-modal-image-container'>
               {selectedIndex !== null && (
                 <>
-                  {/* ✅ SEO: Descriptive Alt Text in Modal */}
                   <img
                     src={deckingProjects[selectedIndex].src}
-                    alt={`Decking Renovation: ${deckingProjects[selectedIndex].title}`}
+                    alt={`Outdoor decking project: ${deckingProjects[selectedIndex].title}`}
                     className='decking-modal-img'
                   />
-                  {/* Aprašymas po modaline nuotrauka */}
                   <p className='decking-modal-caption'>
                     {deckingProjects[selectedIndex].title}
                   </p>
                 </>
               )}
             </div>
-            <button className='decking-modal-next' onClick={nextImage}>
+
+            <button
+              type='button'
+              className='decking-modal-next'
+              onClick={nextImage}
+            >
               <ChevronRight size={24} />
             </button>
           </div>

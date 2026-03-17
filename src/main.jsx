@@ -1,10 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App'; // ✅ Importuojame pagrindinį komponentą
-import './components/styles/App.css'; // ✅ Importuojame globalų stilių
+import { HelmetProvider } from 'react-helmet-async';
+import App from './App';
+import './components/styles/App.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <App />
-  </React.StrictMode>
+    <HelmetProvider>
+      <App />
+    </HelmetProvider>
+  </React.StrictMode>,
 );

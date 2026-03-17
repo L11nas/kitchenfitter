@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './styles/modal.css';
 
 export default function Modal({ isOpen, onClose }) {
@@ -6,11 +6,28 @@ export default function Modal({ isOpen, onClose }) {
     name: '',
     email: '',
     message: '',
+    company: '',
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState('');
   const [submitStatus, setSubmitStatus] = useState('');
+
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const handleEscape = (e) => {
+      if (e.key === 'Escape') onClose();
+    };
+
+    document.addEventListener('keydown', handleEscape);
+    document.body.style.overflow = 'hidden';
+
+    return () => {
+      document.removeEventListener('keydown', handleEscape);
+      document.body.style.overflow = '';
+    };
+  }, [isOpen, onClose]);
 
   if (!isOpen) return null;
 
@@ -24,23 +41,44 @@ export default function Modal({ isOpen, onClose }) {
 
   const onSubmit = async (e) => {
     e.preventDefault();
+
+    if (formData.company) {
+      return;
+    }
+
     setIsSubmitting(true);
     setSubmitMessage('');
     setSubmitStatus('');
 
     try {
-      const response = await fetch('http://localhost:5000/send', {
+      const response = await fetch('https://slbuilders-api.onrender.com/send', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
       });
 
-      const result = await response.json();
+      let result = {};
+      try {
+        result = await response.json();
+      } catch {
+        result = {};
+      }
 
       if (response.ok) {
         setSubmitStatus('success');
-        setSubmitMessage(result.message);
-        setFormData({ name: '', email: '', message: '' }); // išvalom laukus
+        setSubmitMessage(
+          result.message || 'Your request has been sent successfully.',
+        );
+        setFormData({
+          name: '',
+          email: '',
+          message: '',
+          company: '',
+        });
+
+        setTimeout(() => {
+          onClose();
+        }, 1800);
       } else {
         setSubmitStatus('error');
         setSubmitMessage(result.message || 'Failed to send message.');
@@ -54,12 +92,19 @@ export default function Modal({ isOpen, onClose }) {
   };
 
   return (
-    <div className={`cta-modal-overlay ${isOpen ? 'open' : ''}`}>
-      <div className='cta-modal-content'>
+    <div
+      className='cta-modal-overlay'
+      onClick={onClose}
+      role='dialog'
+      aria-modal='true'
+      aria-labelledby='quote-modal-title'
+    >
+      <div className='cta-modal-content' onClick={(e) => e.stopPropagation()}>
         <button className='cta-modal-close' onClick={onClose} type='button'>
           ✖
         </button>
-        <h2>Request a Quote</h2>
+
+        <h2 id='quote-modal-title'>Request a Quote</h2>
 
         {submitMessage && (
           <div className={`submission-message ${submitStatus}`}>
@@ -77,6 +122,7 @@ export default function Modal({ isOpen, onClose }) {
             required
             disabled={isSubmitting}
           />
+
           <input
             type='email'
             name='email'
@@ -86,22 +132,22 @@ export default function Modal({ isOpen, onClose }) {
             required
             disabled={isSubmitting}
           />
+
           <textarea
             name='message'
-            placeholder='Your message'
+            placeholder='Tell us about your project'
             value={formData.message}
             onChange={handleChange}
             required
             disabled={isSubmitting}
           />
 
-          {/* Honeypot laukas (slaptas) */}
           <input
             type='text'
             name='company'
-            value={formData.company || ''}
+            value={formData.company}
             onChange={handleChange}
-            style={{ display: 'none' }} // paslepiam
+            style={{ display: 'none' }}
             autoComplete='off'
             tabIndex='-1'
           />

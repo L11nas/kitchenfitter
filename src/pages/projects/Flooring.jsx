@@ -1,13 +1,17 @@
 import { Link } from 'react-router-dom';
 import '../../components/styles/flooring.css';
 import flooringProjects from '../../data/FlooringProjects';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Dialog } from '@headlessui/react';
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 
 export default function FlooringProjects() {
   const [selectedIndex, setSelectedIndex] = useState(null);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const openModal = (index) => {
     setSelectedIndex(index);
@@ -20,7 +24,7 @@ export default function FlooringProjects() {
   const nextImage = () => {
     if (selectedIndex !== null) {
       setSelectedIndex((prevIndex) =>
-        prevIndex === flooringProjects.length - 1 ? 0 : prevIndex + 1
+        prevIndex === flooringProjects.length - 1 ? 0 : prevIndex + 1,
       );
     }
   };
@@ -28,30 +32,43 @@ export default function FlooringProjects() {
   const prevImage = () => {
     if (selectedIndex !== null) {
       setSelectedIndex((prevIndex) =>
-        prevIndex === 0 ? flooringProjects.length - 1 : prevIndex - 1
+        prevIndex === 0 ? flooringProjects.length - 1 : prevIndex - 1,
       );
     }
   };
 
   return (
     <section className='flooring-page'>
-      {/* ✅ SEO: Page Title and Meta Description */}
       <Helmet>
-        <title>Flooring & Parquet Renovations | Our Projects</title>
+        <title>
+          Flooring Projects | Flooring & Parquet Installations | S.L. Builders
+          LTD
+        </title>
         <meta
           name='description'
-          content='Explore our beautiful flooring and parquet renovation projects. See examples of our work and get inspired for your own flooring remodel.'
+          content='View flooring and parquet installation projects completed by S.L. Builders LTD across Nottingham, Leeds, Doncaster and surrounding areas.'
+        />
+        <link
+          rel='canonical'
+          href='https://slbuildersltd.co.uk/projects/flooring'
         />
       </Helmet>
 
-      {/* ✅ SEO: Main Heading */}
-      <h1 className='flooring-title'>Flooring Renovations</h1>
-      {/* 🔹 Navigacijos tarp kategorijų mygtukai */}
+      <h1 className='flooring-title'>Flooring Renovation Projects</h1>
+
+      <p className='flooring-intro'>
+        Explore our recent flooring and parquet installation projects completed
+        across <strong>Nottingham</strong>, <strong>Leeds</strong>,{' '}
+        <strong>Doncaster</strong> and nearby areas. Our work focuses on clean
+        finishes, durable materials and professionally fitted floors designed to
+        last.
+      </p>
+
       <div className='flooring-category-navigation'>
         <Link to='/projects/kitchens' className='nav-button'>
           Kitchen
         </Link>
-        <Link to='/projects/flooring' className='nav-button'>
+        <Link to='/projects/flooring' className='nav-button active'>
           Flooring
         </Link>
         <Link to='/projects/decking' className='nav-button'>
@@ -67,63 +84,83 @@ export default function FlooringProjects() {
 
       <div className='flooring-container'>
         {flooringProjects.map((project, index) => (
-          <div
+          <button
             key={project.id}
+            type='button'
             className='flooring-card'
             onClick={() => openModal(index)}
           >
             <div className='flooring-img-container'>
-              {/* ✅ SEO: Descriptive Alt Text */}
               <img
                 src={project.src}
-                alt={`Flooring Renovation: ${project.title}`}
+                alt={`Flooring project: ${project.title}`}
                 className='flooring-img'
+                loading='lazy'
               />
             </div>
-            {/* ✅ Aprašymo laukas po nuotrauka */}
             <p className='flooring-description'>{project.title}</p>
-          </div>
+          </button>
         ))}
       </div>
 
-      {/* ✅ Modalas su Headless UI Dialog */}
-      {/* Modalas su Headless UI Dialog */}
+      <section className='flooring-bottom-text'>
+        <h2>Planning a Flooring Project?</h2>
+        <p>
+          Whether you need parquet, laminate, vinyl or hardwood flooring
+          professionally installed, our team is ready to help. Explore our
+          services or contact us to discuss your flooring renovation project.
+        </p>
+        <Link to='/services' className='flooring-cta-link'>
+          Explore Our Services
+        </Link>
+      </section>
+
       <Dialog
         open={selectedIndex !== null}
         onClose={closeModal}
-        className='kitchen-modal-overlay'
+        className='flooring-modal-overlay'
       >
-        <div
-          className='kitchen-modal-overlay'
-          onClick={closeModal} // Add this to handle clicks on the overlay background
-        >
+        <div className='flooring-modal-overlay' onClick={closeModal}>
           <div
             className='flooring-modal-content'
-            onClick={(e) => e.stopPropagation()} // Keep this to prevent clicks on content from closing
+            onClick={(e) => e.stopPropagation()}
           >
-            <button className='flooring-modal-close' onClick={closeModal}>
+            <button
+              type='button'
+              className='flooring-modal-close'
+              onClick={closeModal}
+            >
               <X size={24} />
             </button>
-            <button className='flooring-modal-prev' onClick={prevImage}>
+
+            <button
+              type='button'
+              className='flooring-modal-prev'
+              onClick={prevImage}
+            >
               <ChevronLeft size={24} />
             </button>
+
             <div className='flooring-modal-image-container'>
               {selectedIndex !== null && (
                 <>
-                  {/* ✅ SEO: Descriptive Alt Text in Modal */}
                   <img
                     src={flooringProjects[selectedIndex].src}
-                    alt={`Flooring Renovation: ${flooringProjects[selectedIndex].title}`}
+                    alt={`Flooring project: ${flooringProjects[selectedIndex].title}`}
                     className='flooring-modal-img'
                   />
-                  {/* Aprašymas po modaline nuotrauka */}
                   <p className='flooring-modal-caption'>
                     {flooringProjects[selectedIndex].title}
                   </p>
                 </>
               )}
             </div>
-            <button className='flooring-modal-next' onClick={nextImage}>
+
+            <button
+              type='button'
+              className='flooring-modal-next'
+              onClick={nextImage}
+            >
               <ChevronRight size={24} />
             </button>
           </div>

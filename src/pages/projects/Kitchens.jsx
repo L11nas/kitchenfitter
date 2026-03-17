@@ -1,13 +1,17 @@
 import { Link } from 'react-router-dom';
 import '../../components/styles/kitchen.css';
 import kitchenProjects from '../../data/KitchenProjects';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Dialog } from '@headlessui/react';
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 
 export default function KitchenProjects() {
   const [selectedIndex, setSelectedIndex] = useState(null);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const openModal = (index) => {
     setSelectedIndex(index);
@@ -20,7 +24,7 @@ export default function KitchenProjects() {
   const nextImage = () => {
     if (selectedIndex !== null) {
       setSelectedIndex((prevIndex) =>
-        prevIndex === kitchenProjects.length - 1 ? 0 : prevIndex + 1
+        prevIndex === kitchenProjects.length - 1 ? 0 : prevIndex + 1,
       );
     }
   };
@@ -28,27 +32,40 @@ export default function KitchenProjects() {
   const prevImage = () => {
     if (selectedIndex !== null) {
       setSelectedIndex((prevIndex) =>
-        prevIndex === 0 ? kitchenProjects.length - 1 : prevIndex - 1
+        prevIndex === 0 ? kitchenProjects.length - 1 : prevIndex - 1,
       );
     }
   };
 
   return (
     <section className='kitchen-page'>
-      {/* ✅ SEO: Page Title and Meta Description */}
       <Helmet>
-        <title>Kitchen Renovations | Our Projects</title>
+        <title>
+          Kitchen Projects | Kitchen Installations & Renovations | S.L. Builders
+          LTD
+        </title>
         <meta
           name='description'
-          content='Explore our stunning kitchen renovation projects. See examples of our work and get inspired for your own kitchen remodel.'
+          content='View kitchen installation and renovation projects completed by S.L. Builders LTD across Nottingham, Leeds, Doncaster and surrounding areas.'
+        />
+        <link
+          rel='canonical'
+          href='https://slbuildersltd.co.uk/projects/kitchens'
         />
       </Helmet>
 
-      {/* ✅ SEO: Main Heading */}
-      <h1 className='kitchen-title'>Kitchen Renovations</h1>
-      {/* 🔹 Navigacijos tarp kategorijų mygtukai */}
+      <h1 className='kitchen-title'>Kitchen Renovation Projects</h1>
+
+      <p className='kitchen-intro'>
+        Explore our recent kitchen installation and renovation projects
+        completed across <strong>Nottingham</strong>, <strong>Leeds</strong>,{' '}
+        <strong>Doncaster</strong> and nearby areas. Our work focuses on clean
+        finishes, practical layouts and high-quality kitchens built to suit
+        everyday living.
+      </p>
+
       <div className='kitchen-category-navigation'>
-        <Link to='/projects/kitchens' className='nav-button'>
+        <Link to='/projects/kitchens' className='nav-button active'>
           Kitchen
         </Link>
         <Link to='/projects/flooring' className='nav-button'>
@@ -67,62 +84,83 @@ export default function KitchenProjects() {
 
       <div className='kitchen-container'>
         {kitchenProjects.map((project, index) => (
-          <div
+          <button
             key={project.id}
+            type='button'
             className='kitchen-card'
             onClick={() => openModal(index)}
           >
             <div className='kitchen-img-container'>
-              {/* ✅ SEO: Descriptive Alt Text */}
               <img
                 src={project.src}
-                alt={`Kitchen Renovation: ${project.title}`}
+                alt={`Kitchen project: ${project.title}`}
                 className='kitchen-img'
+                loading='lazy'
               />
             </div>
-            {/* ✅ Aprašymo laukas po nuotrauka */}
             <p className='kitchen-description'>{project.title}</p>
-          </div>
+          </button>
         ))}
       </div>
 
-      {/* Modalas su Headless UI Dialog */}
+      <section className='kitchen-bottom-text'>
+        <h2>Planning a Kitchen Renovation?</h2>
+        <p>
+          Whether you need a full kitchen installation, upgraded units, worktops
+          or a complete layout refresh, our team is ready to help. Explore our
+          services or contact us to discuss your project.
+        </p>
+        <Link to='/services' className='kitchen-cta-link'>
+          Explore Our Services
+        </Link>
+      </section>
+
       <Dialog
         open={selectedIndex !== null}
         onClose={closeModal}
         className='kitchen-modal-overlay'
       >
-        <div
-          className='kitchen-modal-overlay'
-          onClick={closeModal} // Add this to handle clicks on the overlay background
-        >
+        <div className='kitchen-modal-overlay' onClick={closeModal}>
           <div
             className='kitchen-modal-content'
-            onClick={(e) => e.stopPropagation()} // Keep this to prevent clicks on content from closing
+            onClick={(e) => e.stopPropagation()}
           >
-            <button className='kitchen-modal-close' onClick={closeModal}>
+            <button
+              type='button'
+              className='kitchen-modal-close'
+              onClick={closeModal}
+            >
               <X size={24} />
             </button>
-            <button className='kitchen-modal-prev' onClick={prevImage}>
+
+            <button
+              type='button'
+              className='kitchen-modal-prev'
+              onClick={prevImage}
+            >
               <ChevronLeft size={24} />
             </button>
+
             <div className='kitchen-modal-image-container'>
               {selectedIndex !== null && (
                 <>
-                  {/* ✅ SEO: Descriptive Alt Text in Modal */}
                   <img
                     src={kitchenProjects[selectedIndex].src}
-                    alt={`Kitchen Renovation: ${kitchenProjects[selectedIndex].title}`}
+                    alt={`Kitchen project: ${kitchenProjects[selectedIndex].title}`}
                     className='kitchen-modal-img'
                   />
-                  {/* Aprašymas po modaline nuotrauka */}
                   <p className='kitchen-modal-caption'>
                     {kitchenProjects[selectedIndex].title}
                   </p>
                 </>
               )}
             </div>
-            <button className='kitchen-modal-next' onClick={nextImage}>
+
+            <button
+              type='button'
+              className='kitchen-modal-next'
+              onClick={nextImage}
+            >
               <ChevronRight size={24} />
             </button>
           </div>

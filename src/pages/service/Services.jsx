@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
-
-import '../../components/styles/services.css';
+import { Link } from 'react-router-dom';
 import { FaBookmark } from 'react-icons/fa';
 import { Helmet } from 'react-helmet-async';
+import '../../components/styles/services.css';
 
-// Importuojame vaizdus
+// Images
 import kitchenImg from '/assets/Kitchenimg/project8/51.jpg';
 import flooringImg from '/assets/Kitchenimg/parquet.jpg';
 import renovationImg from '/assets/Kitchenimg/hero1.jpg';
@@ -15,136 +15,104 @@ const services = [
   {
     title: 'Kitchen Installation',
     description:
-      'Looking for expert kitchen fitters in the UK? At S.L. BUILDERS LTD, we offer full-service kitchen installations, including cabinet fitting, worktop installation, plumbing, electrical work, and professional finishing. Our custom kitchen fitting solutions are designed for style, practicality, and optimal space use—delivering beautiful, functional kitchens that meet your everyday needs.',
+      'We provide expert kitchen fitting and installation services, including cabinet fitting, worktop installation, plumbing coordination, electrical preparation and professional finishing. Our bespoke kitchen solutions are designed to improve both style and everyday practicality.',
     image: kitchenImg,
-    link: '/services/kitchen-installation',
-    keywords: [
-      'kitchen installation',
-      'kitchen fitting',
-      'cabinet installation',
-      'countertops',
-      'plumbing',
-      'electrical work',
-      'kitchen design',
-      'kitchen remodel',
-    ],
+    link: '/projects/kitchens',
+    alt: 'Modern kitchen installation completed by S.L. Builders LTD',
   },
   {
     title: 'Flooring Installation',
     description:
-      ' we provide professional flooring installation services across the UK, specialising in hardwood, laminate, vinyl, and tile flooring. Whether youre after the natural warmth of wood or the durability of vinyl, our expert fitters ensure a smooth, level, and long-lasting finish. Every installation is completed with precision—combining beauty, resilience, and style for high-traffic living spaces.',
+      'Our flooring installation services include hardwood, laminate, vinyl and tile flooring, fitted with precision for a clean, level and durable finish that enhances both comfort and appearance.',
     image: flooringImg,
-    link: '/services/flooring',
-    keywords: [
-      'flooring installation',
-      'hardwood flooring',
-      'laminate flooring',
-      'vinyl flooring',
-      'tile flooring',
-      'floor installation',
-      'floor remodel',
-    ],
+    link: '/projects/flooring',
+    alt: 'Professional flooring installation for a residential interior',
   },
   {
     title: 'Custom Renovations',
     description:
-      'Transform your home with our bespoke renovation services, tailored to your lifestyle and space. We specialize in modernising outdated interiors, reconfiguring layouts for better flow, and integrating smart home features. From structural wall remodeling to custom furniture installations, we combine style, efficiency, and long-term value in every project.',
+      'We deliver bespoke home renovation services tailored to your layout, lifestyle and design goals, from room upgrades to wider refurbishment works that improve function, flow and long-term value.',
     image: renovationImg,
-    link: '/services/renovations',
-    keywords: [
-      'home renovation',
-      'custom renovation',
-      'home remodeling',
-      'smart home features',
-      'wall remodeling',
-      'bespoke furniture',
-      'home improvement',
-    ],
+    link: '/projects/custom',
+    alt: 'Home renovation project completed by S.L. Builders LTD',
   },
   {
     title: 'Outdoor Decking Installation',
     description:
-      'Enhance your garden or patio with our expert outdoor decking installation services. We build durable, weather-resistant decks using premium materials such as composite, hardwood, and pressure-treated timber. Our services include custom deck design, handrail and balustrade installation, and full waterproofing—perfect for creating stylish, functional outdoor living areas that last.',
+      'We build durable, weather-resistant decking using quality materials such as composite, hardwood and treated timber, creating practical and attractive outdoor spaces for year-round use.',
     image: deckingImg,
-    link: '/services/decking',
-    keywords: [
-      'decking installation',
-      'outdoor decking',
-      'composite decking',
-      'hardwood decking',
-      'deck design',
-      'railing installation',
-      'deck waterproofing',
-    ],
+    link: '/projects/decking',
+    alt: 'Outdoor decking installation for a garden or patio area',
   },
   {
     title: 'Staircase Renovation',
     description:
-      'Modernise your interior with our professional staircase renovation services. We upgrade worn or outdated stairs by replacing treads, fitting contemporary handrails, and strengthening the overall structure for long-term safety. Whether you prefer timber, glass, or metal finishes, we tailor each staircase to match your home’s design and add a sleek, modern look.',
+      'Our staircase renovation services include stair upgrades, tread replacement, handrail fitting and structural improvements, helping modernise your interior while improving safety and finish quality.',
     image: staircaseImg,
-    link: '/services/staircase',
-    keywords: [
-      'staircase renovation',
-      'stair remodel',
-      'handrail installation',
-      'staircase design',
-      'staircase upgrade',
-      'staircase repair',
-    ],
+    link: '/projects/staircase',
+    alt: 'Staircase renovation with modern finish and upgraded handrails',
   },
 ];
 
-export default function ServiceCards() {
+export default function Services() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
   return (
     <section className='services-hero-container'>
-      {/* ✅ SEO: Page Title and Meta Description */}
       <Helmet>
         <title>
-          Our Home Renovation Services | Kitchen, Flooring, Decking & More
+          Kitchen Fitting, Flooring & Renovation Services | S.L. Builders LTD
         </title>
         <meta
           name='description'
-          content='Explore our comprehensive home renovation services, including kitchen installation, flooring, decking, custom renovations, and staircase remodeling. Transform your home with our expert team.'
+          content='Explore kitchen fitting, flooring installation, staircase renovation, decking and bespoke home improvement services from S.L. Builders LTD across Nottingham, Leeds, Doncaster and surrounding areas.'
         />
-        <meta
-          name='keywords'
-          content={[
-            ...new Set(services.flatMap((service) => service.keywords)),
-          ].join(', ')}
-        />
+        <link rel='canonical' href='https://slbuildersltd.co.uk/services' />
       </Helmet>
+
       <div className='services-hero-overlay'></div>
+
       <div className='services-hero-content'>
-        {/* ✅ SEO: Main Heading */}
-        <h2>Our Services</h2>
+        <h1>Our Services</h1>
+
+        <p className='services-intro'>
+          S.L. Builders LTD provides expert kitchen fitting, flooring
+          installation, staircase renovation, decking and bespoke home
+          improvement services across <strong>Nottingham</strong>,{' '}
+          <strong>Leeds</strong>, <strong>Doncaster</strong> and nearby areas.
+          We focus on reliable workmanship, quality materials and practical,
+          long-lasting results for every home.
+        </p>
+
         <div className='services-hero-cards'>
           {services.map((service, index) => (
-            <div key={index} className='services-hero-card' role='article'>
-              {/* ✅ SEO: Descriptive Alt Text */}
+            <article key={index} className='services-hero-card'>
               <img
                 src={service.image}
-                alt={`${
-                  service.title
-                } - professional ${service.title.toLowerCase()} service`}
+                alt={service.alt}
                 className='services-hero-image'
+                loading='lazy'
               />
+
               <div className='services-hero-text'>
-                {/* ✅ SEO: Service Title as H3 */}
-                <h3>
+                <h2>
                   <FaBookmark
                     className='services-hero-icon'
-                    aria-label={`${service.title} bookmark`}
-                    title='Bookmark icon'
+                    aria-hidden='true'
+                    title={service.title}
                   />{' '}
                   {service.title}
-                </h3>
-                {/* ✅ SEO: Service Description */}
+                </h2>
+
                 <p>{service.description}</p>
+
+                <Link to={service.link} className='services-read-more'>
+                  View {service.title} Projects
+                </Link>
               </div>
-            </div>
+            </article>
           ))}
         </div>
       </div>

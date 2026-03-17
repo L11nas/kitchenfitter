@@ -1,4 +1,5 @@
 import { Helmet } from 'react-helmet-async';
+import { Link } from 'react-router-dom';
 import { MdOutlineKitchen } from 'react-icons/md';
 import '../../components/styles/CityPage.css';
 
@@ -6,10 +7,10 @@ export default function Doncaster() {
   return (
     <div className='city-page'>
       <Helmet>
-        <title>Kitchen Renovation in Doncaster | S.L. Builders LTD</title>
+        <title>Kitchen Fitters in Doncaster | S.L. Builders LTD</title>
         <meta
           name='description'
-          content='Leading kitchen fitters in Doncaster. S.L. Builders LTD offers tailored kitchen renovations, custom design, and professional installations.'
+          content='S.L. Builders LTD provides expert kitchen fitting, kitchen renovation, flooring installation and home improvement services in Doncaster and surrounding areas.'
         />
         <link rel='canonical' href='https://slbuildersltd.co.uk/doncaster' />
       </Helmet>
@@ -18,28 +19,113 @@ export default function Doncaster() {
         className='city-banner'
         style={{ backgroundImage: 'url("/assets/cities/doncaster.webp")' }}
         role='img'
-        aria-label='Kitchen renovation project in Doncaster, UK'
+        aria-label='Modern kitchen renovation project in Doncaster'
       >
         <div className='city-content'>
           <span className='city-icon'>
             <MdOutlineKitchen />
           </span>
+
           <h1>Professional Kitchen Fitters in Doncaster</h1>
+
           <p>
-            At S.L. Builders LTD, we provide expert kitchen renovations in
-            Doncaster. Whether you're planning a complete transformation or
-            upgrading specific elements, we ensure a perfect finish.
+            S.L. Builders LTD provides expert kitchen fitting, kitchen
+            renovation and home improvement services across Doncaster and nearby
+            areas. We help homeowners create practical, stylish kitchens with a
+            strong focus on workmanship, durability and clean, professional
+            finishes.
           </p>
+
           <p>
-            Our team combines functionality with style to bring your vision to
-            life – delivering bespoke results that last.
+            Whether you are planning a full kitchen renovation, replacing units,
+            upgrading worktops or improving the layout of your space, our team
+            delivers reliable installation services tailored to your property
+            and everyday needs.
           </p>
-          <p>
-            Reach out now for a free consultation and get started on your dream
-            kitchen today.
-          </p>
+
+          <div className='city-actions'>
+            <Link to='/projects/kitchens' className='city-button'>
+              View Kitchen Projects
+            </Link>
+            <Link to='/services' className='city-button city-button-secondary'>
+              Explore Our Services
+            </Link>
+          </div>
         </div>
       </div>
+
+      <section className='city-section'>
+        <div className='city-section-inner'>
+          <h2>Kitchen Renovation Services in Doncaster</h2>
+          <p>
+            We work with homeowners in Doncaster who want reliable kitchen
+            fitting and renovation services completed to a high standard. Our
+            kitchen projects can include cabinet fitting, worktop installation,
+            flooring, finishing work and wider renovation support where needed.
+          </p>
+          <p>
+            Every home is different, which is why we take a tailored approach to
+            every installation. We focus on creating kitchens that not only look
+            great, but also function well for storage, cooking, family life and
+            long-term everyday use.
+          </p>
+        </div>
+      </section>
+
+      <section className='city-section city-section-alt'>
+        <div className='city-section-inner'>
+          <h2>Areas We Cover Around Doncaster</h2>
+          <p>
+            We provide kitchen fitting and renovation services across Doncaster
+            and surrounding locations, including <strong>Bessacarr</strong>,{' '}
+            <strong>Armthorpe</strong>, <strong>Balby</strong>,{' '}
+            <strong>Bentley</strong>, <strong>Rossington</strong> and nearby
+            areas.
+          </p>
+          <p>
+            If you are based near Doncaster and looking for trusted kitchen
+            fitters with a professional approach and strong attention to detail,
+            S.L. Builders LTD is ready to help.
+          </p>
+        </div>
+      </section>
+
+      <section className='city-section'>
+        <div className='city-section-inner'>
+          <h2>Why Homeowners Choose S.L. Builders LTD</h2>
+          <ul className='city-list'>
+            <li>Experienced kitchen fitters focused on quality finishes</li>
+            <li>
+              Reliable service and clear communication throughout the project
+            </li>
+            <li>Tailored solutions for modern and traditional homes</li>
+            <li>Support with wider home improvement and renovation work</li>
+            <li>
+              Free consultation for projects in Doncaster and nearby areas
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section className='city-section city-cta-section'>
+        <div className='city-section-inner'>
+          <h2>Planning a Kitchen Project in Doncaster?</h2>
+          <p>
+            Whether you need a full kitchen renovation or a professional team to
+            install your new kitchen properly, we are here to help. View our
+            recent work or get in touch to discuss your project.
+          </p>
+
+          <div className='city-actions'>
+            <Link to='/projects/kitchens' className='city-button'>
+              See Recent Kitchen Projects
+            </Link>
+            <Link to='/about' className='city-button city-button-secondary'>
+              Learn More About Us
+            </Link>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
