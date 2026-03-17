@@ -1,118 +1,170 @@
 .reviews-section {
   width: 100%;
   margin-top: 40px;
-  padding: 50px 20px;
+  padding: 56px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   z-index: 6;
 }
+
 .reviews-section h2 {
-  font-size: 2rem;
-  font-weight: bold;
+  font-size: clamp(2rem, 3vw, 2.6rem);
+  font-weight: 700;
   color: white;
-  padding-bottom: 30px;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  padding-bottom: 12px;
+  margin: 0;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.reviews-intro {
+  max-width: 760px;
+  margin: 0 0 30px;
+  color: rgba(255, 255, 255, 0.84);
+  line-height: 1.8;
+  font-size: 1.02rem;
 }
 
 .reviews-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(260px, 1fr));
   gap: 20px;
-  max-width: 1200px;
+  width: 100%;
+  max-width: 1240px;
 }
 
-/* Atsiliepimo kortelė */
 .review-card {
-  width: 300px;
-  padding: 20px;
-  border-radius: 12px;
-  background: rgba(0, 0, 0, 0.6); /* Tamsesnis blur */
-  backdrop-filter: blur(10px);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  padding: 22px 20px;
+  border-radius: 18px;
+  background: rgba(20, 20, 20, 0.74);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.24);
   color: #fff;
   text-align: left;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.28s ease,
+    box-shadow 0.28s ease,
+    border-color 0.28s ease;
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .review-card:hover {
-  transform: translateY(-5px) scale(1.05);
-  background: rgba(0, 0, 0, 0.7);
-  box-shadow: 0 10px 20px rgba(255, 102, 0, 0.5);
+  transform: translateY(-5px);
+  box-shadow: 0 20px 36px rgba(0, 0, 0, 0.34);
+  border-color: rgba(247, 195, 95, 0.18);
 }
 
-/* Profilio informacija */
 .review-header {
   display: flex;
   align-items: center;
-  gap: 10px;
-  margin-bottom: 10px;
+  gap: 12px;
+  margin-bottom: 12px;
 }
 
+.profile-pic,
 .review-header img {
-  width: 50px;
-  height: 50px;
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid #ffcc33;
+  border: 2px solid #f7c35f;
+  flex-shrink: 0;
 }
 
-.review-name {
-  font-weight: bold;
+.review-meta h3 {
+  margin: 0 0 4px;
   font-size: 1rem;
+  color: #fff;
+  font-weight: 700;
 }
 
 .review-date {
-  font-size: 0.8rem;
-  color: #ddd;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.65);
+  margin: 0;
 }
 
-/* Atsiliepimo tekstas */
-.review-text {
-  font-size: 1rem;
-  margin-bottom: 10px;
-}
-
-/* Žvaigždučių įvertinimas */
 .review-stars {
-  color: gold;
-  font-size: 1.2rem;
-  margin-top: 10px;
+  display: flex;
+  gap: 4px;
+  color: #f7c35f;
+  font-size: 0.95rem;
+  margin-bottom: 12px;
 }
 
-/* Atsiliepimo palikimo mygtukas */
+.review-text {
+  font-size: 0.98rem;
+  line-height: 1.75;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.9);
+}
+
 .leave-review {
-  margin-top: 30px;
+  margin-top: 32px;
 }
 
 .leave-review-btn {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: linear-gradient(135deg, #ff7eb9, #7afcff);
-  color: white;
-  padding: 10px 20px;
-  border-radius: 8px;
+  background: #f7c35f;
+  color: #111418;
+  padding: 12px 22px;
+  border-radius: 999px;
   text-decoration: none;
-  font-weight: bold;
-  transition: all 0.3s ease;
+  font-weight: 700;
+  transition: all 0.25s ease;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
 }
 
 .leave-review-btn:hover {
-  background: linear-gradient(135deg, #ff5599, #00eaff);
-  transform: scale(1.05);
+  background: #e6b850;
+  transform: translateY(-2px);
 }
 
-/* Responsive */
-@media (max-width: 768px) {
+@media (max-width: 1100px) {
   .reviews-container {
-    flex-direction: column;
-    align-items: center;
+    grid-template-columns: repeat(2, minmax(260px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .reviews-section {
+    padding: 48px 16px;
+  }
+
+  .reviews-container {
+    grid-template-columns: 1fr;
+    gap: 16px;
   }
 
   .review-card {
-    width: 90%;
+    width: 100%;
+  }
+
+  .reviews-intro {
+    font-size: 0.98rem;
+    line-height: 1.7;
+  }
+}
+
+@media (max-width: 480px) {
+  .reviews-section {
+    padding: 40px 14px;
+  }
+
+  .review-card {
+    padding: 18px 16px;
+    border-radius: 16px;
+  }
+
+  .review-text {
+    font-size: 0.95rem;
+  }
+
+  .leave-review-btn {
+    width: 100%;
+    justify-content: center;
   }
 }

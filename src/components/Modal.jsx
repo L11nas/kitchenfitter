@@ -1,6 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import './styles/modal.css';
 
+function encode(data) {
+  return Object.keys(data)
+    .map(
+      (key) =>
+        `${encodeURIComponent(key)}=${encodeURIComponent(data[key] || '')}`,
+    )
+    .join('&');
+}
+
 export default function Modal({ isOpen, onClose }) {
   const [formData, setFormData] = useState({
     name: '',
@@ -43,6 +52,8 @@ export default function Modal({ isOpen, onClose }) {
     e.preventDefault();
 
     if (formData.company) {
+      setSubmitStatus('error');
+      setSubmitMessage('Spam detected.');
       return;
     }
 
@@ -51,24 +62,20 @@ export default function Modal({ isOpen, onClose }) {
     setSubmitStatus('');
 
     try {
-      const response = await fetch('https://slbuilders-api.onrender.com/send', {
+      const response = await fetch('/', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: encode({
+          'form-name': 'contact',
+          ...formData,
+        }),
       });
-
-      let result = {};
-      try {
-        result = await response.json();
-      } catch {
-        result = {};
-      }
 
       if (response.ok) {
         setSubmitStatus('success');
-        setSubmitMessage(
-          result.message || 'Your request has been sent successfully.',
-        );
+        setSubmitMessage('Your request has been sent successfully.');
         setFormData({
           name: '',
           email: '',
@@ -81,7 +88,7 @@ export default function Modal({ isOpen, onClose }) {
         }, 1800);
       } else {
         setSubmitStatus('error');
-        setSubmitMessage(result.message || 'Failed to send message.');
+        setSubmitMessage('Failed to send your request. Please try again.');
       }
     } catch (error) {
       setSubmitStatus('error');
@@ -112,7 +119,15 @@ export default function Modal({ isOpen, onClose }) {
           </div>
         )}
 
-        <form onSubmit={onSubmit}>
+        <form
+          name='contact'
+          method='POST'
+          data-netlify='true'
+          netlify-honeypot='company'
+          onSubmit={onSubmit}
+        >
+          <input type='hidden' name='form-name' value='contact' />
+
           <input
             type='text'
             name='name'

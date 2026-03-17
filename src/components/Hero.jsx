@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react';
-import AOS from 'aos';
+
 import 'aos/dist/aos.css';
 import Modal from './Modal';
-
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 
@@ -20,6 +19,8 @@ import project3 from '/assets/Kitchenimg/project1/36.jpg';
 import './styles/hero.css';
 
 export default function Hero() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   useEffect(() => {
     if ('requestIdleCallback' in window) {
       requestIdleCallback(() => {
@@ -42,24 +43,6 @@ export default function Hero() {
     }
   }, []);
 
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
-  });
-
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const mailtoLink = `mailto:slbuilderswork@gmail.com?subject=Service enquiry&body=Name: ${formData.name}%0D%0AEmail: ${formData.email}%0D%0AMessage: ${formData.message}`;
-    window.location.href = mailtoLink;
-    setIsModalOpen(false);
-  };
-
   return (
     <>
       <Helmet>
@@ -73,19 +56,11 @@ export default function Hero() {
         <link rel='canonical' href='https://slbuildersltd.co.uk/' />
       </Helmet>
 
-      {!isModalOpen}
-
       <section className='hero-container' role='banner'>
         <div className='hero-fixed-bg' />
-        <Modal
-          isOpen={isModalOpen}
-          onClose={() => setIsModalOpen(false)}
-          onSubmit={handleSubmit}
-          formData={formData}
-          handleChange={handleChange}
-        />
-
         <div className='hero-overlay'></div>
+
+        <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
 
         <div className='hero-content'>
           <h1>
@@ -103,6 +78,7 @@ export default function Hero() {
           </p>
 
           <button
+            type='button'
             className='hero-cta-button'
             onClick={() => setIsModalOpen(true)}
           >
@@ -112,6 +88,7 @@ export default function Hero() {
 
         <section className='hero-services' data-aos='fade-up'>
           <h2>Why Choose S.L. Builders LTD?</h2>
+
           <p>
             At S.L. Builders LTD, we specialise in expert kitchen fitting and
             home renovation services across <strong>Nottingham</strong>,{' '}
@@ -120,6 +97,7 @@ export default function Hero() {
             craftsmanship, careful attention to detail and durable, high-quality
             finishes on every project.
           </p>
+
           <p>
             Whether you are planning a full kitchen renovation, new flooring,
             staircase refurbishment or exterior decking, we work closely with
@@ -178,6 +156,7 @@ export default function Hero() {
 
         <section className='hero-projects' data-aos='fade-up'>
           <h2>See Our Recent Work</h2>
+
           <div className='hero-projects-images'>
             <img
               src={project1}
