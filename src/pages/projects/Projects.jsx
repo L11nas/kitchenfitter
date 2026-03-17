@@ -102,8 +102,10 @@ export default function Projects() {
                 backgroundRepeat: 'no-repeat',
               }}
             >
-              <h2>{category.title}</h2>
-              <span className='projects-cta'>View Projects →</span>
+              <div className='category-content'>
+                <h2>{category.title}</h2>
+                <span className='projects-cta'>View Projects →</span>
+              </div>
             </div>
           </Link>
         ))}

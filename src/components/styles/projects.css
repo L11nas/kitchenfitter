@@ -16,12 +16,18 @@
   padding-bottom: 80px;
 }
 
-.projects-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.55);
-  backdrop-filter: blur(4px);
-  z-index: 1;
+.category-overlay {
+  width: 100%;
+  height: 100%;
+  min-height: 280px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  position: relative;
+  padding: 24px;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
 }
 
 .projects-header {
@@ -68,6 +74,7 @@
   transform: translateY(20px);
   animation: fadeInUp 0.6s ease-out forwards;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  position: relative;
 }
 
 .projects-category:nth-child(1) {
@@ -136,6 +143,10 @@
   z-index: 2;
   text-align: left;
   max-width: 85%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
 }
 
 .category-overlay h2 {
@@ -143,8 +154,11 @@
   font-size: 1.7rem;
   font-weight: 700;
   line-height: 1.2;
-  margin: 0 0 10px;
+  margin: 0;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .projects-cta {
@@ -157,6 +171,8 @@
   padding: 8px 14px;
   border-radius: 999px;
   backdrop-filter: blur(4px);
+  line-height: 1.2;
+  flex-shrink: 0;
 }
 
 .projects-bottom-text {
@@ -216,15 +232,29 @@
     min-height: 240px;
   }
 
+  .category-overlay {
+    padding: 18px;
+  }
+
+  .category-content {
+    max-width: 100%;
+    gap: 8px;
+  }
+
   .category-overlay h2 {
     font-size: 1.45rem;
+    line-height: 1.2;
+  }
+
+  .projects-cta {
+    font-size: 0.92rem;
+    padding: 8px 13px;
   }
 
   .projects-bottom-text h2 {
     font-size: 1.6rem;
   }
 }
-
 @media (max-width: 480px) {
   .projects-page {
     padding: 100px 14px 50px;
@@ -236,15 +266,22 @@
   }
 
   .category-overlay {
-    padding: 18px;
+    padding: 16px;
+  }
+
+  .category-content {
+    max-width: 100%;
+    gap: 8px;
   }
 
   .category-overlay h2 {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
+    line-height: 1.18;
+    max-width: 70%;
   }
 
   .projects-cta {
-    font-size: 0.9rem;
+    font-size: 0.88rem;
     padding: 7px 12px;
   }
 }
