@@ -74,6 +74,13 @@ export default function Modal({ isOpen, onClose }) {
       });
 
       if (response.ok) {
+        if (window.gtag) {
+          window.gtag('event', 'form_submit', {
+            event_category: 'contact',
+            event_label: 'contact_form',
+          });
+        }
+
         setSubmitStatus('success');
         setSubmitMessage('Your request has been sent successfully.');
         setFormData({
