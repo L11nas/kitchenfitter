@@ -51,15 +51,16 @@ export default function Modal({ isOpen, onClose }) {
   const onSubmit = async (e) => {
     e.preventDefault();
 
-    if (formData.company) {
-      setSubmitStatus('error');
-      setSubmitMessage('Spam detected.');
-      return;
-    }
+    // 🔥 VISADA siunčiam event
+    window.gtag?.('event', 'form_submit', {
+      event_category: 'contact',
+      event_label: 'contact_form',
+    });
 
-    setIsSubmitting(true);
-    setSubmitMessage('');
-    setSubmitStatus('');
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: 'form_submit',
+    });
 
     try {
       const response = await fetch('/', {
@@ -74,19 +75,6 @@ export default function Modal({ isOpen, onClose }) {
       });
 
       if (response.ok) {
-        // 🔥 GA event
-        window.gtag?.('event', 'form_submit', {
-          event_category: 'contact',
-          event_label: 'contact_form',
-        });
-
-        window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({
-          event: 'form_submit',
-          event_category: 'contact',
-          event_label: 'contact_form',
-        });
-
         setSubmitStatus('success');
         setSubmitMessage('Your request has been sent successfully.');
 
@@ -102,11 +90,11 @@ export default function Modal({ isOpen, onClose }) {
         }, 1800);
       } else {
         setSubmitStatus('error');
-        setSubmitMessage('Failed to send your request. Please try again.');
+        setSubmitMessage('Failed to send your request.');
       }
     } catch (error) {
       setSubmitStatus('error');
-      setSubmitMessage('Something went wrong. Please try again.');
+      setSubmitMessage('Something went wrong.');
     } finally {
       setIsSubmitting(false);
     }
