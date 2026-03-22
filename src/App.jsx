@@ -21,10 +21,11 @@ import Doncaster from './pages/cities/Doncaster';
 import Lincolnshire from './pages/cities/Lincolnshire';
 import Leicestershire from './pages/cities/Leicestershire';
 import ScrollToTop from './components/ScrollToTop';
-
+import Analytics from './components/Analytics';
 export default function App() {
   return (
     <Router>
+      <Analytics />
       <ScrollToTop />
       <Navbar />
 
