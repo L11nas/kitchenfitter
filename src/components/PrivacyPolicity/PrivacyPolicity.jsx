@@ -1,5 +1,6 @@
 // PrivacyPolicy.jsx
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import '../styles/privacyPolicity.css';
 
 const PrivacyPolicy = () => {
@@ -9,6 +10,15 @@ const PrivacyPolicy = () => {
 
   return (
     <div className='privacy-policy-container'>
+      <Helmet>
+        <title>Privacy Policy | S.L. Builders LTD</title>
+        <meta
+          name='description'
+          content='Read the S.L. Builders LTD privacy policy covering how we collect, use and protect your personal information.'
+        />
+        <link rel='canonical' href='https://slbuildersltd.co.uk/privacy-policy' />
+      </Helmet>
+
       <div className='privacy-policy-content'>
         <h1>Privacy Policy</h1>
 
