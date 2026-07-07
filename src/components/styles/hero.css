@@ -182,6 +182,80 @@
   font-size: 2rem;
 }
 
+/* TESTIMONIALS SECTION */
+.hero-testimonials {
+  width: 100%;
+  max-width: 1200px;
+  padding: 24px 0;
+  margin: 8px 0 26px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  color: #f2f2f2;
+  border-radius: 15px;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-testimonials h2 {
+  margin-bottom: 8px;
+  font-size: clamp(1.9rem, 3vw, 2.5rem);
+  color: #fff;
+  text-align: center;
+}
+
+.hero-testimonials-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(260px, 1fr));
+  gap: 20px;
+  width: 100%;
+}
+
+.hero-testimonial-card {
+  background: rgba(20, 20, 20, 0.72);
+  backdrop-filter: blur(8px);
+  padding: 26px 22px;
+  border-radius: 18px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  transition:
+    transform 0.28s ease,
+    box-shadow 0.28s ease,
+    border-color 0.28s ease;
+}
+
+.hero-testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 36px rgba(0, 0, 0, 0.32);
+  border-color: rgba(247, 195, 95, 0.2);
+}
+
+.hero-testimonial-stars {
+  color: #f7c35f;
+  font-size: 1.1rem;
+  display: flex;
+  justify-content: center;
+  gap: 3px;
+  margin-bottom: 12px;
+}
+
+.hero-testimonial-text {
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 0.98rem;
+  line-height: 1.75;
+  margin: 0 0 14px;
+  font-style: italic;
+}
+
+.hero-testimonial-name {
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
 /* PROJECTS SECTION */
 .hero-projects {
   width: 100%;
@@ -259,6 +333,10 @@
     grid-template-columns: repeat(2, minmax(240px, 1fr));
   }
 
+  .hero-testimonials-cards {
+    grid-template-columns: repeat(2, minmax(240px, 1fr));
+  }
+
   .hero-projects-images img {
     width: calc(50% - 10px);
   }
@@ -316,6 +394,15 @@
     line-height: 1.65;
   }
 
+  .hero-testimonials-cards {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .hero-testimonial-card {
+    padding: 20px 18px;
+  }
+
   .hero-projects-images {
     gap: 14px;
   }
@@ -353,6 +440,7 @@
   }
 
   .hero-services h2,
+  .hero-testimonials h2,
   .hero-projects h2 {
     font-size: 1.7rem;
   }

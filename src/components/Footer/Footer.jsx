@@ -180,7 +180,8 @@ export default function Footer() {
       </div>
 
       <div className='footer-copyright'>
-        &copy; 2025 S.L. BUILDERS LTD. All rights reserved.
+        &copy; {new Date().getFullYear()} S.L. BUILDERS LTD. All rights
+        reserved.
         <Link to='/privacy-policy' className='privacy-link'>
           Privacy Policy
         </Link>

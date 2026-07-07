@@ -11,12 +11,24 @@ import {
   FaThumbsUp,
   FaTree,
   FaLayerGroup,
+  FaStar,
 } from 'react-icons/fa';
 
 import project1 from '/assets/Kitchenimg/project5/25.webp';
 import project2 from '/assets/Kitchenimg/project8/54.webp';
 import project3 from '/assets/Kitchenimg/project1/36.jpg';
+import { reviews } from './Reviews';
 import './styles/hero.css';
+
+const FEATURED_REVIEW_NAMES = [
+  'Alisha Chambers',
+  'Vedat Tufan',
+  'Shazz Karpaite',
+];
+
+const featuredReviews = reviews.filter((review) =>
+  FEATURED_REVIEW_NAMES.includes(review.name),
+);
 
 export default function Hero() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -152,6 +164,35 @@ export default function Hero() {
               </p>
             </article>
           </div>
+        </section>
+
+        <section className='hero-testimonials' data-aos='fade-up'>
+          <h2>What Our Customers Say</h2>
+
+          <div className='hero-testimonials-cards'>
+            {featuredReviews.map((review) => (
+              <article className='hero-testimonial-card' key={review.name}>
+                <div
+                  className='hero-testimonial-stars'
+                  aria-label={`${review.rating} out of 5 stars`}
+                >
+                  {Array.from({ length: review.rating }).map((_, i) => (
+                    <FaStar key={i} aria-hidden='true' />
+                  ))}
+                </div>
+                <p className='hero-testimonial-text'>&ldquo;{review.text}&rdquo;</p>
+                <p className='hero-testimonial-name'>{review.name}</p>
+              </article>
+            ))}
+          </div>
+
+          <Link
+            to='/projects'
+            className='hero-cta-button'
+            aria-label='Read all customer reviews'
+          >
+            See All Reviews
+          </Link>
         </section>
 
         <section className='hero-projects' data-aos='fade-up'>

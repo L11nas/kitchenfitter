@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import '../components/styles/reviews.css';
 import { FaFacebook, FaStar } from 'react-icons/fa';
 
-const reviews = [
+export const reviews = [
   {
     name: 'Alisha Chambers',
     profilePic: '/fblogo.jpg',

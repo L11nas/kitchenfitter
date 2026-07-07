@@ -50,6 +50,7 @@ export default function Modal({ isOpen, onClose }) {
 
   const onSubmit = async (e) => {
     e.preventDefault();
+    setIsSubmitting(true);
 
     // 🔥 VISADA siunčiam event
     window.gtag?.('event', 'form_submit', {
