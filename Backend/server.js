@@ -13,7 +13,7 @@ app.use(cors());
 app.use(express.json());
 
 app.post('/send', async (req, res) => {
-  const { name, email, message } = req.body;
+  const { name, email, message, company } = req.body;
 
   if (company && company.trim() !== '') {
     return res.status(400).json({
