@@ -13,7 +13,7 @@ import {
   FaStar,
 } from 'react-icons/fa';
 
-import project1 from '/assets/Kitchenimg/project5/25.webp';
+import project1 from '/assets/Kitchenimg/project9/44.jpg';
 import project2 from '/assets/Kitchenimg/project8/49.jpg';
 import project3 from '/assets/Kitchenimg/project1/36.jpg';
 import { reviews } from '../data/Reviews';
@@ -197,7 +197,7 @@ export default function Hero() {
           <div className='hero-projects-images'>
             <img
               src={project1}
-              alt='Modern kitchen installation project completed by S.L. Builders LTD'
+              alt='White kitchen with oak worktops and red splashback fitted by S.L. Builders LTD'
               loading='lazy'
               className='blur-up'
             />

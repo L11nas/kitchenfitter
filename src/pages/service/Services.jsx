@@ -34,7 +34,7 @@ const services = [
       'We deliver bespoke home renovation services tailored to your layout, lifestyle and design goals, from room upgrades to wider refurbishment works that improve function, flow and long-term value.',
     image: renovationImg,
     link: '/projects/custom',
-    alt: 'Home renovation project completed by S.L. Builders LTD',
+    alt: 'Planning a bespoke home renovation project with the homeowner',
   },
   {
     title: 'Outdoor Decking Installation',
