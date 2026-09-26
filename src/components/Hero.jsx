@@ -14,7 +14,7 @@ import {
 } from 'react-icons/fa';
 
 import project1 from '/assets/Kitchenimg/project5/25.webp';
-import project2 from '/assets/Kitchenimg/project8/54.webp';
+import project2 from '/assets/Kitchenimg/project8/49.jpg';
 import project3 from '/assets/Kitchenimg/project1/36.jpg';
 import { reviews } from '../data/Reviews';
 import './styles/hero.css';
