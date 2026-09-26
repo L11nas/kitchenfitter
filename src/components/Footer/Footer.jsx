@@ -185,6 +185,9 @@ export default function Footer() {
         <Link to='/privacy-policy' className='privacy-link'>
           Privacy Policy
         </Link>
+        <Link to='/cookie-policy' className='privacy-link'>
+          Cookie Policy
+        </Link>
       </div>
     </footer>
   );

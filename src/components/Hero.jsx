@@ -1,7 +1,6 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
 import 'aos/dist/aos.css';
-import Modal from './Modal';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 
@@ -31,8 +30,6 @@ const featuredReviews = reviews.filter((review) =>
 );
 
 export default function Hero() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
   useEffect(() => {
     if ('requestIdleCallback' in window) {
       requestIdleCallback(() => {
@@ -68,11 +65,9 @@ export default function Hero() {
         <link rel='canonical' href='https://slbuildersltd.co.uk/' />
       </Helmet>
 
-      <section className='hero-container' role='banner'>
+      <section className='hero-container'>
         <div className='hero-fixed-bg' />
         <div className='hero-overlay'></div>
-
-        <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
 
         <div className='hero-content'>
           <h1>
@@ -89,13 +84,14 @@ export default function Hero() {
             quality craftsmanship, reliability and attention to detail.
           </p>
 
-          <button
-            type='button'
+          <a
+            href='https://wa.me/447414460648'
+            target='_blank'
+            rel='noopener noreferrer'
             className='hero-cta-button'
-            onClick={() => setIsModalOpen(true)}
           >
             Get a Free Consultation
-          </button>
+          </a>
         </div>
 
         <section className='hero-services' data-aos='fade-up'>
@@ -187,7 +183,7 @@ export default function Hero() {
           </div>
 
           <Link
-            to='/projects'
+            to='/projects#reviews'
             className='hero-cta-button'
             aria-label='Read all customer reviews'
           >
@@ -207,13 +203,13 @@ export default function Hero() {
             />
             <img
               src={project2}
-              alt='Staircase renovation project with premium wood finish'
+              alt='High-gloss white kitchen with island and granite worktops fitted by S.L. Builders LTD'
               loading='lazy'
               className='blur-up'
             />
             <img
               src={project3}
-              alt='Outdoor decking installation for a residential property'
+              alt='Modern grey handleless kitchen with quartz worktops fitted by S.L. Builders LTD'
               loading='lazy'
               className='blur-up'
             />

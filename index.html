@@ -78,10 +78,8 @@
         "priceRange": "££",
         "address": {
           "@type": "PostalAddress",
-          "streetAddress": "Daniels Way",
           "addressLocality": "Nottingham",
           "addressRegion": "Nottinghamshire",
-          "postalCode": "NG15 7LL",
           "addressCountry": "GB"
         },
         "areaServed": [
@@ -96,29 +94,37 @@
       }
     </script>
 
-    <!-- Google Analytics -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-1R8LMGQD61"
-    ></script>
+    <!-- Google Analytics: loaded only after analytics consent (UK GDPR / PECR) -->
     <script>
+      window.GA_ID = 'G-1R8LMGQD61';
       window.dataLayer = window.dataLayer || [];
       function gtag() {
         dataLayer.push(arguments);
       }
-      gtag('js', new Date());
 
-      gtag('config', 'G-1R8LMGQD61');
+      window.loadGA = function () {
+        if (window.gaLoaded) return;
+        window.gaLoaded = true;
+        window['ga-disable-' + window.GA_ID] = false;
+
+        var script = document.createElement('script');
+        script.async = true;
+        script.src =
+          'https://www.googletagmanager.com/gtag/js?id=' + window.GA_ID;
+        document.head.appendChild(script);
+
+        gtag('js', new Date());
+        gtag('config', window.GA_ID);
+      };
+
+      try {
+        var consent = JSON.parse(localStorage.getItem('cookieConsent'));
+        if (consent && consent.analytics) window.loadGA();
+      } catch (e) {}
     </script>
   </head>
 
   <body>
-    <form name="contact" data-netlify="true" netlify-honeypot="company" hidden>
-      <input type="text" name="name" />
-      <input type="email" name="email" />
-      <textarea name="message"></textarea>
-      <input type="text" name="company" />
-    </form>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

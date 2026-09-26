@@ -1,5 +1,5 @@
 // PrivacyPolicy.jsx
-import React from 'react';
+import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import '../styles/privacyPolicity.css';
 
@@ -23,13 +23,13 @@ const PrivacyPolicy = () => {
         <h1>Privacy Policy</h1>
 
         <p className='last-updated'>
-          <strong>Last Updated: 5 April 2025</strong>
+          <strong>Last Updated: 26 September 2026</strong>
         </p>
 
         <section>
           <h2>Introduction</h2>
           <p>
-            Welcome to S.L. BUILDERS LTD ("we," "our," or "us"). We are
+            Welcome to S.L. BUILDERS LTD (&quot;we&quot;, &quot;our&quot; or &quot;us&quot;). We are
             committed to protecting your privacy and providing you with a secure
             experience when using our website and services. This Privacy Policy
             explains how we collect, use, and protect your personal information
@@ -45,16 +45,16 @@ const PrivacyPolicy = () => {
         <section>
           <h2>Who We Are</h2>
           <p>
-            [S.L. BUILDERS LTD] provides kitchen installation, flooring, and
-            outdoor cladding services in the United Kingdom. We are registered
-            as a data controller with the Information Commissioner's Office
-            (ICO) under registration number.
+            S.L. BUILDERS LTD provides kitchen fitting, flooring installation,
+            staircase renovation, decking and home improvement services in the
+            United Kingdom. S.L. BUILDERS LTD is the data controller for the
+            personal information described in this policy.
           </p>
           <p>
             <strong>Contact Information:</strong>
           </p>
           <ul>
-            <li>Address: Annesley Rd, Nottingham, United Kingdom, ng15</li>
+            <li>Location: Nottingham, United Kingdom</li>
             <li>Email: slbuilderswork@gmail.com</li>
             <li>Phone: +44 7414 460648</li>
           </ul>
@@ -68,7 +68,6 @@ const PrivacyPolicy = () => {
           <ul>
             <li>Name, address, email address, and phone number</li>
             <li>Information about your property when you request a quote</li>
-            <li>Payment information when you purchase our services</li>
             <li>Communications you have with us</li>
           </ul>
 
@@ -157,28 +156,23 @@ const PrivacyPolicy = () => {
           <h3>Types of Cookies We Use</h3>
           <ul>
             <li>
-              <strong>Necessary Cookies:</strong> Essential for the website to
-              function properly. These cannot be disabled.
+              <strong>Necessary:</strong> We store your cookie choice in your
+              browser. This cannot be disabled.
             </li>
             <li>
-              <strong>Analytics Cookies:</strong> Help us understand how
-              visitors interact with our website by collecting anonymous
-              information.
-            </li>
-            <li>
-              <strong>Marketing Cookies:</strong> Used to track visitors across
-              websites to display relevant advertisements.
-            </li>
-            <li>
-              <strong>Preferences Cookies:</strong> Enable the website to
-              remember your choices and provide enhanced features.
+              <strong>Analytics Cookies (optional):</strong> Google Analytics
+              helps us understand how visitors interact with our website.
             </li>
           </ul>
+          <p>
+            Analytics cookies are only set if you give consent by clicking
+            &quot;Accept All&quot; in our cookie banner.
+          </p>
 
           <p>
             You can manage your cookie preferences through our cookie consent
             banner or your browser settings. For detailed information, please
-            see our <a>Cookie Policy</a>.
+            see our <Link to='/cookie-policy'>Cookie Policy</Link>.
           </p>
         </section>
 
@@ -188,7 +182,7 @@ const PrivacyPolicy = () => {
           <ul>
             <li>
               <strong>Service Providers:</strong> Third parties who provide
-              services on our behalf, such as payment processors, IT service
+              services on our behalf, such as IT service
               providers, and delivery partners.
             </li>
             <li>
@@ -222,7 +216,7 @@ const PrivacyPolicy = () => {
           <h2>Data Retention</h2>
           <p>
             We will retain your personal information only for as long as
-            necessary to fulfill the purposes for which it was collected,
+            necessary to fulfil the purposes for which it was collected,
             including legal, accounting, or reporting requirements. For specific
             retention periods, please contact us using the details provided
             above.
@@ -276,7 +270,7 @@ const PrivacyPolicy = () => {
             If you have concerns about how we handle your personal information,
             please contact us first so we can address your concerns. If you are
             not satisfied with our response, you have the right to lodge a
-            complaint with the Information Commissioner's Office (ICO):
+            complaint with the Information Commissioner&apos;s Office (ICO):
           </p>
           <ul>
             <li>
@@ -291,14 +285,14 @@ const PrivacyPolicy = () => {
             </li>
             <li>Phone: 0303 123 1113</li>
             <li>
-              Address: Information Commissioner's Office, Wycliffe House, Water
+              Address: Information Commissioner&apos;s Office, Wycliffe House, Water
               Lane, Wilmslow, Cheshire, SK9 5AF
             </li>
           </ul>
         </section>
 
         <section>
-          <h2>Children's Privacy</h2>
+          <h2>Children&apos;s Privacy</h2>
           <p>
             Our website and services are not intended for children under 16
             years of age. We do not knowingly collect personal information from
@@ -312,7 +306,7 @@ const PrivacyPolicy = () => {
           <p>
             We may update this Privacy Policy from time to time to reflect
             changes in our practices or legal requirements. We will post the
-            updated policy on our website with a revised "Last Updated" date. We
+            updated policy on our website with a revised &quot;Last Updated&quot; date. We
             encourage you to review this policy periodically.
           </p>
         </section>
@@ -336,7 +330,6 @@ const PrivacyPolicy = () => {
           <ul>
             <li>Email: slbuilderswork@gmail.com</li>
             <li>Phone: +44 7414 460648 </li>
-            <li>Mail: Annesley Rd, Nottingham, United Kingdom, ng15</li>
           </ul>
         </section>
 

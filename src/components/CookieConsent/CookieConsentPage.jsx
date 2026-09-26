@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import '../styles/cookieConsentPage.css';
 
 const COOKIE_KEY = 'cookieConsent';
@@ -23,12 +24,19 @@ const CookieConsent = () => {
           return;
         }
       }
-    } catch (err) {
+    } catch {
       // Sugedęs arba senas įrašas – išvalom
       localStorage.removeItem(COOKIE_KEY);
     }
 
     setVisible(true);
+  }, []);
+
+  useEffect(() => {
+    const openSettings = () => setVisible(true);
+    window.addEventListener('open-cookie-settings', openSettings);
+    return () =>
+      window.removeEventListener('open-cookie-settings', openSettings);
   }, []);
 
   const saveConsent = (type, analytics, marketing, preferences) => {
@@ -40,6 +48,13 @@ const CookieConsent = () => {
       date: new Date().toISOString(),
     };
     localStorage.setItem(COOKIE_KEY, JSON.stringify(consentData));
+
+    if (analytics) {
+      window.loadGA?.();
+    } else {
+      window[`ga-disable-${window.GA_ID}`] = true;
+    }
+
     setVisible(false);
   };
 
@@ -67,11 +82,11 @@ const CookieConsent = () => {
 
         <div className='cookie-consent-content'>
           <p>
-            We use cookies to enhance your browsing experience, serve
-            personalised content, and analyze our traffic. We also use
-            third-party services like Google Analytics and Google Business
-            integrations (e.g., maps and reviews). By clicking "Accept All", you
-            consent to the use of all cookies.
+            We use necessary cookies to make this website work. With your
+            permission, we would also like to use Google Analytics cookies to
+            understand how visitors use our site. Analytics cookies are only
+            set if you click &quot;Accept All&quot;. You can change your choice
+            at any time on our Cookie Policy page.
           </p>
 
           {showDetails && (
@@ -79,29 +94,15 @@ const CookieConsent = () => {
               <div className='cookie-category'>
                 <h3>Necessary Cookies</h3>
                 <p>
-                  These cookies are essential for the website to function
-                  properly and cannot be switched off in our systems.
+                  We store your cookie choice in your browser so we do not ask
+                  again on every visit. These cannot be switched off.
                 </p>
               </div>
               <div className='cookie-category'>
                 <h3>Analytics Cookies</h3>
                 <p>
-                  We use Google Analytics to understand how visitors use our
-                  site and improve our services.
-                </p>
-              </div>
-              <div className='cookie-category'>
-                <h3>Marketing Cookies</h3>
-                <p>
-                  Help us personalize content or track interactions for features
-                  like Google Business.
-                </p>
-              </div>
-              <div className='cookie-category'>
-                <h3>Preferences Cookies</h3>
-                <p>
-                  These cookies remember your preferences and settings to
-                  enhance your visit.
+                  Optional. We use Google Analytics to understand how visitors
+                  use our site and improve our services.
                 </p>
               </div>
             </div>
@@ -128,7 +129,8 @@ const CookieConsent = () => {
         <div className='cookie-consent-footer'>
           <p>
             To learn more, please read our{' '}
-            <a href='/privacy-policy'>Privacy Policy</a>.
+            <Link to='/privacy-policy'>Privacy Policy</Link> and{' '}
+            <Link to='/cookie-policy'>Cookie Policy</Link>.
           </p>
         </div>
       </div>

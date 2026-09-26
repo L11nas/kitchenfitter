@@ -1,4 +1,4 @@
-import React, { useState, useEffect, memo, lazy, Suspense } from 'react';
+import { useState, useEffect, memo, lazy, Suspense } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 // Import icons only when needed - lazy load for performance
 const IconComponents = lazy(() => import('../IconComponent'));
@@ -95,13 +95,16 @@ const Navbar = memo(function Navbar() {
               <IconComponents type='mobile' />
             </Suspense>
           </div>
-          <div
+          <button
+            type='button'
             className='menu-toggle'
             onClick={toggleMobileMenu}
             title='Toggle Menu'
+            aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={isMobileMenuOpen}
           >
             {isMobileMenuOpen ? '✕' : '☰'}
-          </div>
+          </button>
         </div>
 
         {/* Only render when needed */}

@@ -4,6 +4,7 @@ import Footer from './components/Footer/Footer';
 import Hero from './components/Hero';
 import CookieConsent from './components/CookieConsent/CookieConsentPage';
 import PrivacyPolicity from './components/PrivacyPolicity/PrivacyPolicity';
+import CookiePolicy from './pages/cookie-policy/CookiePolicy';
 import About from './pages/about/About';
 import './components/styles/App.css';
 import Services from './pages/service/Services';
@@ -39,7 +40,7 @@ export default function App() {
         <Route path='/projects/decking' element={<DeckingProjects />} />
         <Route path='/projects/staircase' element={<StaircaseProjects />} />
         <Route path='/projects/custom' element={<CustomProjects />} />
-        <Route path='/cookie-policy' element={<CookieConsent />} />
+        <Route path='/cookie-policy' element={<CookiePolicy />} />
         <Route path='/privacy-policy' element={<PrivacyPolicity />} />
         <Route path='/leeds' element={<Leeds />} />
         <Route path='/nottingham' element={<Nottingham />} />
