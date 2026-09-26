@@ -1,9 +1,7 @@
-import React from 'react';
 import { FaWhatsapp, FaSms } from 'react-icons/fa';
 
 const IconComponents = ({ type }) => {
   const rawNumber = '447414460648';
-  const formattedNumber = '+44 7414 460648';
 
   const handleSmsClick = (e) => {
     e.preventDefault();

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 
@@ -114,7 +114,7 @@ export default function Projects() {
       <div className='projects-bottom-text'>
         <h2>Looking for a Similar Project?</h2>
         <p>
-          If you're planning a kitchen installation, flooring upgrade or full
+          If you&apos;re planning a kitchen installation, flooring upgrade or full
           home renovation, our team is ready to help. Contact us for a free
           consultation and we’ll guide you through the process step by step.
         </p>
