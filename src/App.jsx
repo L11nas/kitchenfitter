@@ -1,10 +1,11 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
 import Hero from './components/Hero';
 import CookieConsent from './components/CookieConsent/CookieConsentPage';
 import PrivacyPolicity from './components/PrivacyPolicity/PrivacyPolicity';
 import CookiePolicy from './pages/cookie-policy/CookiePolicy';
+import NotFound from './pages/not-found/NotFound';
 import About from './pages/about/About';
 import './components/styles/App.css';
 import Services from './pages/service/Services';
@@ -25,7 +26,7 @@ import ScrollToTop from './components/ScrollToTop';
 import Analytics from './components/Analytics';
 export default function App() {
   return (
-    <Router>
+    <>
       <Analytics />
       <ScrollToTop />
       <Navbar />
@@ -48,11 +49,12 @@ export default function App() {
         <Route path='/doncaster' element={<Doncaster />} />
         <Route path='/lincolnshire' element={<Lincolnshire />} />
         <Route path='/leicestershire' element={<Leicestershire />} />
+        <Route path='*' element={<NotFound />} />
       </Routes>
 
       <ScrollToTopButton />
       <Footer />
       <CookieConsent />
-    </Router>
+    </>
   );
 }

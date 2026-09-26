@@ -1,11 +1,7 @@
-import { useState, useEffect, memo, lazy, Suspense } from 'react';
+import { useState, useEffect, memo } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-// Import icons only when needed - lazy load for performance
-const IconComponents = lazy(() => import('../IconComponent'));
+import IconComponents from '../IconComponent';
 import '../styles/navbar.css';
-
-// Pre-rendered placeholder for lazy-loaded icons
-const IconPlaceholder = () => <span className='icon-placeholder'></span>;
 
 const Navbar = memo(function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -83,17 +79,13 @@ const Navbar = memo(function Navbar() {
           </ul>
 
           <div className='contact-links'>
-            <Suspense fallback={<IconPlaceholder />}>
-              <IconComponents type='desktop' />
-            </Suspense>
+            <IconComponents type='desktop' />
           </div>
         </div>
 
         <div className='mobile-controls'>
           <div className='mobile-contacts'>
-            <Suspense fallback={<IconPlaceholder />}>
-              <IconComponents type='mobile' />
-            </Suspense>
+            <IconComponents type='mobile' />
           </div>
           <button
             type='button'
