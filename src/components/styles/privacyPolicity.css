@@ -86,7 +86,8 @@
 
 .privacy-policy-content a {
   color: #f7c35f;
-  text-decoration: none;
+  text-decoration: underline;
+  text-underline-offset: 3px;
   transition:
     color 0.25s ease,
     opacity 0.25s ease;

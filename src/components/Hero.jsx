@@ -13,9 +13,9 @@ import {
   FaStar,
 } from 'react-icons/fa';
 
-import project1 from '/assets/Kitchenimg/project9/44.jpg';
-import project2 from '/assets/Kitchenimg/project8/49.jpg';
-import project3 from '/assets/Kitchenimg/project1/36.jpg';
+import project1 from '/assets/Kitchenimg/project9/44-600.jpg';
+import project2 from '/assets/Kitchenimg/project8/49-600.jpg';
+import project3 from '/assets/Kitchenimg/project1/36-600.jpg';
 import { reviews } from '../data/Reviews';
 import './styles/hero.css';
 
@@ -170,6 +170,7 @@ export default function Hero() {
               <article className='hero-testimonial-card' key={review.name}>
                 <div
                   className='hero-testimonial-stars'
+                  role='img'
                   aria-label={`${review.rating} out of 5 stars`}
                 >
                   {Array.from({ length: review.rating }).map((_, i) => (

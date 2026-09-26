@@ -67,7 +67,6 @@ export default function Footer() {
               target='_blank'
               rel='noopener noreferrer'
               className='social-icon-link'
-              aria-label='Chat with us on WhatsApp'
             >
               <FaWhatsapp title='WhatsApp' />
               <span>WhatsApp only</span>

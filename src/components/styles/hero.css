@@ -131,8 +131,12 @@
   max-width: 980px;
   margin: 0 auto;
   line-height: 1.85;
-  color: rgba(255, 255, 255, 0.88);
+  color: rgba(255, 255, 255, 0.92);
   text-align: center;
+  /* Keeps text readable over the light parts of the background photo */
+  background: rgba(20, 20, 20, 0.6);
+  padding: 14px 20px;
+  border-radius: 14px;
 }
 
 .hero-services-cards {

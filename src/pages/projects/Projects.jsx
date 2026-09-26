@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 
 import '../../components/styles/projects.css';
-import kitchenBg from '/assets/Kitchenimg/k3.jpg';
-import flooringBg from '/assets/Kitchenimg/floor.jpg';
-import deckingBg from '/assets/Kitchenimg/TerraceF.jpg';
-import staircaseBg from '/assets/Kitchenimg/stairs.jpg';
-import customBg from '/assets/Kitchenimg/worker.jpg';
+import kitchenBg from '/assets/Kitchenimg/k3.webp';
+import flooringBg from '/assets/Kitchenimg/floor.webp';
+import deckingBg from '/assets/Kitchenimg/TerraceF.webp';
+import staircaseBg from '/assets/Kitchenimg/stairs.webp';
+import customBg from '/assets/Kitchenimg/worker.webp';
 import backgroundImage from '/assets/valeria.webp';
 import Reviews from '../../components/Reviews';
 
@@ -91,7 +91,6 @@ export default function Projects() {
             to={category.link}
             key={index}
             className='projects-category'
-            aria-label={`View ${category.title} projects`}
           >
             <div
               className='category-overlay'

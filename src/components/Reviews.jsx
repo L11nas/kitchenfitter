@@ -31,6 +31,7 @@ export default function Reviews() {
 
             <div
               className='review-stars'
+              role='img'
               aria-label={`${review.rating} out of 5 stars`}
             >
               {Array.from({ length: review.rating }).map((_, starIndex) => (
