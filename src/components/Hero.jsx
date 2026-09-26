@@ -4,20 +4,55 @@ import 'aos/dist/aos.css';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 
-import {
-  FaTools,
-  FaClock,
-  FaThumbsUp,
-  FaTree,
-  FaLayerGroup,
-  FaStar,
-} from 'react-icons/fa';
+import { FaStar, FaPaintRoller, FaCheck } from 'react-icons/fa';
+import { MdKitchen, MdDeck, MdStairs } from 'react-icons/md';
+import { TbLayoutGrid } from 'react-icons/tb';
 
 import project1 from '/assets/Kitchenimg/project9/44-600.jpg';
 import project2 from '/assets/Kitchenimg/project8/49-600.jpg';
 import project3 from '/assets/Kitchenimg/project1/36-600.jpg';
 import { reviews } from '../data/Reviews';
 import './styles/hero.css';
+
+const SERVICES = [
+  {
+    title: 'Kitchen Installation',
+    text: 'Bespoke kitchen fitting combining practical layouts, modern design and long-lasting quality.',
+    Icon: MdKitchen,
+    link: '/projects/kitchens',
+  },
+  {
+    title: 'Flooring Installation',
+    text: 'Wooden, laminate and vinyl flooring fitted with precision for a clean, durable finish.',
+    Icon: TbLayoutGrid,
+    link: '/projects/flooring',
+  },
+  {
+    title: 'Staircase Renovation',
+    text: 'Stair upgrades that improve appearance, safety and everyday durability.',
+    Icon: MdStairs,
+    link: '/projects/staircase',
+  },
+  {
+    title: 'Outdoor Decking',
+    text: 'Decking designed for style, strength and year-round use in the British weather.',
+    Icon: MdDeck,
+    link: '/projects/decking',
+  },
+  {
+    title: 'Custom Renovations',
+    text: 'Tailored renovation work, from single-room upgrades to full property refurbishments.',
+    Icon: FaPaintRoller,
+    link: '/projects/custom',
+  },
+];
+
+const TRUST_POINTS = [
+  '15+ years’ experience',
+  '5-star Facebook reviews',
+  'Free consultation',
+  'Based in Hucknall, Nottingham',
+];
 
 const FEATURED_REVIEW_NAMES = [
   'Alisha Chambers',
@@ -71,9 +106,9 @@ export default function Hero() {
 
         <div className='hero-content'>
           <h1>
-            Expert Kitchen Fitters in Nottingham, Leeds & Doncaster{' '}
+            Kitchen Fitters in Nottingham, Leeds & Doncaster
             <span className='hero-main-phrase'>
-              Bespoke Installation & Home Renovation
+              Kitchen installation, flooring & home renovation
             </span>
           </h1>
 
@@ -92,6 +127,14 @@ export default function Hero() {
           >
             Get a Free Consultation
           </a>
+
+          <ul className='hero-trust'>
+            {TRUST_POINTS.map((point) => (
+              <li key={point}>
+                <FaCheck aria-hidden='true' /> {point}
+              </li>
+            ))}
+          </ul>
         </div>
 
         <section className='hero-services' data-aos='fade-up'>
@@ -115,50 +158,18 @@ export default function Hero() {
           </p>
 
           <div className='hero-services-cards'>
-            <article className='hero-service-card' data-aos='zoom-in'>
-              <FaTools size={40} aria-hidden='true' />
-              <h3>Kitchen Installation</h3>
-              <p>
-                Bespoke kitchen fitting solutions combining functionality,
-                modern design and long-lasting quality.
-              </p>
-            </article>
-
-            <article className='hero-service-card' data-aos='zoom-in'>
-              <FaClock size={40} aria-hidden='true' />
-              <h3>Flooring Installation</h3>
-              <p>
-                Wooden, laminate and vinyl flooring installed with precision for
-                a clean, durable and professional finish.
-              </p>
-            </article>
-
-            <article className='hero-service-card' data-aos='zoom-in'>
-              <FaThumbsUp size={40} aria-hidden='true' />
-              <h3>Custom Renovations</h3>
-              <p>
-                Tailored home renovation solutions, from single-room upgrades to
-                full property refurbishments.
-              </p>
-            </article>
-
-            <article className='hero-service-card' data-aos='zoom-in'>
-              <FaTree size={40} aria-hidden='true' />
-              <h3>Outdoor Decking</h3>
-              <p>
-                Premium decking installations designed for style, strength and
-                year-round durability.
-              </p>
-            </article>
-
-            <article className='hero-service-card' data-aos='zoom-in'>
-              <FaLayerGroup size={40} aria-hidden='true' />
-              <h3>Staircase Renovation</h3>
-              <p>
-                Stair upgrades and renovations that improve both appearance,
-                safety and everyday durability.
-              </p>
-            </article>
+            {SERVICES.map(({ title, text, Icon, link }) => (
+              <Link
+                key={title}
+                to={link}
+                className='hero-service-card'
+                data-aos='zoom-in'
+              >
+                <Icon size={40} aria-hidden='true' />
+                <h3>{title}</h3>
+                <p>{text}</p>
+              </Link>
+            ))}
           </div>
         </section>
 

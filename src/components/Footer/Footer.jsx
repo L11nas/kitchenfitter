@@ -157,8 +157,10 @@ export default function Footer() {
       </div>
 
       <div className='footer-copyright'>
-        &copy; {new Date().getFullYear()} S.L. BUILDERS LTD. All rights
-        reserved.
+        <span suppressHydrationWarning>
+          &copy; {new Date().getFullYear()} S.L. BUILDERS LTD. All rights
+          reserved.
+        </span>
         <Link to='/privacy-policy' className='privacy-link'>
           Privacy Policy
         </Link>
@@ -166,6 +168,10 @@ export default function Footer() {
           Cookie Policy
         </Link>
       </div>
+      <p className='footer-company-info'>
+        S.L. BUILDERS LTD is registered in England and Wales, company number
+        09940501.
+      </p>
     </footer>
   );
 }

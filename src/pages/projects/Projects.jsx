@@ -10,7 +10,6 @@ import flooringBg from '/assets/Kitchenimg/floor.webp';
 import deckingBg from '/assets/Kitchenimg/TerraceF.webp';
 import staircaseBg from '/assets/Kitchenimg/stairs.webp';
 import customBg from '/assets/Kitchenimg/worker.webp';
-import backgroundImage from '/assets/valeria.webp';
 import Reviews from '../../components/Reviews';
 
 export default function Projects() {
@@ -47,15 +46,7 @@ export default function Projects() {
   ];
 
   return (
-    <section
-      className='projects-page'
-      style={{
-        backgroundImage: `url(${backgroundImage})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-      }}
-    >
+    <section className='projects-page'>
       <Helmet>
         <title>
           Completed Kitchen & Home Renovation Projects | S.L. Builders LTD

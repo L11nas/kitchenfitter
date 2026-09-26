@@ -112,3 +112,10 @@ button {
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
+
+button,
+input,
+textarea,
+select {
+  font-family: inherit;
+}
