@@ -54,7 +54,7 @@ const PrivacyPolicy = () => {
             <strong>Contact Information:</strong>
           </p>
           <ul>
-            <li>Location: Nottingham, United Kingdom</li>
+            <li>Address: Annesley Road, Nottingham, United Kingdom</li>
             <li>Email: slbuilderswork@gmail.com</li>
             <li>Phone: +44 7414 460648</li>
           </ul>
