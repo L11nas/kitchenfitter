@@ -15,12 +15,6 @@ export default function Footer() {
   const rawNumber = '447414460648';
   const email = 'slbuilderswork@gmail.com';
 
-  const shareEmailHref = `mailto:?subject=${encodeURIComponent(
-    'S.L. Builders LTD | Kitchen Fitting & Home Renovation Services',
-  )}&body=${encodeURIComponent(
-    'Take a look at S.L. Builders LTD: https://slbuildersltd.co.uk',
-  )}`;
-
   const serviceAreas = [
     { name: 'Lincolnshire, UK', path: '/lincolnshire' },
     { name: 'Nottingham, UK', path: '/nottingham' },
@@ -119,40 +113,6 @@ export default function Footer() {
               ))}
             </ul>
           </div>
-        </div>
-      </div>
-
-      <div className='social-sharing' aria-label='Share this page'>
-        <p>Share this page:</p>
-
-        <div className='social-sharing-buttons'>
-          <a
-            href='https://www.facebook.com/sharer/sharer.php?u=https://slbuildersltd.co.uk'
-            target='_blank'
-            rel='noopener noreferrer'
-            className='social-share-button'
-          >
-            <FaFacebook />
-            Share via Facebook
-          </a>
-
-          <a
-            href='https://wa.me/?text=Take%20a%20look%20at%20S.L.%20Builders%20LTD:%20https://slbuildersltd.co.uk'
-            target='_blank'
-            rel='noopener noreferrer'
-            className='social-share-button'
-          >
-            <FaWhatsapp />
-            Share via WhatsApp
-          </a>
-
-          <a
-            href={shareEmailHref}
-            className='social-share-button'
-          >
-            <FaEnvelope />
-            Share via Email
-          </a>
         </div>
       </div>
 

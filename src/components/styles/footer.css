@@ -201,49 +201,6 @@
   color: #f7c35f;
 }
 
-/* ================= SHARE ================= */
-.social-sharing {
-  margin-top: 34px;
-  padding-top: 26px;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
-  width: 100%;
-  max-width: 1240px;
-}
-
-.social-sharing p {
-  margin-bottom: 14px;
-  font-weight: 700;
-  color: #fff;
-}
-
-.social-sharing-buttons {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.social-share-button {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 16px;
-  background: rgba(255, 255, 255, 0.04);
-  color: rgba(255, 255, 255, 0.92);
-  border-radius: 10px;
-  font-size: 0.95rem;
-  font-weight: 600;
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  transition: all 0.25s ease;
-}
-
-.social-share-button:hover {
-  background: rgba(247, 195, 95, 0.08);
-  color: #f7c35f;
-  border-color: rgba(247, 195, 95, 0.22);
-  transform: translateY(-2px);
-}
-
 /* ================= COPYRIGHT ================= */
 .footer-copyright {
   font-size: 0.92rem;
@@ -299,17 +256,6 @@
 
   .service-areas li {
     width: calc(50% - 4px);
-    justify-content: center;
-  }
-
-  .social-sharing-buttons {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .social-share-button {
-    width: 100%;
-    max-width: 320px;
     justify-content: center;
   }
 }
