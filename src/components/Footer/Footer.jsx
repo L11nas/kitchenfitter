@@ -13,33 +13,13 @@ export default function Footer() {
   const [showMap, setShowMap] = useState(false);
 
   const rawNumber = '447414460648';
+  const email = 'slbuilderswork@gmail.com';
 
-  const handleWhatsAppClick = (e) => {
-    e.preventDefault();
-    window.open(`https://wa.me/${rawNumber}`, '_blank', 'noopener,noreferrer');
-  };
-
-  const handleSmsClick = (e) => {
-    e.preventDefault();
-    window.location.href = `sms:${rawNumber}`;
-  };
-
-  const handleEmailClick = (e) => {
-    e.preventDefault();
-    const email = 'slbuilderswork' + '@' + 'gmail.com';
-    window.location.href = `mailto:${email}`;
-  };
-
-  const handleShareEmailClick = (e) => {
-    e.preventDefault();
-    const subject = encodeURIComponent(
-      'S.L. Builders LTD | Kitchen Fitting & Home Renovation Services',
-    );
-    const body = encodeURIComponent(
-      'Take a look at S.L. Builders LTD: https://slbuildersltd.co.uk',
-    );
-    window.location.href = `mailto:?subject=${subject}&body=${body}`;
-  };
+  const shareEmailHref = `mailto:?subject=${encodeURIComponent(
+    'S.L. Builders LTD | Kitchen Fitting & Home Renovation Services',
+  )}&body=${encodeURIComponent(
+    'Take a look at S.L. Builders LTD: https://slbuildersltd.co.uk',
+  )}`;
 
   const serviceAreas = [
     { name: 'Lincolnshire, UK', path: '/lincolnshire' },
@@ -59,15 +39,13 @@ export default function Footer() {
           <address>
             <p>
               <FaSms aria-label='SMS icon' title='SMS' />
-              <a href='#' onClick={handleSmsClick}>
-                SMS only
-              </a>
+              <a href={`sms:+${rawNumber}`}>SMS only</a>
             </p>
 
             <p>
               <FaEnvelope aria-label='Email icon' title='Email' />
-              <a href='#' onClick={handleEmailClick} title='Send us an email'>
-                slbuilderswork@gmail.com
+              <a href={`mailto:${email}`} title='Send us an email'>
+                {email}
               </a>
             </p>
           </address>
@@ -85,8 +63,9 @@ export default function Footer() {
             </a>
 
             <a
-              href='#'
-              onClick={handleWhatsAppClick}
+              href={`https://wa.me/${rawNumber}`}
+              target='_blank'
+              rel='noopener noreferrer'
               className='social-icon-link'
               aria-label='Chat with us on WhatsApp'
             >
@@ -169,8 +148,7 @@ export default function Footer() {
           </a>
 
           <a
-            href='#'
-            onClick={handleShareEmailClick}
+            href={shareEmailHref}
             className='social-share-button'
           >
             <FaEnvelope />
