@@ -1,132 +1,56 @@
-import { Helmet } from 'react-helmet-async';
-import { Link } from 'react-router-dom';
-import { MdOutlineKitchen } from 'react-icons/md';
-import '../../components/styles/CityPage.css';
+import CityPage from '../../components/CityPage';
 
 export default function Nottingham() {
   return (
-    <div className='city-page'>
-      <Helmet>
-        <title>Kitchen Fitters in Nottingham | S.L. Builders LTD</title>
-        <meta
-          name='description'
-          content='S.L. Builders LTD provides expert kitchen fitting, kitchen renovation, flooring installation and home improvement services in Nottingham and surrounding areas.'
-        />
-        <link rel='canonical' href='https://slbuildersltd.co.uk/nottingham' />
-      </Helmet>
-
-      <div
-        className='city-banner'
-        style={{ backgroundImage: 'url("/assets/cities/nottinghamshire.jpg")' }}
-        role='img'
-        aria-label='Modern kitchen renovation project in Nottingham'
-      >
-        <div className='city-content'>
-          <span className='city-icon'>
-            <MdOutlineKitchen />
-          </span>
-
-          <h1>Expert Kitchen Fitters in Nottingham</h1>
-
-          <p>
-            S.L. Builders LTD provides expert kitchen fitting, kitchen
-            renovation and home improvement services across Nottingham and
-            nearby areas. We help homeowners create practical, stylish kitchens
-            with a strong focus on quality workmanship, durability and clean,
-            professional finishes.
-          </p>
-
-          <p>
-            Whether you are planning a full kitchen renovation, replacing old
-            units, upgrading worktops or improving the layout of your space, our
-            team delivers reliable installation services tailored to your home
-            and everyday needs.
-          </p>
-
-          <div className='city-actions'>
-            <Link to='/projects/kitchens' className='city-button'>
-              View Kitchen Projects
-            </Link>
-            <Link to='/services' className='city-button city-button-secondary'>
-              Explore Our Services
-            </Link>
-          </div>
-        </div>
-      </div>
-
-      <section className='city-section'>
-        <div className='city-section-inner'>
-          <h2>Kitchen Renovation Services in Nottingham</h2>
-          <p>
-            We work with homeowners in Nottingham who want high-quality kitchen
-            fitting and renovation work carried out with care and attention to
-            detail. Our kitchen services can include cabinet fitting, worktop
-            installation, flooring, finishing work and wider renovation support
-            where needed.
-          </p>
-          <p>
-            Every kitchen project is different, which is why we take a tailored
-            approach to every installation. We focus on creating kitchens that
-            not only look great, but also function well for storage, cooking,
-            family life and long-term everyday use.
-          </p>
-        </div>
-      </section>
-
-      <section className='city-section city-section-alt'>
-        <div className='city-section-inner'>
-          <h2>Areas We Cover Around Nottingham</h2>
-          <p>
-            We provide kitchen fitting and renovation services across Nottingham
-            and nearby locations, including <strong>West Bridgford</strong>,{' '}
-            <strong>Arnold</strong>, <strong>Beeston</strong>,{' '}
-            <strong>Carlton</strong>, <strong>Mapperley</strong> and surrounding
-            areas.
-          </p>
-          <p>
-            If you are based near Nottingham and looking for trusted kitchen
-            fitters with a professional approach and strong attention to detail,
-            S.L. Builders LTD is ready to help.
-          </p>
-        </div>
-      </section>
-
-      <section className='city-section'>
-        <div className='city-section-inner'>
-          <h2>Why Homeowners Choose S.L. Builders LTD</h2>
-          <ul className='city-list'>
-            <li>Experienced kitchen fitters focused on quality finishes</li>
-            <li>
-              Reliable service and clear communication throughout the project
-            </li>
-            <li>Tailored solutions for both modern and traditional homes</li>
-            <li>Support with wider home improvement and renovation work</li>
-            <li>
-              Free consultation for projects in Nottingham and nearby areas
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <section className='city-section city-cta-section'>
-        <div className='city-section-inner'>
-          <h2>Planning a Kitchen Project in Nottingham?</h2>
-          <p>
-            Whether you need a full kitchen renovation or a professional team to
-            install your new kitchen properly, we are here to help. View our
-            recent work or get in touch to discuss your project.
-          </p>
-
-          <div className='city-actions'>
-            <Link to='/projects/kitchens' className='city-button'>
-              See Recent Kitchen Projects
-            </Link>
-            <Link to='/about' className='city-button city-button-secondary'>
-              Learn More About Us
-            </Link>
-          </div>
-        </div>
-      </section>
-    </div>
+    <CityPage
+      name='Nottingham'
+      path='/nottingham'
+      title='Kitchen Fitters in Nottingham | Kitchen Installation | S.L. Builders LTD'
+      description='Nottingham-based kitchen fitters. S.L. Builders LTD installs kitchens and worktops in homes across Nottingham, from Arnold and Beeston to West Bridgford. Free consultation.'
+      heading='Kitchen Fitters in Nottingham'
+      banner='/assets/cities/nottinghamshire.jpg'
+      bannerLabel='Modern fitted kitchen'
+      intro={[
+        'S.L. Builders LTD is based on the north side of Nottingham, so the city and its suburbs are where much of our work takes place. We fit new kitchens, replace worktops and improve layouts for homeowners who want a clean, long-lasting finish.',
+        'Being local means we can visit your home, look at the space properly and agree a clear plan with you before any work starts.',
+      ]}
+      homesHeading='Kitchens for Every Type of Nottingham Home'
+      homes={[
+        'Nottingham has a real mix of housing, and each type needs a slightly different approach. Victorian and Edwardian terraces in areas such as Sherwood, Carrington and Forest Fields often have narrow kitchens where every centimetre of storage matters. Their walls are rarely perfectly straight, so worktops and end panels need careful scribing to sit tight against them.',
+        'The 1930s semi-detached houses common in West Bridgford, Beeston and Mapperley usually allow for larger layouts, and many homeowners use a new kitchen as the chance to open up into a dining area. On newer estates around the city, the original builder-grade kitchens are often ready for an upgrade with better units, worktops and flooring.',
+      ]}
+      areasHeading='Areas We Cover Around Nottingham'
+      areas={[
+        'Arnold',
+        'Beeston',
+        'Bulwell',
+        'Carlton',
+        'Clifton',
+        'Mapperley',
+        'Sherwood',
+        'West Bridgford',
+        'Wollaton',
+        'Hucknall',
+      ]}
+      areasNote='If your part of Nottingham is not listed, get in touch. We cover most of Greater Nottingham and the surrounding villages.'
+      faqs={[
+        {
+          q: 'Are you based in Nottingham?',
+          a: 'Yes. We are based on Annesley Road on the north side of Nottingham, so homes across the city and its suburbs are close to us.',
+        },
+        {
+          q: 'What kitchen work do you carry out?',
+          a: 'We handle full kitchen installations, including cabinet fitting, worktop installation, plumbing coordination, electrical preparation and finishing. We also replace units and worktops in existing kitchens and help with layout changes.',
+        },
+        {
+          q: 'How do I get a quote?',
+          a: 'Send us a message by SMS, WhatsApp or email with a short description of your project and a few photos of the room. We will get back to you to arrange a free consultation.',
+        },
+        {
+          q: 'Can you help with other rooms as well?',
+          a: 'Yes. Alongside kitchens we install flooring, renovate staircases, build outdoor decking and take on custom renovation work, so one team can cover several jobs in the same home.',
+        },
+      ]}
+    />
   );
 }

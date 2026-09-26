@@ -1,130 +1,56 @@
-import { Helmet } from 'react-helmet-async';
-import { Link } from 'react-router-dom';
-import { MdOutlineKitchen } from 'react-icons/md';
-import '../../components/styles/CityPage.css';
+import CityPage from '../../components/CityPage';
 
 export default function Hucknall() {
   return (
-    <div className='city-page'>
-      <Helmet>
-        <title>Kitchen Fitters in Hucknall | S.L. Builders LTD</title>
-        <meta
-          name='description'
-          content='S.L. Builders LTD provides expert kitchen fitting, kitchen renovation, flooring installation and home improvement services in Hucknall and surrounding areas.'
-        />
-        <link rel='canonical' href='https://slbuildersltd.co.uk/hucknall' />
-      </Helmet>
-
-      <div
-        className='city-banner'
-        style={{ backgroundImage: 'url("/assets/cities/hucknall.webp")' }}
-        role='img'
-        aria-label='Modern kitchen installation project in Hucknall'
-      >
-        <div className='city-content'>
-          <span className='city-icon'>
-            <MdOutlineKitchen />
-          </span>
-
-          <h1>Reliable Kitchen Fitters in Hucknall</h1>
-
-          <p>
-            S.L. Builders LTD provides expert kitchen fitting, kitchen
-            renovation and home improvement services across Hucknall and nearby
-            areas. We help homeowners create practical, stylish kitchens with a
-            strong focus on quality workmanship, durability and clean,
-            professional finishes.
-          </p>
-
-          <p>
-            Whether you are planning a full kitchen renovation, replacing old
-            units, upgrading worktops or improving the layout of your space, our
-            team delivers reliable installation services tailored to your home
-            and everyday needs.
-          </p>
-
-          <div className='city-actions'>
-            <Link to='/projects/kitchens' className='city-button'>
-              View Kitchen Projects
-            </Link>
-            <Link to='/services' className='city-button city-button-secondary'>
-              Explore Our Services
-            </Link>
-          </div>
-        </div>
-      </div>
-
-      <section className='city-section'>
-        <div className='city-section-inner'>
-          <h2>Kitchen Renovation Services in Hucknall</h2>
-          <p>
-            We work with homeowners in Hucknall who want high-quality kitchen
-            fitting and renovation work carried out with care and attention to
-            detail. Our kitchen services can include cabinet fitting, worktop
-            installation, flooring, finishing work and wider renovation support
-            where needed.
-          </p>
-          <p>
-            Every kitchen project is different, which is why we take a tailored
-            approach to every installation. We focus on creating kitchens that
-            not only look great, but also function well for storage, cooking,
-            family life and long-term everyday use.
-          </p>
-        </div>
-      </section>
-
-      <section className='city-section city-section-alt'>
-        <div className='city-section-inner'>
-          <h2>Areas We Cover Around Hucknall</h2>
-          <p>
-            We provide kitchen fitting and renovation services across Hucknall
-            and nearby locations, including <strong>Bulwell</strong>,{' '}
-            <strong>Bestwood</strong>, <strong>Arnold</strong>,{' '}
-            <strong>Papplewick</strong>, <strong>Linby</strong> and surrounding
-            areas.
-          </p>
-          <p>
-            If you are based near Hucknall and looking for trusted kitchen
-            fitters with a professional approach and strong attention to detail,
-            S.L. Builders LTD is ready to help.
-          </p>
-        </div>
-      </section>
-
-      <section className='city-section'>
-        <div className='city-section-inner'>
-          <h2>Why Homeowners Choose S.L. Builders LTD</h2>
-          <ul className='city-list'>
-            <li>Experienced kitchen fitters focused on quality finishes</li>
-            <li>
-              Reliable service and clear communication throughout the project
-            </li>
-            <li>Tailored solutions for both modern and traditional homes</li>
-            <li>Support with wider home improvement and renovation work</li>
-            <li>Free consultation for projects in Hucknall and nearby areas</li>
-          </ul>
-        </div>
-      </section>
-
-      <section className='city-section city-cta-section'>
-        <div className='city-section-inner'>
-          <h2>Planning a Kitchen Project in Hucknall?</h2>
-          <p>
-            Whether you need a full kitchen renovation or a professional team to
-            install your new kitchen properly, we are here to help. View our
-            recent work or get in touch to discuss your project.
-          </p>
-
-          <div className='city-actions'>
-            <Link to='/projects/kitchens' className='city-button'>
-              See Recent Kitchen Projects
-            </Link>
-            <Link to='/about' className='city-button city-button-secondary'>
-              Learn More About Us
-            </Link>
-          </div>
-        </div>
-      </section>
-    </div>
+    <CityPage
+      name='Hucknall'
+      path='/hucknall'
+      areaType='Place'
+      title='Kitchen Fitters in Hucknall | Local Kitchen Installation | S.L. Builders LTD'
+      description='Local kitchen fitters based on Annesley Road, Hucknall. S.L. Builders LTD fits kitchens, worktops and flooring in Hucknall, Linby, Papplewick and nearby villages.'
+      heading='Local Kitchen Fitters in Hucknall'
+      banner='/assets/cities/hucknall.webp'
+      bannerLabel='Modern fitted kitchen'
+      intro={[
+        'Hucknall is our home town. S.L. Builders LTD is based on Annesley Road, so for homeowners in Hucknall and the nearby villages we are genuinely local kitchen fitters.',
+        'We fit complete kitchens, replace tired units and worktops, and carry out related renovation work, with the same team looking after your project from the first visit to the final check.',
+      ]}
+      homesHeading='Kitchen Fitting for Hucknall Homes'
+      homes={[
+        'Hucknall grew as a mining town, and many streets near the town centre are lined with terraced houses from that era. Their kitchens tend to be compact, so the focus is on clever storage, well-planned corner units and a layout that makes the most of a small footprint.',
+        'Further out, the post-war semis and the newer housing estates on the edges of town offer more room to work with. Here many homeowners want to replace a dated or basic kitchen with something more modern, often with new flooring fitted at the same time for a consistent finish.',
+      ]}
+      areasHeading='Areas We Cover Around Hucknall'
+      areas={[
+        'Hucknall town centre',
+        'Butler’s Hill',
+        'Linby',
+        'Papplewick',
+        'Bestwood Village',
+        'Annesley',
+        'Kirkby-in-Ashfield',
+        'Bulwell',
+        'Eastwood',
+      ]}
+      areasNote='Being based in Hucknall, we can easily reach the surrounding villages and the north of Nottingham.'
+      faqs={[
+        {
+          q: 'Where in Hucknall are you based?',
+          a: 'We are based on Annesley Road in Hucknall, which makes it easy for us to visit homes in the town and nearby villages.',
+        },
+        {
+          q: 'Can you work in a small terraced kitchen?',
+          a: 'Yes. Compact kitchens are common in Hucknall, and we plan the layout carefully to make the best use of the space, including storage, worktop length and where appliances go.',
+        },
+        {
+          q: 'How do I arrange a visit?',
+          a: 'Send us a message by SMS, WhatsApp or email with a few details and photos of your kitchen, and we will get back to you to arrange a free consultation.',
+        },
+        {
+          q: 'Do you only fit kitchens?',
+          a: 'No. We also install flooring, renovate staircases, build decking and take on custom renovation projects around the home.',
+        },
+      ]}
+    />
   );
 }

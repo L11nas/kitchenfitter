@@ -1,133 +1,55 @@
-import { Helmet } from 'react-helmet-async';
-import { Link } from 'react-router-dom';
-import { MdOutlineKitchen } from 'react-icons/md';
-import '../../components/styles/CityPage.css';
+import CityPage from '../../components/CityPage';
 
 export default function Lincolnshire() {
   return (
-    <div className='city-page'>
-      <Helmet>
-        <title>Kitchen Fitters in Lincolnshire | S.L. Builders LTD</title>
-        <meta
-          name='description'
-          content='S.L. Builders LTD provides expert kitchen fitting, kitchen renovation, flooring installation and home improvement services across Lincolnshire.'
-        />
-        <link rel='canonical' href='https://slbuildersltd.co.uk/lincolnshire' />
-      </Helmet>
-
-      <div
-        className='city-banner'
-        style={{ backgroundImage: 'url("/assets/cities/lincolnshire.jpg")' }}
-        role='img'
-        aria-label='Modern kitchen renovation project in Lincolnshire'
-      >
-        <div className='city-content'>
-          <span className='city-icon'>
-            <MdOutlineKitchen />
-          </span>
-
-          <h1>Top Kitchen Fitters in Lincolnshire</h1>
-
-          <p>
-            S.L. Builders LTD provides expert kitchen fitting, kitchen
-            renovation and home improvement services across Lincolnshire. We
-            help homeowners create practical, stylish kitchens with a strong
-            focus on quality workmanship, durability and clean, professional
-            finishes.
-          </p>
-
-          <p>
-            Whether you are planning a full kitchen renovation, replacing old
-            units, upgrading worktops or improving the layout of your space, our
-            team delivers reliable installation services tailored to your home
-            and everyday needs.
-          </p>
-
-          <div className='city-actions'>
-            <Link to='/projects/kitchens' className='city-button'>
-              View Kitchen Projects
-            </Link>
-            <Link to='/services' className='city-button city-button-secondary'>
-              Explore Our Services
-            </Link>
-          </div>
-        </div>
-      </div>
-
-      <section className='city-section'>
-        <div className='city-section-inner'>
-          <h2>Kitchen Renovation Services in Lincolnshire</h2>
-          <p>
-            We work with homeowners across Lincolnshire who want high-quality
-            kitchen fitting and renovation work carried out with care and
-            attention to detail. Our kitchen services can include cabinet
-            fitting, worktop installation, flooring, finishing work and wider
-            renovation support where needed.
-          </p>
-          <p>
-            Every kitchen project is different, which is why we take a tailored
-            approach to every installation. We focus on creating kitchens that
-            not only look great, but also function well for storage, cooking,
-            family life and long-term everyday use.
-          </p>
-        </div>
-      </section>
-
-      <section className='city-section city-section-alt'>
-        <div className='city-section-inner'>
-          <h2>Areas We Cover Across Lincolnshire</h2>
-          <p>
-            We provide kitchen fitting and renovation services across
-            Lincolnshire, including <strong>Lincoln</strong>,{' '}
-            <strong>Grantham</strong>, <strong>Boston</strong>,{' '}
-            <strong>Scunthorpe</strong>, <strong>Spalding</strong> and nearby
-            areas.
-          </p>
-          <p>
-            If you are based in Lincolnshire and looking for trusted kitchen
-            fitters with a professional approach and strong attention to detail,
-            S.L. Builders LTD is ready to help.
-          </p>
-        </div>
-      </section>
-
-      <section className='city-section'>
-        <div className='city-section-inner'>
-          <h2>Why Homeowners Choose S.L. Builders LTD</h2>
-          <ul className='city-list'>
-            <li>Experienced kitchen fitters focused on quality finishes</li>
-            <li>
-              Reliable service and clear communication throughout the project
-            </li>
-            <li>Tailored solutions for both modern and traditional homes</li>
-            <li>Support with wider home improvement and renovation work</li>
-            <li>
-              Free consultation for projects across Lincolnshire and nearby
-              areas
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <section className='city-section city-cta-section'>
-        <div className='city-section-inner'>
-          <h2>Planning a Kitchen Project in Lincolnshire?</h2>
-          <p>
-            Whether you need a full kitchen renovation or a professional team to
-            install your new kitchen properly, we are here to help. View our
-            recent work or get in touch to discuss your project.
-          </p>
-
-          <div className='city-actions'>
-            <Link to='/projects/kitchens' className='city-button'>
-              See Recent Kitchen Projects
-            </Link>
-            <Link to='/about' className='city-button city-button-secondary'>
-              Learn More About Us
-            </Link>
-          </div>
-        </div>
-      </section>
-    </div>
+    <CityPage
+      name='Lincolnshire'
+      path='/lincolnshire'
+      areaType='AdministrativeArea'
+      title='Kitchen Fitters in Lincolnshire | Lincoln, Grantham & Sleaford | S.L. Builders LTD'
+      description='Kitchen fitting across Lincolnshire, including Lincoln, Grantham, Sleaford and Gainsborough. S.L. Builders LTD fits kitchens in cottages, bungalows and modern homes.'
+      heading='Kitchen Fitters in Lincolnshire'
+      banner='/assets/cities/lincolnshire.jpg'
+      bannerLabel='Modern fitted kitchen'
+      intro={[
+        'S.L. Builders LTD fits kitchens for homeowners across Lincolnshire, from Lincoln and Grantham to the smaller market towns and villages. We handle everything from full kitchen installations to replacing worktops and units.',
+        'We plan each kitchen around the property and the way you live, which matters in a county with so many different styles of home.',
+      ]}
+      homesHeading='Kitchens for Lincolnshire Properties'
+      homes={[
+        'Lincolnshire has many older cottages and farmhouses, where thick walls, uneven floors and walls that are far from square are common. Fitting a kitchen in these homes takes patience: units need careful levelling and worktops need to be scribed so everything sits neatly.',
+        'The county also has a large number of bungalows, where a well-designed, easy-to-use kitchen is especially important. In Lincoln and Grantham there are Victorian terraces and modern estates too, each with their own layouts and opportunities for improvement.',
+      ]}
+      areasHeading='Areas We Cover in Lincolnshire'
+      areas={[
+        'Lincoln',
+        'North Hykeham',
+        'Grantham',
+        'Sleaford',
+        'Gainsborough',
+        'Market Rasen',
+        'Stamford',
+        'Bourne',
+      ]}
+      areasNote='Lincolnshire is a large county, so please send us your location and we will confirm whether we can take on your project.'
+      faqs={[
+        {
+          q: 'Which parts of Lincolnshire do you cover?',
+          a: 'We cover Lincoln, Grantham, Sleaford, Gainsborough and nearby towns and villages. For other parts of the county, send us your location and we will let you know.',
+        },
+        {
+          q: 'Can you fit a kitchen in an older cottage with uneven walls?',
+          a: 'Yes. Older properties need extra care with levelling units and scribing worktops, and we allow for this when planning the installation.',
+        },
+        {
+          q: 'How do I get a quote?',
+          a: 'Send us a message by SMS, WhatsApp or email with your location, a short description of the job and a few photos of the room. We will get back to you to arrange a free consultation.',
+        },
+        {
+          q: 'Do you offer other renovation work?',
+          a: 'Yes. We also install flooring, renovate staircases, build decking and take on custom renovation projects.',
+        },
+      ]}
+    />
   );
 }
