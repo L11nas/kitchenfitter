@@ -2,6 +2,12 @@ import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FaBookmark } from 'react-icons/fa';
 import { Helmet } from 'react-helmet-async';
+import StructuredData from '../../components/StructuredData';
+import {
+  BUSINESS_REF,
+  SITE_URL,
+  breadcrumbSchema,
+} from '../../utils/structuredData';
 import '../../components/styles/services.css';
 
 // Images
@@ -54,6 +60,32 @@ const services = [
   },
 ];
 
+const AREAS_SERVED = [
+  'Nottingham',
+  'Hucknall',
+  'Leeds',
+  'Doncaster',
+  'Lincolnshire',
+  'Leicestershire',
+].map((name) => ({ '@type': 'Place', name }));
+
+const servicesSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  itemListElement: services.map((service, index) => ({
+    '@type': 'ListItem',
+    position: index + 1,
+    item: {
+      '@type': 'Service',
+      name: service.title,
+      description: service.description,
+      url: `${SITE_URL}${service.link}`,
+      provider: BUSINESS_REF,
+      areaServed: AREAS_SERVED,
+    },
+  })),
+};
+
 export default function Services() {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -71,6 +103,10 @@ export default function Services() {
         />
         <link rel='canonical' href='https://slbuildersltd.co.uk/services' />
       </Helmet>
+      <StructuredData data={servicesSchema} />
+      <StructuredData
+        data={breadcrumbSchema([{ name: 'Services', path: '/services' }])}
+      />
 
       <div className='services-hero-overlay'></div>
 

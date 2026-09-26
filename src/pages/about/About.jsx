@@ -1,5 +1,7 @@
 import { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
+import StructuredData from '../../components/StructuredData';
+import { breadcrumbSchema } from '../../utils/structuredData';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import {
@@ -87,6 +89,11 @@ export default function About() {
         />
         <link rel='canonical' href='https://slbuildersltd.co.uk/about' />
       </Helmet>
+      <StructuredData
+        data={breadcrumbSchema([
+          { name: 'About', path: '/about' },
+        ])}
+      />
 
       <div className='about-info'>
         <h1 data-aos='fade-up'>About S.L. Builders LTD</h1>

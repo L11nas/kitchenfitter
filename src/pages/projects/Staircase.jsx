@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
+import StructuredData from '../../components/StructuredData';
+import { breadcrumbSchema } from '../../utils/structuredData';
 import '../../components/styles/staircase.css';
 import { useEffect } from 'react';
 
@@ -23,6 +25,12 @@ export default function StaircaseProjects() {
           href='https://slbuildersltd.co.uk/projects/staircase'
         />
       </Helmet>
+      <StructuredData
+        data={breadcrumbSchema([
+          { name: 'Projects', path: '/projects' },
+          { name: 'Staircase', path: '/projects/staircase' },
+        ])}
+      />
 
       <h1 className='staircase-title'>Staircase Renovation Projects</h1>
 

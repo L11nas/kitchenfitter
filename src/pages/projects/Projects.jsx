@@ -1,6 +1,8 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
+import StructuredData from '../../components/StructuredData';
+import { breadcrumbSchema } from '../../utils/structuredData';
 
 import '../../components/styles/projects.css';
 import kitchenBg from '/assets/Kitchenimg/k3.webp';
@@ -64,6 +66,11 @@ export default function Projects() {
         />
         <link rel='canonical' href='https://slbuildersltd.co.uk/projects' />
       </Helmet>
+      <StructuredData
+        data={breadcrumbSchema([
+          { name: 'Projects', path: '/projects' },
+        ])}
+      />
 
       <div className='projects-overlay'></div>
 

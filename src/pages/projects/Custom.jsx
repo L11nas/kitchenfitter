@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
+import StructuredData from '../../components/StructuredData';
+import { breadcrumbSchema } from '../../utils/structuredData';
 import '../../components/styles/custom.css';
 
 export default function CustomRenovation() {
@@ -19,6 +21,12 @@ export default function CustomRenovation() {
           href='https://slbuildersltd.co.uk/projects/custom'
         />
       </Helmet>
+      <StructuredData
+        data={breadcrumbSchema([
+          { name: 'Projects', path: '/projects' },
+          { name: 'Custom Renovations', path: '/projects/custom' },
+        ])}
+      />
 
       <h1 className='custom-title'>Custom Renovation Projects</h1>
 

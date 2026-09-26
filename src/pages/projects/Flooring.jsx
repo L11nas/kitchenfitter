@@ -5,6 +5,8 @@ import { useState, useEffect } from 'react';
 import { Dialog } from '@headlessui/react';
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
+import StructuredData from '../../components/StructuredData';
+import { breadcrumbSchema } from '../../utils/structuredData';
 
 export default function FlooringProjects() {
   const [selectedIndex, setSelectedIndex] = useState(null);
@@ -53,6 +55,12 @@ export default function FlooringProjects() {
           href='https://slbuildersltd.co.uk/projects/flooring'
         />
       </Helmet>
+      <StructuredData
+        data={breadcrumbSchema([
+          { name: 'Projects', path: '/projects' },
+          { name: 'Flooring', path: '/projects/flooring' },
+        ])}
+      />
 
       <h1 className='flooring-title'>Flooring Renovation Projects</h1>
 
