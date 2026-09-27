@@ -16,7 +16,7 @@
   inset: 0;
   width: 100%;
   height: 100%;
-  background: url('/assets/Kitchenimg/background.webp') no-repeat center center;
+  background: url('/assets/Kitchenimg/hero-kitchen.webp') no-repeat center center;
   background-size: cover;
   z-index: -5;
   pointer-events: none;
@@ -508,4 +508,11 @@
 .hero-testimonials > .hero-cta-button,
 .hero-projects > .hero-cta-button {
   justify-self: center;
+}
+
+/* Smaller hero background for phones */
+@media (max-width: 768px) {
+  .hero-fixed-bg {
+    background-image: url('/assets/Kitchenimg/hero-kitchen-mobile.webp');
+  }
 }
